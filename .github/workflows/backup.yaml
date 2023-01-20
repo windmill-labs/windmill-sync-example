@@ -1,0 +1,47 @@
+name: 'Sync Windmill'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  # schedule:
+  #  - cron:  '0 * * * *'
+
+env:
+  WMILL_URL: https://app.windmill.dev/
+  WMILL_WORKSPACE: sync-demo
+
+concurrency:
+  group: 'wmill-backup'
+
+jobs:
+  sync:
+    environment:
+      name: windmill 
+      url: ${{ env.WMILL_URL }}?workspace=${{ env.WMILL_WORKSPACE }}
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+
+      # TODO: Replace with https://deno.land/x/wmill@v??/main.ts or a custom action
+      - name: Setup wmill
+        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+
+      - name: Publish Local Changes
+        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts sync push --token ${{ secrets.WMILL_TOKEN }}
+
+      - name: Pull newly made changes
+        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts sync pull --token ${{ secrets.WMILL_TOKEN }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Changes from ${{ env.WMILL_WORKSPACE }}                                                                                                          
