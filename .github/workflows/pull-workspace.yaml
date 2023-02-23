@@ -1,0 +1,33 @@
+name: 'Pull windmill to main'
+on:
+  workflow_dispatch:
+  schedule:
+   - cron:  '0 * * * *'
+
+env:
+  WMILL_URL: https://app.windmill.dev/
+  WMILL_WORKSPACE: github-sync-example
+
+jobs:
+  sync:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+      # Pull changes
+      - name: Pull changes
+        run: |
+          deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts sync pull --yes 
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: 'Sync windmill -> repo'
+      # instead of creating pull request, git-auto-commit can push directly to main
+      # - uses: stefanzweifel/git-auto-commit-action@v4

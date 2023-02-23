@@ -1,0 +1,31 @@
+name: 'Push main to windmill workspace'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  # schedule:
+  #  - cron:  '0 * * * *'
+
+env:
+  WMILL_URL: https://app.windmill.dev/
+  WMILL_WORKSPACE: github-sync-example
+
+jobs:
+  sync:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+
+      # (push will pull first to detect conflicts and only push actual changes)
+      - name: Push changes
+        run: |
+          deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts sync push --yes --fail-conflicts   
+                                                                                                 

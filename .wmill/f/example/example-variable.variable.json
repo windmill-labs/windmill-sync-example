@@ -1,8 +1,0 @@
-{
-  "value": "example content!",
-  "is_secret": false,
-  "description": "An example variable",
-  "is_expired": false,
-  "is_oauth": false,
-  "account": null
-}

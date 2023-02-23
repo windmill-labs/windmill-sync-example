@@ -1,0 +1,251 @@
+{
+  "value": {
+    "modules": [
+      {
+        "id": "ao",
+        "value": {
+          "lock": "",
+          "path": null,
+          "type": "rawscript",
+          "content": "import * as wmill from 'https://deno.land/x/windmill@v1.27.2/mod.ts'\nimport { sleep } from \"https://deno.land/x/sleep/mod.ts\";\n\nexport async function main() {\n  let result = []\n  for (let i = 0; i < 10; i++) {\n    console.log('I should sleep')\n    result.push(i)\n    await sleep(0.2)\n  }\n  return result\n}\n",
+          "language": "deno",
+          "input_transforms": {}
+        },
+        "summary": "",
+        "stop_after_if": null,
+        "input_transforms": {}
+      },
+      {
+        "id": "ap",
+        "value": {
+          "lock": "",
+          "path": null,
+          "type": "rawscript",
+          "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.35.0/mod.ts\"\n\nexport async function main(x: string) {\n  return x;\n}\n",
+          "language": "deno",
+          "input_transforms": {
+            "x": {
+              "type": "static",
+              "value": ""
+            }
+          }
+        },
+        "summary": null,
+        "stop_after_if": null,
+        "input_transforms": {}
+      },
+      {
+        "id": "aq",
+        "value": {
+          "type": "forloopflow",
+          "modules": [
+            {
+              "id": "ar",
+              "value": {
+                "lock": null,
+                "path": null,
+                "type": "rawscript",
+                "content": "import * as wmill from 'https://deno.land/x/windmill@v1.27.2/mod.ts'\nimport { sleep } from \"https://deno.land/x/sleep/mod.ts\";\n\nexport async function main() {\n  let result = []\n  for (let i= 0; i<10; i++) {\n  console.log('I should sleep')\n  result.push(i)\n  await sleep(0.2)\n  }\n  return result\n}\n",
+                "language": "deno",
+                "input_transforms": {}
+              },
+              "summary": null,
+              "stop_after_if": {
+                "expr": "result == undefined",
+                "skip_if_stopped": false
+              },
+              "input_transforms": {}
+            },
+            {
+              "id": "as",
+              "value": {
+                "lock": null,
+                "path": null,
+                "type": "rawscript",
+                "content": "// import * as wmill from 'https://deno.land/x/windmill@v1.31.0/mod.ts'\n\nexport async function main(x: string) {\n  return x\n}\n",
+                "language": "deno",
+                "input_transforms": {
+                  "x": {
+                    "expr": "import { previous_result, flow_input, step, variable, resource, params } from 'windmill@1-1'\n\n`${flow_input.iter.value}`",
+                    "type": "javascript"
+                  }
+                }
+              },
+              "summary": null,
+              "stop_after_if": {
+                "expr": "stepresult == undefined",
+                "skip_if_stopped": false
+              },
+              "input_transforms": {}
+            }
+          ],
+          "iterator": {
+            "expr": "[]",
+            "type": "javascript"
+          },
+          "parallel": false,
+          "skip_failures": true
+        },
+        "summary": null,
+        "stop_after_if": null,
+        "input_transforms": {}
+      },
+      {
+        "id": "at",
+        "value": {
+          "type": "branchall",
+          "branches": [
+            {
+              "modules": [
+                {
+                  "id": "au",
+                  "value": {
+                    "type": "identity"
+                  },
+                  "summary": null,
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                },
+                {
+                  "id": "av",
+                  "value": {
+                    "type": "identity"
+                  },
+                  "summary": null,
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                }
+              ],
+              "summary": "",
+              "parallel": true,
+              "skip_failure": false
+            },
+            {
+              "modules": [
+                {
+                  "id": "aw",
+                  "value": {
+                    "type": "identity"
+                  },
+                  "summary": null,
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                },
+                {
+                  "id": "ax",
+                  "value": {
+                    "type": "identity"
+                  },
+                  "summary": null,
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                }
+              ],
+              "summary": "",
+              "parallel": true,
+              "skip_failure": false
+            },
+            {
+              "modules": [
+                {
+                  "id": "ay",
+                  "value": {
+                    "type": "identity"
+                  },
+                  "summary": null,
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                },
+                {
+                  "id": "az",
+                  "value": {
+                    "type": "branchone",
+                    "default": [
+                      {
+                        "id": "bc",
+                        "value": {
+                          "type": "forloopflow",
+                          "modules": [
+                            {
+                              "id": "bd",
+                              "value": {
+                                "type": "identity"
+                              },
+                              "summary": null,
+                              "stop_after_if": null,
+                              "input_transforms": {}
+                            }
+                          ],
+                          "iterator": {
+                            "expr": "previous_result",
+                            "type": "javascript"
+                          },
+                          "parallel": false,
+                          "skip_failures": true
+                        },
+                        "summary": null,
+                        "stop_after_if": null,
+                        "input_transforms": {}
+                      }
+                    ],
+                    "branches": [
+                      {
+                        "expr": "true",
+                        "modules": [
+                          {
+                            "id": "ba",
+                            "value": {
+                              "type": "identity"
+                            },
+                            "summary": null,
+                            "stop_after_if": null,
+                            "input_transforms": {}
+                          }
+                        ],
+                        "summary": ""
+                      },
+                      {
+                        "expr": "true  ",
+                        "modules": [
+                          {
+                            "id": "bb",
+                            "value": {
+                              "type": "identity"
+                            },
+                            "summary": null,
+                            "stop_after_if": null,
+                            "input_transforms": {}
+                          }
+                        ],
+                        "summary": ""
+                      }
+                    ]
+                  },
+                  "summary": "",
+                  "stop_after_if": null,
+                  "input_transforms": {}
+                }
+              ],
+              "summary": "",
+              "parallel": true,
+              "skip_failure": false
+            }
+          ],
+          "parallel": false
+        },
+        "summary": "",
+        "stop_after_if": null,
+        "input_transforms": {}
+      }
+    ],
+    "failure_module": null
+  },
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [],
+    "properties": {}
+  },
+  "summary": "An unnecessarily branchy flow",
+  "description": ""
+}
