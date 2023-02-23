@@ -1,6 +1,7 @@
 {
-    "owners": [],
-    "extra_perms": {
-        "g/all": true
-    }
+  "owners": [],
+  "extra_perms": {
+    "g/all": true
+  },
+  "display_name": "example"
 }
