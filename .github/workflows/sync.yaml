@@ -9,10 +9,10 @@ on:
 
 env:
   WMILL_URL: https://app.windmill.dev/
-  WMILL_WORKSPACE: sync-demo
+  WMILL_WORKSPACE: github-sync-demo
 
 concurrency:
-  group: 'wmill-backup'
+  group: 'wmill'
 
 jobs:
   sync:
@@ -31,17 +31,8 @@ jobs:
         with:
           deno-version: vx.x.x
 
-      # TODO: Replace with https://deno.land/x/wmill@v??/main.ts or a custom action
       - name: Setup wmill
-        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+        run: deno run --unstable -A  https://deno.land/x/wmill/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
 
       - name: Publish Local Changes
-        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts sync push --token ${{ secrets.WMILL_TOKEN }}
-
-      - name: Pull newly made changes
-        run: deno run --unstable -A https://raw.githubusercontent.com/HurricanKai/windmill/sync2/cli/main.ts sync pull --token ${{ secrets.WMILL_TOKEN }}
-
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Changes from ${{ env.WMILL_WORKSPACE }}                                                                                                          
+        run: deno run --unstable -A  https://deno.land/x/wmill/main.ts sync push --token ${{ secrets.WMILL_TOKEN }} --fail-conflicts                                                                                                        

@@ -1,12 +1,11 @@
 # Windmill Sync Example
 
-This repo demonstrates how to syncronize definitions between GitHub and Windmill
-automatically. This means that changes on either platform will be propagated to
-the other.
+Template repo that demonstrate how to use a github repo as source of truth for part or all of your Windmill workspace.
 
-See also
-[backup example](https://github.com/windmill-labs/windmill-backup-example) and
-[push example](https://github.com/windmill-labs/windmill-push-example).
+Users of this repo can commit changes to the main branches and have it deployed to their Windmill workspace thanks to a github action that will simply uses the [windmill cli](https://github.com/windmill-labs/windmill/tree/main/cli) "wmill sync push" under the hood.
+
+To use a repo solely for backup purpose, see the
+[backup example](https://github.com/windmill-labs/windmill-backup-example).
 
 ## Setup
 
@@ -38,24 +37,12 @@ automatically ran on a schedule.
 
 ### Security
 
-In some cases it may be useful to take extra care, especially when users have
-access to the automated repo that do not have write access to the repository. To
-do so, create a separate account that can only access this specific
-workspacewith write access and use a token issued using this account. This can
-be done using the UI or the
-[wmill cli](https://github.com/windmill-labs/windmill/blob/main/cli/README.md).
+We recommend creating and using a separate account in Windmill from which to use the token of. This will allow better tracking of the use of the token.
 
 It may additionally be useful to restrict the GitHub environment.
 [The GitHub help article](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 goes into detail of all the options.
 
-## Tracking Changes
+## .wmillignore
 
-The
-[wmill cli](https://github.com/windmill-labs/windmill/blob/main/cli/README.md)
-is used to manage what files are tracked, a folder with state `.wmill` is
-maintained, similar to the well known `.git` folder. To start tracking a file,
-use `wmill sync add <file>`. On the next push/pull the file will be considered
-and both the local and remote versions updated. Note that only `.json` files
-should be tracked, for scripts the relevant content file (`.py`, `.ts`, `.go`)
-will be tracked automatically.
+To avoid tracking certain files or to whitelist only certail files (like only the content of some folders)

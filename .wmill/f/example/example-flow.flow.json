@@ -1,0 +1,26 @@
+{
+    "summary": "",
+    "description": "",
+    "value": {
+        "modules": [
+            {
+                "id": "a",
+                "value": {
+                    "path": "f/example/example-script",
+                    "type": "script",
+                    "input_transforms": {}
+                },
+                "summary": null,
+                "stop_after_if": null,
+                "input_transforms": {}
+            }
+        ],
+        "failure_module": null
+    },
+    "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {},
+        "required": [],
+        "type": "object"
+    }
+}
