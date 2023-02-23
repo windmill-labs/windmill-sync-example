@@ -1,11 +1,10 @@
 # Windmill Sync Example
 
-Template repo that demonstrate how to use a github repo as source of truth for part or all of your Windmill workspace.
+Example repo that demonstrate how to use a github repo as source of truth for part or all of your Windmill workspace.
 
-Users of this repo can commit changes to the main branches and have it deployed to their Windmill workspace thanks to a github action that will simply uses the [windmill cli](https://github.com/windmill-labs/windmill/tree/main/cli) "wmill sync push" under the hood.
+Users of this repo can commit changes to the main branches and have it deployed to their Windmill workspace thanks to a github action that will simply uses the [windmill cli's](https://github.com/windmill-labs/windmill/tree/main/cli) `wmill sync push` under the hood.
 
-To use a repo solely for backup purpose, see the
-[backup example](https://github.com/windmill-labs/windmill-backup-example).
+This repo is used for syncing with the example folder on the demo workspace
 
 ## Setup
 
@@ -25,12 +24,13 @@ secret "WMILL_TOKEN" to this environment.
 ![](./img/gh-environment.png#gh-dark-mode-only)
 ![](./img/gh-environment-light.png#gh-light-mode-only)
 
-Edit the workflow in
-[.github/workflows/push.yaml](./.github/workflows/push.yaml), usually you'll
+Edit the workflows:
+- [.github/workflows/push-on-merge.yaml](./.github/workflows/push-on-merge.yaml) to push on merge to main, usually you'll
 only need to fill out the `env` variables, then activate GitHub actions by
 navigating to the "Actions" tab in GitHub. You may want to run the action once
-manually to see that everything works, in the future the action will be
-automatically ran on a schedule.
+manually to see that everything works.
+
+- [.github/workflows/pull-workspace.yaml](./.github/workflows/pull-workspace.yaml) to sync back any changes made in Windmill UI to this repo under the form of either a Pull Request or a commit to main directly.
 
 ![](./img/configure.png#gh-dark-mode-only)
 ![](./img/configure-light.png#gh-light-mode-only)
@@ -45,4 +45,4 @@ goes into detail of all the options.
 
 ## .wmillignore
 
-To avoid tracking certain files or to whitelist only certail files (like only the content of some folders)
+Use the .wmillignore file to filter the contents to sync (like only the content of some folders), it supports the .gitignore syntax.
