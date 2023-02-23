@@ -11,17 +11,9 @@ env:
   WMILL_URL: https://app.windmill.dev/
   WMILL_WORKSPACE: github-sync-demo
 
-concurrency:
-  group: 'wmill'
-
 jobs:
   sync:
-    environment:
-      name: windmill 
-      url: ${{ env.WMILL_URL }}?workspace=${{ env.WMILL_WORKSPACE }}
     runs-on: "ubuntu-latest"
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
