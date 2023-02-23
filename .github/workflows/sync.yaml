@@ -26,6 +26,5 @@ jobs:
       - name: Setup wmill
         run: |
           deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
-          deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts workspace
           deno run --unstable -A  https://deno.land/x/wmill@v1.67.3/main.ts sync push --yes --fail-conflicts   
                                                                                                  
