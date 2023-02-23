@@ -9,7 +9,7 @@ on:
 
 env:
   WMILL_URL: https://app.windmill.dev/
-  WMILL_WORKSPACE: github-sync-demo
+  WMILL_WORKSPACE: github-sync-example
 
 jobs:
   sync:
