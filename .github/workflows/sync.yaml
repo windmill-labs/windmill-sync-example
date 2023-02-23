@@ -32,7 +32,7 @@ jobs:
           deno-version: vx.x.x
 
       - name: Setup wmill
-        run: deno run --unstable -A  https://deno.land/x/wmill/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
-
-      - name: Publish Local Changes
-        run: deno run --unstable -A  https://deno.land/x/wmill/main.ts sync push --token ${{ secrets.WMILL_TOKEN }} --fail-conflicts                                                                                                        
+        run: |
+          deno run --unstable -A  https://deno.land/x/wmill/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill/main.ts sync push --token ${{ secrets.WMILL_TOKEN }} --fail-conflicts   
+                                                                                                 
