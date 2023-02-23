@@ -3,7 +3,7 @@
   "resource_type": "postgresql",
   "value": {
     "host": "postgres",
-    "port": 5432,
+    "port": 5432222,
     "user": "demodb",
     "dbname": "demodb",
     "sslmode": "disable",
