@@ -1,5 +1,5 @@
 {
-    "value": "example content!",
-    "is_secret": false,
-    "description": "An example variable"
+  "value": "example content!!",
+  "is_secret": false,
+  "description": "An example variable"
 }
