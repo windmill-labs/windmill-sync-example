@@ -13,6 +13,7 @@ env:
 
 jobs:
   sync:
+    environment: windmill
     runs-on: "ubuntu-latest"
     steps:
       - name: Checkout
