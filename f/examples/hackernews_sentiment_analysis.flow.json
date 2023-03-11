@@ -1,0 +1,116 @@
+{
+  "value": {
+    "modules": [
+      {
+        "id": "a",
+        "value": {
+          "lock": "",
+          "type": "rawscript",
+          "content": "import * as wmill from \"https://deno.land/x/windmill@v1.25.0/mod.ts\";\n\nconst MAX_LOOKBACK = 100;\n\nexport async function main(mentions: string[]) {\n  console.log(wmill.getInternalStatePath());\n  let lastState = await wmill.getInternalState();\n  console.log(`lastState: ${lastState}`);\n\n  let maxItem = await getMaxItem();\n  console.log(`maxItem: ${maxItem}`);\n\n  if (!lastState) {\n    console.log(\n      `First run of trigger, looking back to MAX_LOOKBACK (100) elements`,\n    );\n    lastState = maxItem - MAX_LOOKBACK;\n  }\n\n  maxItem = Math.min(maxItem, lastState + MAX_LOOKBACK);\n\n  const items = [];\n  for (let i = lastState; i < maxItem; i++) {\n    console.log(`fetching id: ${i}`);\n    const item = await getItem(i);\n    if (mentions.find((mention) => item.text?.includes(mention))) {\n      items.push(item);\n    }\n  }\n  await wmill.setInternalState(maxItem);\n\n  return items;\n}\n\nexport async function getMaxItem() {\n  const res = await fetch(\"https://hacker-news.firebaseio.com/v0/maxitem.json\");\n  return Number(await res.text());\n}\n\nexport async function getItem(id: number) {\n  const res = await fetch(\n    `https://hacker-news.firebaseio.com/v0/item/${id}.json`,\n  );\n  return res.json();\n}\n",
+          "language": "deno",
+          "input_transforms": {
+            "mentions": {
+              "expr": "previous_result.mentions",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Watch for new message with mentions on HackerNews",
+        "stop_after_if": {
+          "expr": "result.length == 0",
+          "skip_if_stopped": true
+        },
+        "input_transforms": {}
+      },
+      {
+        "id": "b",
+        "value": {
+          "type": "forloopflow",
+          "modules": [
+            {
+              "id": "c",
+              "value": {
+                "type": "rawscript",
+                "content": "from nltk.sentiment import SentimentIntensityAnalyzer\n\ndef main(text: str = \"Wow, NLTK is really powerful!\"):\n    return SentimentIntensityAnalyzer().polarity_scores(text)\n",
+                "language": "python3",
+                "input_transforms": {
+                  "text": {
+                    "expr": "`${flow_input.iter.value.text}`",
+                    "type": "javascript"
+                  }
+                }
+              },
+              "summary": "Analyse sentiment with nltk",
+              "input_transforms": {}
+            },
+            {
+              "id": "d",
+              "value": {
+                "path": "hub/111/slack/send_message_to_channel",
+                "type": "script",
+                "input_transforms": {
+                  "text": {
+                    "expr": "`${flow_input.iter.value.id} by ${flow_input.iter.value.by}: \\n ${flow_input.iter.value.text}:\n${JSON.stringify(previous_result)}`",
+                    "type": "javascript"
+                  },
+                  "slack": {
+                    "expr": "flow_input.slack",
+                    "type": "javascript"
+                  },
+                  "channel": {
+                    "expr": "`${flow_input.channel}`",
+                    "type": "javascript"
+                  }
+                }
+              },
+              "summary": "Send message to slack",
+              "input_transforms": {}
+            }
+          ],
+          "iterator": {
+            "expr": "result",
+            "type": "javascript"
+          },
+          "parallel": false,
+          "skip_failures": true
+        },
+        "input_transforms": {}
+      }
+    ]
+  },
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [
+      "mentions",
+      "channel"
+    ],
+    "properties": {
+      "slack": {
+        "type": "object",
+        "format": "resource-slack",
+        "description": "OAuth slack credentials"
+      },
+      "channel": {
+        "type": "string",
+        "format": "",
+        "default": "demo",
+        "description": "slack channel"
+      },
+      "mentions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "format": "",
+        "default": [
+          "windmill",
+          "unicorn"
+        ],
+        "description": "The list of mentions to watch for"
+      }
+    }
+  },
+  "summary": "Whenever an HackerNews message contains a mention, publish it to Slack with sentiment analysed",
+  "description": "We watch all new items on HackerNews and filter those that match one of the parametrized mention.\n\n For each of them, we attach sentiment analysis through NLTK and then publish it to slack."
+}
