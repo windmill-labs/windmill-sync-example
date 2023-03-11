@@ -1,0 +1,12 @@
+{
+  "description": "demodb",
+  "resource_type": "postgresql",
+  "value": {
+    "host": "postgres",
+    "port": 5432,
+    "user": "demodb",
+    "dbname": "demodb",
+    "sslmode": "disable",
+    "password": "$var:f/examples/demodb"
+  }
+}
