@@ -1282,7 +1282,7 @@
     "unusedInlineScripts": []
   },
   "policy": {
-    "on_behalf_of": "u/ruben",
+    "on_behalf_of": "u/github",
     "triggerables": {
       "rawscript/0b7c4f9a401d090cc96b25069f8cb3846fed012f68437856425adcc7ff23ae9b": {},
       "rawscript/0ce94e9ebe918bee2c0942577d8acc74d9f81e2cad7c380a6098325d468990de": {},
@@ -1292,7 +1292,7 @@
       "rawscript/f19ca57f66dbe82b11d6b00a3b1ae7fe31e1c608e18bfd338aea9123e29834e3": {}
     },
     "execution_mode": "publisher",
-    "on_behalf_of_email": "ruben@rubenfiszel.com"
+    "on_behalf_of_email": "github-sync@windmill.dev"
   },
   "summary": "Product Dashboard"
 }
