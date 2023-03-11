@@ -1,0 +1,63 @@
+{
+  "value": {
+    "modules": [
+      {
+        "id": "a",
+        "value": {
+          "lock": "",
+          "path": null,
+          "type": "rawscript",
+          "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.36.0/mod.ts\"\n\nexport async function main(path: string) {\n  Deno.writeTextFile(`./shared/${path}`, \"foo\");\n}\n",
+          "language": "deno",
+          "input_transforms": {
+            "path": {
+              "expr": "`${flow_input.path}`",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "write to file",
+        "stop_after_if": null,
+        "input_transforms": {}
+      },
+      {
+        "id": "b",
+        "value": {
+          "lock": "",
+          "path": null,
+          "type": "rawscript",
+          "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.36.0/mod.ts\"\n\nexport async function main(path: string) {\n  return Deno.readTextFile(`./shared/${path}`)\n}\n",
+          "language": "deno",
+          "input_transforms": {
+            "path": {
+              "expr": "`${flow_input.path}`",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "read from file",
+        "stop_after_if": null,
+        "input_transforms": {}
+      }
+    ],
+    "same_worker": true,
+    "failure_module": null
+  },
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [
+      "path"
+    ],
+    "properties": {
+      "path": {
+        "type": "string",
+        "format": "",
+        "default": "test",
+        "description": ""
+      }
+    }
+  },
+  "summary": "Same worker example of using the './shared' folder",
+  "description": ""
+}
