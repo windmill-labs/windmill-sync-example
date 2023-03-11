@@ -1114,7 +1114,7 @@
     "unusedInlineScripts": []
   },
   "policy": {
-    "on_behalf_of": "u/user",
+    "on_behalf_of": "u/github",
     "triggerables": {
       "script/hub/338/gmail/_send_email": {
         "user_id": "me",
@@ -1124,7 +1124,7 @@
       "rawscript/edd6db23cc9f6675c95c9b4a91dc91b2ed3e42c7bf7d268089fb7054a62f779e": {}
     },
     "execution_mode": "publisher",
-    "on_behalf_of_email": "user@windmill.dev"
+    "on_behalf_of_email": "github-sync@windmill.dev"
   },
   "summary": "CRM connected to Gmail"
 }
