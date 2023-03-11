@@ -52,5 +52,6 @@
     "sniffio==1.3.0",
     "windmill-api==1.64.0",
     "wmill==1.64.0"
-  ]
+  ],
+  "kind": "script"
 }

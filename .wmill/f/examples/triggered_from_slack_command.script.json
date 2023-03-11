@@ -26,5 +26,6 @@
   "is_template": true,
   "lock": [
     "slack-sdk==3.19.5"
-  ]
+  ],
+  "kind": "script"
 }

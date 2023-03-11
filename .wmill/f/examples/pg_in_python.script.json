@@ -27,5 +27,6 @@
     "psycopg-binary==3.1.8",
     "psycopg-pool==3.1.6",
     "typing-extensions==4.5.0"
-  ]
+  ],
+  "kind": "script"
 }

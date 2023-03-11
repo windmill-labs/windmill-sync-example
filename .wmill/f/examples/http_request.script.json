@@ -23,5 +23,6 @@
     "idna==3.4",
     "requests==2.28.2",
     "urllib3==1.26.14"
-  ]
+  ],
+  "kind": "script"
 }

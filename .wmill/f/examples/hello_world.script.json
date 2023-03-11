@@ -15,5 +15,6 @@
     }
   },
   "is_template": false,
-  "lock": []
+  "lock": [],
+  "kind": "script"
 }
