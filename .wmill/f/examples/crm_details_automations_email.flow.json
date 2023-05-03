@@ -1,0 +1,585 @@
+{
+  "value": {
+    "modules": [
+      {
+        "id": "a",
+        "value": {
+          "lock": "",
+          "type": "rawscript",
+          "content": "export async function main(email: string) {\n  let [name, domain] = email.split(\"@\");\n  let name_space = name.charAt(0) + \" \" + name.slice(1);\n  name = name.replace(/[0-9]/g, \" \");\n  name_space = name_space.replace(/[0-9]/g, \" \");\n  const nameWithoutDots = name.replace(/\\./g, \" \");\n  const commonDomains = [\n    \"gmail.com\",\n    \"yahoo.com\",\n    \"outlook.com\",\n    \"hotmail.com\",\n    \"aol.com\",\n    \"icloud.com\",\n    \"mail.ru\",\n    \"yandex.ru\",\n    \"live.com\",\n    \"zoho.com\",\n    \"protonmail.com\",\n    \"gmx.com\",\n    \"fastmail.com\",\n    \"comcast.net\",\n    \"verizon.net\",\n    \"163.com\",\n    \"qq.com\",\n    \"sina.com\",\n    \"naver.com\",\n    \"t-online.de\",\n  ];\n\n  const isCommonDomain = commonDomains.includes(domain);\n\n  if (isCommonDomain) {\n    return { name_space, name: nameWithoutDots, domain: \"\" };\n  } else {\n    return { name_space, name: nameWithoutDots, domain };\n  }\n}",
+          "language": "deno",
+          "input_transforms": {
+            "email": {
+              "expr": "flow_input.email",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Parses email",
+        "input_transforms": {}
+      },
+      {
+        "id": "c",
+        "value": {
+          "lock": "beautifulsoup4==4.12.0\nbs4==0.0.1\ncertifi==2022.12.7\ncharset-normalizer==3.1.0\nhtml5lib==1.1\nidna==3.4\nlxml==4.9.2\nrequests==2.28.2\nsix==1.16.0\nsoupsieve==2.4\nurllib3==1.26.15\nwebencodings==0.5.1",
+          "type": "rawscript",
+          "content": "from bs4 import BeautifulSoup\nimport requests\nfrom lxml.html import html5parser\nimport html5lib\n\n\ndef main(name: str, domain: str, name_space: str):\n    def search(query):\n        url = \"https://www.google.com/search?q={}\".format(query)\n        r = requests.get(url)\n        data = r.text\n        soup = BeautifulSoup(data, \"lxml\")\n        titles = soup.find_all(\"h3\")\n        res = []\n        for title in titles[:2]:\n            h = html5parser.fromstring(str(title)).getchildren()[0].text\n            res.append(h)\n        return res\n\n    infos = [name, domain]\n    query = \"+\".join(map(lambda x: x.replace(\" \", \"+\"), infos))\n    try:\n        res1 = search(query)\n    except:\n        res1 = []\n\n    infos = [name_space, domain]\n    query = \"+\".join(map(lambda x: x.replace(\" \", \"+\"), infos))\n    try:\n        res2 = search(query)\n    except:\n        res2 = []\n\n    return res1, res2\n",
+          "language": "python3",
+          "input_transforms": {
+            "name": {
+              "expr": "results.a.name",
+              "type": "javascript"
+            },
+            "domain": {
+              "expr": "results.a.domain",
+              "type": "javascript"
+            },
+            "name_space": {
+              "expr": "results.a.name_space",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Scrape Web",
+        "input_transforms": {}
+      },
+      {
+        "id": "ak",
+        "value": {
+          "lock": "",
+          "type": "rawscript",
+          "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.83.1/mod.ts\"\n\nexport async function main(r1?: string, r2?: string, r3?: string, r4?: string) {\n  // Assign empty strings to undefined inputs\n  const inputs = [r1, r2, r3, r4].map((input) => input ?? \"\");\n  \n  const results = inputs.filter((result, index, array) => {\n    // Remove empty values\n    if (result.trim() === \"\") {\n      return false;\n    }\n    // Remove duplicates\n    return array.indexOf(result) === index;\n  });\n  \n  return results;\n}",
+          "language": "deno",
+          "input_transforms": {
+            "r1": {
+              "expr": "results.c[0][0]",
+              "type": "javascript"
+            },
+            "r2": {
+              "expr": "results.c[0][1]",
+              "type": "javascript"
+            },
+            "r3": {
+              "expr": "results.c[1][0]",
+              "type": "javascript"
+            },
+            "r4": {
+              "expr": "results.c[1][1]",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Removes empty and duplicates",
+        "input_transforms": {}
+      },
+      {
+        "id": "al",
+        "value": {
+          "type": "branchone",
+          "default": [
+            {
+              "id": "an",
+              "value": {
+                "type": "rawscript",
+                "content": "import * as wmill from \"https://deno.land/x/windmill@v1.70.1/mod.ts\";\nimport { Airtable } from \"https://deno.land/x/airtable/mod.ts\";\n\nexport async function main(at_con: wmill.Resource<\"airtable\">, at_table: wmill.Resource<\"airtable_table\">, first_name: string = \"n/a\", last_name: string = \"n/a\", email: string, company: string = \"n/a\", role: string = \"n/a\", what_company_does: string = \"n/a\", automatic: boolean = true) {\n\n    const airtable = new Airtable({...at_con, ...at_table});\n    \n    const new_record = {\n        \"First name\": first_name,\n        \"Last name\": last_name,\n        \"Email\": email,\n        \"Company\": company,\n        \"Role\": role,\n        \"What company does\": what_company_does,\n        \"Generated automatically\": automatic\n    };\n\n    const createOne = await airtable.create(new_record);\n\n    return { message: \"Created record in table\"}\n}",
+                "language": "deno",
+                "input_transforms": {
+                  "role": {
+                    "type": "static",
+                    "value": "n/a"
+                  },
+                  "email": {
+                    "expr": "flow_input.email",
+                    "type": "javascript"
+                  },
+                  "at_con": {
+                    "expr": "flow_input[\"Airtable Account\"]",
+                    "type": "javascript"
+                  },
+                  "company": {
+                    "type": "static",
+                    "value": "n/a"
+                  },
+                  "at_table": {
+                    "expr": "flow_input[\"Airtable Table\"]",
+                    "type": "javascript"
+                  },
+                  "automatic": {
+                    "type": "static",
+                    "value": true
+                  },
+                  "last_name": {
+                    "type": "static",
+                    "value": "n/a"
+                  },
+                  "first_name": {
+                    "type": "static",
+                    "value": "n/a"
+                  },
+                  "what_company_does": {
+                    "type": "static",
+                    "value": "n/a"
+                  }
+                }
+              },
+              "summary": "Create Single Record (Airtable)",
+              "input_transforms": {}
+            }
+          ],
+          "branches": [
+            {
+              "expr": "results.c.some((x)=>x!=\"\")",
+              "modules": [
+                {
+                  "id": "ac",
+                  "value": {
+                    "type": "forloopflow",
+                    "modules": [
+                      {
+                        "id": "ae",
+                        "value": {
+                          "path": "hub/687/openai/create_completion",
+                          "type": "script",
+                          "input_transforms": {
+                            "n": {
+                              "type": "static",
+                              "value": 1
+                            },
+                            "auth": {
+                              "expr": "flow_input[\"Open AI\"]",
+                              "type": "javascript"
+                            },
+                            "echo": {
+                              "type": "static",
+                              "value": false
+                            },
+                            "stop": {
+                              "type": "static",
+                              "value": ""
+                            },
+                            "model": {
+                              "type": "static",
+                              "value": "text-davinci-003"
+                            },
+                            "top_p": {
+                              "type": "static",
+                              "value": null
+                            },
+                            "prompt": {
+                              "expr": "\"Here is a tagline of a business profile: \" + flow_input.iter.value + \". If it somehow matches the email \" + flow_input.email + \", just say 'Match', otherwise say 'Doesn't match'.\"",
+                              "type": "javascript"
+                            },
+                            "stream": {
+                              "type": "static",
+                              "value": false
+                            },
+                            "suffix": {
+                              "type": "static",
+                              "value": ""
+                            },
+                            "best_of": {
+                              "type": "static",
+                              "value": null
+                            },
+                            "logprobs": {
+                              "type": "static",
+                              "value": null
+                            },
+                            "logit_bias": {
+                              "type": "static",
+                              "value": null
+                            },
+                            "max_tokens": {
+                              "type": "static",
+                              "value": 300
+                            },
+                            "temperature": {
+                              "type": "static",
+                              "value": 0
+                            },
+                            "presence_penalty": {
+                              "type": "static",
+                              "value": null
+                            },
+                            "frequency_penalty": {
+                              "type": "static",
+                              "value": null
+                            }
+                          }
+                        },
+                        "summary": "Open AI to tell if relevant result",
+                        "input_transforms": {}
+                      },
+                      {
+                        "id": "af",
+                        "value": {
+                          "type": "branchone",
+                          "default": [
+                            {
+                              "id": "ah",
+                              "value": {
+                                "type": "rawscript",
+                                "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.82.0/mod.ts\"\n\nexport async function main(x: string) {\n  return x\n}\n",
+                                "language": "deno",
+                                "input_transforms": {
+                                  "x": {
+                                    "type": "static",
+                                    "value": ""
+                                  }
+                                }
+                              },
+                              "summary": "Does not match -> gives empty value",
+                              "input_transforms": {}
+                            }
+                          ],
+                          "branches": [
+                            {
+                              "expr": "results.ae.choices[0].text.trim() === 'Match'",
+                              "modules": [
+                                {
+                                  "id": "ad",
+                                  "value": {
+                                    "type": "rawscript",
+                                    "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.82.0/mod.ts\"\n\nconst websites = [\"Indeed\", \"Glassdoor\", \"AngelList\", \"Hired\", \"Monster\", \"CareerBuilder\", \"SimplyHired\", \"Dice\", \"Upwork\", \"BEAMSTART\"];\n\nexport async function main(search_result: string) {\n  for (let website of websites) {\n    if (search_result.includes(website)) {\n      search_result = search_result.replace(website, \"\");\n    }\n  }\n  return search_result;\n}",
+                                    "language": "deno",
+                                    "input_transforms": {
+                                      "search_result": {
+                                        "expr": "flow_input.iter.value",
+                                        "type": "javascript"
+                                      }
+                                    }
+                                  },
+                                  "summary": "Kill Professional Websites mentions",
+                                  "input_transforms": {}
+                                },
+                                {
+                                  "id": "ag",
+                                  "value": {
+                                    "type": "rawscript",
+                                    "content": "// import * as wmill from \"https://deno.land/x/windmill@v1.82.0/mod.ts\"\n\nexport async function main(x: string) {\n  return x\n}\n",
+                                    "language": "deno",
+                                    "input_transforms": {
+                                      "x": {
+                                        "expr": "results.ad",
+                                        "type": "javascript"
+                                      }
+                                    }
+                                  },
+                                  "summary": "Return matching result",
+                                  "input_transforms": {}
+                                }
+                              ],
+                              "summary": "Match"
+                            }
+                          ]
+                        },
+                        "summary": "",
+                        "input_transforms": {}
+                      }
+                    ],
+                    "iterator": {
+                      "expr": "results.ak",
+                      "type": "javascript"
+                    },
+                    "parallel": false,
+                    "skip_failures": true
+                  },
+                  "input_transforms": {}
+                },
+                {
+                  "id": "aj",
+                  "value": {
+                    "type": "branchone",
+                    "default": [
+                      {
+                        "id": "z",
+                        "value": {
+                          "type": "rawscript",
+                          "content": "import * as wmill from \"https://deno.land/x/windmill@v1.70.1/mod.ts\";\nimport { Airtable } from \"https://deno.land/x/airtable/mod.ts\";\n\nexport async function main(at_con: wmill.Resource<\"airtable\">, at_table: wmill.Resource<\"airtable_table\">, first_name: string = \"n/a\", last_name: string = \"n/a\", email: string, company: string = \"n/a\", role: string = \"n/a\", what_company_does: string = \"n/a\", automatic: boolean = true) {\n\n    const airtable = new Airtable({...at_con, ...at_table});\n    \n    const new_record = {\n        \"First name\": first_name,\n        \"Last name\": last_name,\n        \"Email\": email,\n        \"Company\": company,\n        \"Role\": role,\n        \"What company does\": what_company_does,\n        \"Generated automatically\": automatic\n    };\n\n    const createOne = await airtable.create(new_record);\n\n    return { message: \"Created record in table\"}\n}",
+                          "language": "deno",
+                          "input_transforms": {
+                            "role": {
+                              "type": "static",
+                              "value": "n/a"
+                            },
+                            "email": {
+                              "expr": "flow_input.email",
+                              "type": "javascript"
+                            },
+                            "at_con": {
+                              "expr": "flow_input[\"Airtable Account\"]",
+                              "type": "javascript"
+                            },
+                            "company": {
+                              "type": "static",
+                              "value": "n/a"
+                            },
+                            "at_table": {
+                              "expr": "flow_input[\"Airtable Table\"]",
+                              "type": "javascript"
+                            },
+                            "automatic": {
+                              "type": "static",
+                              "value": true
+                            },
+                            "last_name": {
+                              "type": "static",
+                              "value": "n/a"
+                            },
+                            "first_name": {
+                              "type": "static",
+                              "value": "n/a"
+                            },
+                            "what_company_does": {
+                              "type": "static",
+                              "value": "n/a"
+                            }
+                          }
+                        },
+                        "summary": "Create Single Record (Airtable)",
+                        "input_transforms": {}
+                      }
+                    ],
+                    "branches": [
+                      {
+                        "expr": "[results.ac[0],results.ac[1],results.ac[2]].some((x)=>x!=\"\")",
+                        "modules": [
+                          {
+                            "id": "aa",
+                            "value": {
+                              "path": "hub/687/openai/create_completion",
+                              "type": "script",
+                              "input_transforms": {
+                                "n": {
+                                  "type": "static",
+                                  "value": 1
+                                },
+                                "auth": {
+                                  "expr": "flow_input[\"Open AI\"]",
+                                  "type": "javascript"
+                                },
+                                "echo": {
+                                  "type": "static",
+                                  "value": false
+                                },
+                                "stop": {
+                                  "type": "static",
+                                  "value": ""
+                                },
+                                "model": {
+                                  "type": "static",
+                                  "value": "text-davinci-003"
+                                },
+                                "top_p": {
+                                  "type": "static",
+                                  "value": null
+                                },
+                                "prompt": {
+                                  "expr": "\"Give with the exact format 'Number. Category: Result + jump line' the 1. First Name, 2. Last Name, 3. Profession, 4. Company and 5. What the Company Does of: email = \" + flow_input.email + \". Some infos: \" + results.ac[0] + \". \" + results.ac[1] + \". \" + results.ac[2] + \". \" + results.ac[3] + \". Say 'n/a' if not sure. Do not make up names but you can guess where to split first name and last name from email (but do not add just a letter as a name). You can take more risk for What the Company Does\"",
+                                  "type": "javascript"
+                                },
+                                "stream": {
+                                  "type": "static",
+                                  "value": false
+                                },
+                                "suffix": {
+                                  "type": "static",
+                                  "value": ""
+                                },
+                                "best_of": {
+                                  "type": "static",
+                                  "value": null
+                                },
+                                "logprobs": {
+                                  "type": "static",
+                                  "value": null
+                                },
+                                "logit_bias": {
+                                  "type": "static",
+                                  "value": null
+                                },
+                                "max_tokens": {
+                                  "type": "static",
+                                  "value": 350
+                                },
+                                "temperature": {
+                                  "type": "static",
+                                  "value": 0
+                                },
+                                "presence_penalty": {
+                                  "type": "static",
+                                  "value": null
+                                },
+                                "frequency_penalty": {
+                                  "type": "static",
+                                  "value": null
+                                }
+                              }
+                            },
+                            "summary": "Open AI to make sense of web info",
+                            "input_transforms": {}
+                          },
+                          {
+                            "id": "y",
+                            "value": {
+                              "type": "rawscript",
+                              "content": "export async function main(completion: string) {\n  const regex = /1. First Name: (.+)\\n2. Last Name: (.+)\\n3. Profession: (.+)\\n4. Company: (.+)\\n5. What the Company Does: (.+)/;\n  const matches = completion.match(regex);\n  if (!matches) {\n    throw new Error(\"Invalid completion string\");\n  }\n\n  const [, value1, value2, value3, value4, value5] = matches;\n  const first_name = value1.trim();\n  const last_name = value2.trim();\n  const profession = value3.trim();\n  const company = value4.trim();\n  const what_company_does = value5.trim();\n\n  return { first_name, last_name, profession, company, what_company_does };\n}\n",
+                              "language": "deno",
+                              "input_transforms": {
+                                "completion": {
+                                  "expr": "results.aa.choices[0].text",
+                                  "type": "javascript"
+                                }
+                              }
+                            },
+                            "summary": "Parser",
+                            "input_transforms": {}
+                          },
+                          {
+                            "id": "v",
+                            "value": {
+                              "path": "hub/714/airtable/create_single_record",
+                              "type": "rawscript",
+                              "content": "import * as wmill from \"https://deno.land/x/windmill@v1.70.1/mod.ts\";\nimport { Airtable } from \"https://deno.land/x/airtable/mod.ts\";\n\nexport async function main(at_con: wmill.Resource<\"airtable\">, at_table: wmill.Resource<\"airtable_table\">, first_name: string, last_name: string, email: string, company: string, role: string, what_company_does: string, automatic: boolean = true) {\n\n    const airtable = new Airtable({...at_con, ...at_table});\n    \n    const new_record = {\n        \"First name\": first_name,\n        \"Last name\": last_name,\n        \"Email\": email,\n        \"Company\": company,\n        \"Role\": role,\n        \"What company does\": what_company_does,\n        \"Generated automatically\": automatic\n    };\n\n    const createOne = await airtable.create(new_record);\n\n    return { message: \"Created record in table\"}\n}",
+                              "language": "deno",
+                              "input_transforms": {
+                                "role": {
+                                  "expr": "results.y.profession",
+                                  "type": "javascript"
+                                },
+                                "email": {
+                                  "expr": "flow_input.email",
+                                  "type": "javascript"
+                                },
+                                "at_con": {
+                                  "expr": "flow_input[\"Airtable Account\"]",
+                                  "type": "javascript"
+                                },
+                                "company": {
+                                  "expr": "results.y.company",
+                                  "type": "javascript"
+                                },
+                                "at_table": {
+                                  "expr": "flow_input[\"Airtable Table\"]",
+                                  "type": "javascript"
+                                },
+                                "automatic": {
+                                  "type": "static",
+                                  "value": true
+                                },
+                                "last_name": {
+                                  "expr": "results.y.last_name",
+                                  "type": "javascript"
+                                },
+                                "first_name": {
+                                  "expr": "results.y.first_name",
+                                  "type": "javascript"
+                                },
+                                "what_company_does": {
+                                  "expr": "results.y.what_company_does",
+                                  "type": "javascript"
+                                }
+                              }
+                            },
+                            "summary": "Create Single Record (Airtable)",
+                            "input_transforms": {}
+                          }
+                        ],
+                        "summary": ""
+                      }
+                    ]
+                  },
+                  "summary": "",
+                  "input_transforms": {}
+                }
+              ],
+              "summary": ""
+            }
+          ]
+        },
+        "summary": "",
+        "input_transforms": {}
+      }
+    ],
+    "failure_module": {
+      "id": "failure",
+      "value": {
+        "type": "rawscript",
+        "content": "import * as wmill from \"https://deno.land/x/windmill@v1.70.1/mod.ts\";\nimport { Airtable } from \"https://deno.land/x/airtable/mod.ts\";\n\nexport async function main(at_con: wmill.Resource<\"airtable\">, at_table: wmill.Resource<\"airtable_table\">, first_name: string = \"n/a\", last_name: string = \"n/a\", email: string, company: string = \"n/a\", role: string = \"n/a\", what_company_does: string = \"n/a\", automatic: boolean = true) {\n\n    const airtable = new Airtable({...at_con, ...at_table});\n    \n    const new_record = {\n        \"First name\": first_name,\n        \"Last name\": last_name,\n        \"Email\": email,\n        \"Company\": company,\n        \"Role\": role,\n        \"What company does\": what_company_does,\n        \"Generated automatically\": automatic\n    };\n\n    const createOne = await airtable.create(new_record);\n\n    return { message: \"Created record in table\"}\n}",
+        "language": "deno",
+        "input_transforms": {
+          "role": {
+            "type": "static",
+            "value": "n/a"
+          },
+          "email": {
+            "expr": "flow_input.email",
+            "type": "javascript"
+          },
+          "at_con": {
+            "expr": "flow_input[\"Airtable Account\"]",
+            "type": "javascript"
+          },
+          "company": {
+            "type": "static",
+            "value": "n/a"
+          },
+          "at_table": {
+            "expr": "flow_input[\"Airtable Table\"]",
+            "type": "javascript"
+          },
+          "automatic": {
+            "type": "static",
+            "value": true
+          },
+          "last_name": {
+            "type": "static",
+            "value": "n/a"
+          },
+          "first_name": {
+            "type": "static",
+            "value": "n/a"
+          },
+          "what_company_does": {
+            "type": "static",
+            "value": "n/a"
+          }
+        }
+      },
+      "input_transforms": {}
+    }
+  },
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [],
+    "properties": {
+      "email": {
+        "type": "string",
+        "format": "",
+        "default": "",
+        "description": ""
+      },
+      "Open AI": {
+        "type": "object",
+        "format": "resource-openai",
+        "default": "",
+        "description": ""
+      },
+      "Airtable Table": {
+        "type": "object",
+        "format": "resource-airtable_table",
+        "default": "",
+        "description": ""
+      },
+      "Airtable Account": {
+        "type": "object",
+        "format": "resource-airtable",
+        "default": "",
+        "description": ""
+      }
+    }
+  },
+  "summary": "Automatically Populate CRM Contact Details from Simple Email",
+  "description": "Populate your CRM contacts' details from only emails. Note: this Workflow works with a table that has specific columns names, customize them to your needs.\nTutorial: https://www.windmill.dev/blog/automatically-populate-crm"
+}
