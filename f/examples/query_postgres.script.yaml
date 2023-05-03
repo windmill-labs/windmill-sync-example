@@ -1,0 +1,20 @@
+summary: Execute an arbitrary SQL query on a Postgres resource
+description: 'An example of how to use resources from scripts. '
+is_template: false
+kind: script
+lock: []
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  properties:
+    db:
+      description: ''
+      default: '$res:f/examples/demodb'
+      format: resource-postgresql
+      type: object
+    query:
+      description: ''
+      default: SELECT * FROM demo
+      format: sql
+      type: string
+  required: []
+  type: object

@@ -1,0 +1,948 @@
+summary: CRM connected to Gmail
+value:
+  fullscreen: false
+  grid:
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 9
+        id: a
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 12
+        x: 0
+        y: 1
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 10
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 3
+        x: 0
+        y: 0
+      data:
+        actionButtons: []
+        card: true
+        componentInput:
+          value:
+            - company: Blanda-O'Keefe
+              email: atuny0@sohu.com
+              firstName: Terry
+              id: 1
+              jobTitle: Help Desk Operator
+              lastName: Medhurst
+              phone: +63 791 675 8914
+              stage: Lead
+            - company: Aufderhar-Cronin
+              email: hbingley1@plala.or.jp
+              firstName: Sheldon
+              id: 2
+              jobTitle: Senior Cost Accountant
+              lastName: Quigley
+              phone: +7 813 117 7139
+              stage: Customer
+            - company: Lindgren LLC
+              email: rshawe2@51.la
+              firstName: Terrill
+              id: 3
+              jobTitle: Mechanical Systems Engineer
+              lastName: Hills
+              phone: +63 739 292 7942
+              stage: Customer
+            - company: Wolff and Sons
+              email: yraigatt3@nature.com
+              firstName: Miles
+              id: 4
+              jobTitle: Paralegal
+              lastName: Cummerata
+              phone: +86 461 145 4186
+              stage: Customer
+            - company: Adams Inc
+              email: kmeus4@upenn.edu
+              firstName: Mavis
+              id: 5
+              jobTitle: Web Developer I
+              lastName: Schultz
+              phone: +372 285 771 1911
+              stage: Customer
+            - company: D'Amore and Sons
+              email: jtreleven5@nhs.uk
+              firstName: Alison
+              id: 6
+              jobTitle: Civil Engineer
+              lastName: Reichert
+              phone: +351 527 735 3642
+              stage: Customer
+            - company: 'Schimmel, Wilderman and Orn'
+              email: dpettegre6@columbia.edu
+              firstName: Oleta
+              id: 7
+              jobTitle: Sales Associate
+              lastName: Abbott
+              phone: +62 640 802 7111
+              stage: Lead
+            - company: 'Corkery, Reichert and Hodkiewicz'
+              email: ggude7@chron.com
+              firstName: Ewell
+              id: 8
+              jobTitle: Clinical Specialist
+              lastName: Mueller
+              phone: +86 946 297 2275
+              stage: Lead
+            - company: Gorczany Group
+              email: nloiterton8@aol.com
+              firstName: Demetrius
+              id: 9
+              jobTitle: Community Outreach Specialist
+              lastName: Corkery
+              phone: +86 356 590 9727
+              stage: Lead
+            - company: Bins Group
+              email: umcgourty9@jalbum.net
+              firstName: Eleanora
+              id: 10
+              jobTitle: Senior Sales Associate
+              lastName: Price
+              phone: +60 184 408 0824
+              stage: Lead
+            - company: Kuhn-Harber
+              email: acharlota@liveinternet.ru
+              firstName: Marcel
+              id: 11
+              jobTitle: Account Executive
+              lastName: Jones
+              phone: +967 253 210 0344
+              stage: Lead
+            - company: Goodwin-Skiles
+              email: rhallawellb@dropbox.com
+              firstName: Assunta
+              id: 12
+              jobTitle: Developer II
+              lastName: Rath
+              phone: +380 962 542 6549
+              stage: Lead
+            - company: Casper Inc
+              email: lgribbinc@posterous.com
+              firstName: Trace
+              id: 13
+              jobTitle: Sales Associate
+              lastName: Douglas
+              phone: +1 609 937 3468
+              stage: Customer
+            - company: Schoen Inc
+              email: mturleyd@tumblr.com
+              firstName: Enoch
+              id: 14
+              jobTitle: Professor
+              lastName: Lynch
+              phone: +94 912 100 5118
+              stage: Customer
+            - company: Hahn-MacGyver
+              email: kminchelle@qq.com
+              firstName: Jeanne
+              id: 15
+              jobTitle: Software Test Engineer IV
+              lastName: Halvorson
+              phone: +86 581 108 7855
+              stage: Customer
+            - company: 'Steuber, Considine and Padberg'
+              email: dpierrof@vimeo.com
+              firstName: Trycia
+              id: 16
+              jobTitle: Geological Engineer
+              lastName: Fadel
+              phone: +420 833 708 0340
+              stage: Customer
+            - company: Bogisich and Sons
+              email: vcholdcroftg@ucoz.com
+              firstName: Bradford
+              id: 17
+              jobTitle: Operator
+              lastName: Prohaska
+              phone: +420 874 628 3710
+              stage: Customer
+            - company: Metz Group
+              email: sberminghamh@chron.com
+              firstName: Arely
+              id: 18
+              jobTitle: VP Accounting
+              lastName: Skiles
+              phone: +55 886 766 8617
+              stage: Lead
+            - company: 'Bahringer, Auer and Wehner'
+              email: bleveragei@so-net.ne.jp
+              firstName: Gust
+              id: 19
+              jobTitle: Financial Analyst
+              lastName: Purdy
+              phone: +86 886 889 0258
+              stage: Customer
+            - company: Hoppe Group
+              email: aeatockj@psu.edu
+              firstName: Lenna
+              id: 20
+              jobTitle: Geologist III
+              lastName: Renner
+              phone: +1 904 601 7177
+              stage: Customer
+            - company: Brekke Group
+              email: ckensleyk@pen.io
+              firstName: Doyle
+              id: 21
+              jobTitle: Programmer Analyst I
+              lastName: Ernser
+              phone: +86 634 419 6839
+              stage: Lead
+            - company: Durgan Group
+              email: froachel@howstuffworks.com
+              firstName: Tressa
+              id: 22
+              jobTitle: VP Quality Control
+              lastName: Weber
+              phone: +34 517 104 6248
+              stage: Customer
+            - company: 'Romaguera, Williamson and Kessler'
+              email: beykelhofm@wikispaces.com
+              firstName: Felicity
+              id: 23
+              jobTitle: Assistant Manager
+              lastName: O'Reilly
+              phone: +63 919 564 1690
+              stage: Lead
+            - company: Wintheiser-Boehm
+              email: brickeardn@fema.gov
+              firstName: Jocelyn
+              id: 24
+              jobTitle: Research Nurse
+              lastName: Schuster
+              phone: +7 968 462 1292
+              stage: Lead
+            - company: Volkman Group
+              email: dfundello@amazon.co.jp
+              firstName: Edwina
+              id: 25
+              jobTitle: Cost Accountant
+              lastName: Ernser
+              phone: +86 376 986 8945
+              stage: Customer
+            - company: 'Boyle, Boyer and Lang'
+              email: lgronaverp@cornell.edu
+              firstName: Griffin
+              id: 26
+              jobTitle: Senior Cost Accountant
+              lastName: Braun
+              phone: +62 511 790 0161
+              stage: Lead
+            - company: O'Hara and Sons
+              email: fokillq@amazon.co.jp
+              firstName: Piper
+              id: 27
+              jobTitle: Sales Representative
+              lastName: Schowalter
+              phone: +60 785 960 7918
+              stage: Customer
+            - company: 'Leffler, Beatty and Kilback'
+              email: xisherwoodr@ask.com
+              firstName: Kody
+              id: 28
+              jobTitle: Recruiting Manager
+              lastName: Terry
+              phone: +81 859 545 8951
+              stage: Customer
+            - company: Bruen and Sons
+              email: jissetts@hostgator.com
+              firstName: Macy
+              id: 29
+              jobTitle: Structural Analysis Engineer
+              lastName: Greenfelder
+              phone: +81 915 649 2384
+              stage: Lead
+            - company: Balistreri-Kshlerin
+              email: kdulyt@umich.edu
+              firstName: Maurine
+              id: 30
+              jobTitle: Quality Engineer
+              lastName: Stracke
+              phone: +48 143 590 6847
+              stage: Customer
+          fields: {}
+          fieldType: array
+          runnable:
+            name: Get Customers
+            inlineScript:
+              content: |
+                export async function main() {
+                  const res = await fetch("https://dummyjson.com/users");
+                  const json = await res.json();
+                  const users = json.users.map((u: any) => ({
+                    id: u.id,
+                    email: u.email,
+                    lastName: u.lastName,
+                    firstName: u.firstName,
+                    phone: u.phone,
+                    jobTitle: u.company.title,
+                    company: u.company.name,
+                    stage: Math.random() > 0.5 ? "Lead" : "Customer",
+                  }));
+                  return users;
+                }
+              language: deno
+              path: /inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties: {}
+                required: []
+                type: object
+            type: runnableByName
+          subFieldType: object
+          type: runnable
+        configuration:
+          search:
+            value: Disabled
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: tableSearchOptions
+            type: static
+        id: a
+        type: tablecomponent
+      id: a
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        id: b
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 12
+        x: 0
+        y: 0
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 0
+        y: 10
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Customers
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: 'padding-left: 10px;'
+            fieldType: text
+            type: static
+          style:
+            value: Title
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: b
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: top
+      id: b
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 2
+        id: c
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 0
+        y: 10
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 1
+        y: 10
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          connection:
+            componentId: a
+            path: selectedRow.firstName
+          eval: >-
+            ${a.selectedRow ? `${a.selectedRow.firstName}
+            ${a.selectedRow.lastName}` : 'Select a row from the table'}
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: ''
+            fieldType: text
+            type: static
+          style:
+            value: Subtitle
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: c
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: bottom
+      id: c
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        id: d
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 0
+        y: 12
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 2
+        y: 10
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Email
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: ''
+            fieldType: text
+            type: static
+          style:
+            value: Label
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: d
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: center
+      id: d
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        id: e
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 0
+        y: 13
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 0
+        y: 11
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Phone
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: ''
+            fieldType: text
+            type: static
+          style:
+            value: Label
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: e
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: center
+      id: e
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 2
+        id: p
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 0
+        y: 14
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 2
+        y: 12
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: >-
+            Send Email${a?.selectedRow?.firstName ? ` to
+            ${a.selectedRow.firstName}` : ''}
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: ''
+            fieldType: text
+            type: static
+          style:
+            value: Subtitle
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: p
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: bottom
+      id: p
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 12
+        id: q
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 0
+        y: 16
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 5
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 3
+        x: 0
+        y: 13
+      data:
+        card: true
+        componentInput:
+          fields:
+            gmail_auth:
+              value: '$res:u/adam/my_gmail'
+              fieldType: object
+              format: resource-gmail
+              type: static
+            message:
+              value: null
+              fieldType: string
+              type: user
+            subject:
+              value: null
+              fieldType: string
+              type: user
+            to_email:
+              value: null
+              connection:
+                componentId: f
+                path: result
+              fieldType: string
+              type: connected
+            user_id:
+              value: me
+              fieldType: string
+              type: static
+          fieldType: any
+          runnable:
+            path: hub/338/gmail/_send_email
+            runType: hubscript
+            schema:
+              $schema: 'https://json-schema.org/draft/2020-12/schema'
+              properties:
+                gmail_auth:
+                  description: ''
+                  default: null
+                  format: resource-gmail
+                  type: object
+                message:
+                  description: ''
+                  default: null
+                  type: string
+                subject:
+                  description: ''
+                  default: null
+                  type: string
+                to_email:
+                  description: ''
+                  default: null
+                  type: string
+                user_id:
+                  description: ''
+                  default: me
+                  type: string
+              required:
+                - gmail_auth
+                - to_email
+                - subject
+                - message
+              type: object
+            type: runnableByPath
+          type: runnable
+        configuration:
+          color:
+            value: dark
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: buttonColorOptions
+            type: static
+          label:
+            value: Submit
+            fieldType: text
+            type: static
+          size:
+            value: xs
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: buttonSizeOptions
+            type: static
+        horizontalAlignment: center
+        id: q
+        type: formcomponent
+      id: q
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        id: r
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 5
+        x: 1
+        y: 12
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 2
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 0
+        y: 18
+      data:
+        card: false
+        componentInput:
+          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
+          eval: |-
+            <a href="mailto:${a?.selectedRow?.email}">
+            ${a?.selectedRow?.email || 'Select a row'}
+            </a>
+          fieldType: template
+          type: template
+        configuration: {}
+        id: r
+        softWrap: false
+        type: htmlcomponent
+      id: r
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 1
+        id: s
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 5
+        x: 1
+        y: 13
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: true
+        h: 2
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 1
+        y: 18
+      data:
+        card: false
+        componentInput:
+          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
+          eval: |-
+            <a href="tel:${a?.selectedRow?.phone}">
+            ${a?.selectedRow?.phone || 'Select a row'}
+            </a>
+          fieldType: template
+          type: template
+        configuration: {}
+        id: s
+        softWrap: false
+        type: htmlcomponent
+      id: s
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 12
+        id: t
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 6
+        y: 11
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 8
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 2
+        x: 0
+        y: 20
+      data:
+        card: true
+        componentInput:
+          value:
+            data:
+              - 13
+              - 17
+            labels:
+              - Lead
+              - Customer
+          fields:
+            tableData:
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              format: ''
+              type: connected
+          fieldType: object
+          runnable:
+            name: Pie Chart Data
+            inlineScript:
+              content: |
+                export async function main(tableData: any[]) {
+                  if(!Array.isArray(tableData)) {
+                    return {
+                      'data': [ 0, 0 ],
+                      'labels': [ 'Lead', 'Customer' ]
+                    }
+                  }
+
+                  let leads = 0, customers = 0
+                  tableData.forEach(row => {
+                    if(row.stage === 'Lead') leads++;
+                    if(row.stage === 'Customer') customers++;
+                  })
+                  return {
+                    'data': [ leads, customers ],
+                    'labels': [ 'Lead', 'Customer' ]
+                  }
+                }
+              language: deno
+              path: u/adam/crm-app/inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  tableData:
+                    description: ''
+                    default: null
+                    format: ''
+                    items:
+                      type: string
+                    type: array
+                required:
+                  - tableData
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration:
+          doughnutStyle:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          theme:
+            value: theme1
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: chartThemeOptions
+            type: static
+        id: t
+        type: piechartcomponent
+      id: t
+  hiddenInlineScripts: []
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  on_behalf_of: u/henri
+  on_behalf_of_email: henri@windmill.dev
+  triggerables:
+    rawscript/321967753ee3f94ed95de9e3ac8271202d1745a2bf6d77eceba4494736bc755d: {}
+    rawscript/edd6db23cc9f6675c95c9b4a91dc91b2ed3e42c7bf7d268089fb7054a62f779e: {}
+    script/hub/338/gmail/_send_email:
+      gmail_auth: '$res:u/adam/my_gmail'
+      user_id: me
