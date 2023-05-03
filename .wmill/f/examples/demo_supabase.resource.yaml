@@ -1,5 +1,0 @@
-description: Supabase project for Windmill demos
-value:
-  key: '$var:f/examples/demo_supabase'
-  url: 'https://karxleenaentsycrloob.supabase.co'
-resource_type: supabase

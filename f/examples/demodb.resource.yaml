@@ -1,9 +1,0 @@
-description: demodb
-value:
-  dbname: demodb
-  host: postgres
-  password: '$var:f/examples/demodb'
-  port: 5432
-  sslmode: disable
-  user: demodb
-resource_type: postgresql
