@@ -1,0 +1,162 @@
+{
+  "value": {
+    "modules": [
+      {
+        "id": "a",
+        "value": {
+          "lock": "",
+          "type": "rawscript",
+          "content": "import {\n  pgSql,\n  type Resource,\n} from \"https://deno.land/x/windmill@v1.34.0/mod.ts\";\n\n//PG parametrized statement. No SQL injection is possible.\nexport async function main(\n  db: Resource<\"postgresql\"> = \"$res:g/all/demodb\",\n  reason: string,\n  username: string,\n) {\n  const query = await pgSql(\n    db,\n  )`UPDATE users\nSET banned = true, ban_reason = ${reason}\nWHERE username = ${username}`;\n  return query.rows;\n}\n",
+          "language": "deno",
+          "input_transforms": {
+            "db": {
+              "expr": "flow_input.db",
+              "type": "javascript"
+            },
+            "reason": {
+              "expr": "`${flow_input.reason}`",
+              "type": "javascript"
+            },
+            "username": {
+              "expr": "`${flow_input.username}`",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Flag user in users table",
+        "input_transforms": {}
+      },
+      {
+        "id": "b",
+        "value": {
+          "lock": "",
+          "type": "rawscript",
+          "content": "import {\n  pgSql,\n  type Resource,\n} from \"https://deno.land/x/windmill@v1.34.0/mod.ts\";\n\n//PG parametrized statement. No SQL injection is possible.\nexport async function main(\n  db: Resource<\"postgresql\"> = \"$res:g/all/demodb\",\n  username: string,\n) {\n  const query = await pgSql(\n    db,\n  )`SELECT DISTINCT email\nFROM users\nWHERE username = ${username}`;\n  return query.rows;\n}",
+          "language": "deno",
+          "input_transforms": {
+            "db": {
+              "expr": "flow_input.db",
+              "type": "javascript"
+            },
+            "username": {
+              "expr": "`${flow_input.username}`",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Retrieve email address from username",
+        "input_transforms": {}
+      },
+      {
+        "id": "c",
+        "value": {
+          "path": "hub/209/gmail/_send_email",
+          "type": "script",
+          "input_transforms": {
+            "userId": {
+              "type": "static",
+              "value": "me"
+            },
+            "message": {
+              "expr": "`Hello ${flow_input.username},\nWe regret to inform you, you have been banned for the following reason: \n${flow_input.reason}\nBest regards`",
+              "type": "javascript"
+            },
+            "subject": {
+              "type": "static",
+              "value": "You have been banned"
+            },
+            "to_email": {
+              "expr": "`${step(1)[0][0]}`",
+              "type": "javascript"
+            },
+            "gmail_auth": {
+              "expr": "flow_input.gmail",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Notify user about ban via email",
+        "input_transforms": {}
+      },
+      {
+        "id": "d",
+        "value": {
+          "path": "hub/111/slack/send_message_to_channel",
+          "type": "script",
+          "input_transforms": {
+            "text": {
+              "expr": "`User ${flow_input.username} was banned. Reason: ${flow_input.reason}`",
+              "type": "javascript"
+            },
+            "slack": {
+              "expr": "flow_input.slack",
+              "type": "javascript"
+            },
+            "channel": {
+              "expr": "`${flow_input.slack_channel}`",
+              "type": "javascript"
+            }
+          }
+        },
+        "summary": "Send a message to Slack reporting the ban",
+        "input_transforms": {}
+      }
+    ]
+  },
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [
+      "username",
+      "slack_channel",
+      "db",
+      "gmail",
+      "username",
+      "db",
+      "gmail",
+      "db",
+      "gmail",
+      "gmail",
+      "db",
+      "slack"
+    ],
+    "properties": {
+      "db": {
+        "type": "object",
+        "format": "resource-postgresql",
+        "default": "$res:g/all/demodb",
+        "description": "Database containing the users table"
+      },
+      "gmail": {
+        "type": "object",
+        "format": "resource-gmail",
+        "description": "GMail account used to send the notification email"
+      },
+      "slack": {
+        "type": "object",
+        "format": "resource-slack",
+        "description": "Slack Account used to send notification message"
+      },
+      "reason": {
+        "type": "string",
+        "format": "",
+        "default": "aggressive towards windmills",
+        "description": "Brief description for the reason of the ban"
+      },
+      "username": {
+        "type": "string",
+        "format": "",
+        "default": "don",
+        "description": "Username in the database"
+      },
+      "slack_channel": {
+        "type": "string",
+        "format": "",
+        "default": "bans",
+        "description": "Channel name to send the notification to"
+      }
+    }
+  },
+  "summary": "Ban a user, notify them by email, and us by Slack",
+  "description": "Note: This flow connects to a Postgresql resource and updates the `user` table. It requires the following columns: `username`, `email`, `banned`, `ban_reason`.\n\nSet banned flag, notify user via email, send slack message about the operation."
+}

@@ -1,0 +1,1130 @@
+{
+  "value": {
+    "grid": [
+      {
+        "3": {
+          "h": 10,
+          "w": 3,
+          "x": 0,
+          "y": 0,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 1,
+          "id": "a",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "a",
+        "data": {
+          "id": "a",
+          "card": true,
+          "type": "tablecomponent",
+          "actionButtons": [],
+          "configuration": {
+            "search": {
+              "type": "static",
+              "value": "Disabled",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "tableSearchOptions"
+            }
+          },
+          "componentInput": {
+            "type": "runnable",
+            "value": [
+              {
+                "id": 1,
+                "email": "atuny0@sohu.com",
+                "phone": "+63 791 675 8914",
+                "stage": "Lead",
+                "company": "Blanda-O'Keefe",
+                "jobTitle": "Help Desk Operator",
+                "lastName": "Medhurst",
+                "firstName": "Terry"
+              },
+              {
+                "id": 2,
+                "email": "hbingley1@plala.or.jp",
+                "phone": "+7 813 117 7139",
+                "stage": "Customer",
+                "company": "Aufderhar-Cronin",
+                "jobTitle": "Senior Cost Accountant",
+                "lastName": "Quigley",
+                "firstName": "Sheldon"
+              },
+              {
+                "id": 3,
+                "email": "rshawe2@51.la",
+                "phone": "+63 739 292 7942",
+                "stage": "Customer",
+                "company": "Lindgren LLC",
+                "jobTitle": "Mechanical Systems Engineer",
+                "lastName": "Hills",
+                "firstName": "Terrill"
+              },
+              {
+                "id": 4,
+                "email": "yraigatt3@nature.com",
+                "phone": "+86 461 145 4186",
+                "stage": "Customer",
+                "company": "Wolff and Sons",
+                "jobTitle": "Paralegal",
+                "lastName": "Cummerata",
+                "firstName": "Miles"
+              },
+              {
+                "id": 5,
+                "email": "kmeus4@upenn.edu",
+                "phone": "+372 285 771 1911",
+                "stage": "Customer",
+                "company": "Adams Inc",
+                "jobTitle": "Web Developer I",
+                "lastName": "Schultz",
+                "firstName": "Mavis"
+              },
+              {
+                "id": 6,
+                "email": "jtreleven5@nhs.uk",
+                "phone": "+351 527 735 3642",
+                "stage": "Customer",
+                "company": "D'Amore and Sons",
+                "jobTitle": "Civil Engineer",
+                "lastName": "Reichert",
+                "firstName": "Alison"
+              },
+              {
+                "id": 7,
+                "email": "dpettegre6@columbia.edu",
+                "phone": "+62 640 802 7111",
+                "stage": "Lead",
+                "company": "Schimmel, Wilderman and Orn",
+                "jobTitle": "Sales Associate",
+                "lastName": "Abbott",
+                "firstName": "Oleta"
+              },
+              {
+                "id": 8,
+                "email": "ggude7@chron.com",
+                "phone": "+86 946 297 2275",
+                "stage": "Lead",
+                "company": "Corkery, Reichert and Hodkiewicz",
+                "jobTitle": "Clinical Specialist",
+                "lastName": "Mueller",
+                "firstName": "Ewell"
+              },
+              {
+                "id": 9,
+                "email": "nloiterton8@aol.com",
+                "phone": "+86 356 590 9727",
+                "stage": "Lead",
+                "company": "Gorczany Group",
+                "jobTitle": "Community Outreach Specialist",
+                "lastName": "Corkery",
+                "firstName": "Demetrius"
+              },
+              {
+                "id": 10,
+                "email": "umcgourty9@jalbum.net",
+                "phone": "+60 184 408 0824",
+                "stage": "Lead",
+                "company": "Bins Group",
+                "jobTitle": "Senior Sales Associate",
+                "lastName": "Price",
+                "firstName": "Eleanora"
+              },
+              {
+                "id": 11,
+                "email": "acharlota@liveinternet.ru",
+                "phone": "+967 253 210 0344",
+                "stage": "Lead",
+                "company": "Kuhn-Harber",
+                "jobTitle": "Account Executive",
+                "lastName": "Jones",
+                "firstName": "Marcel"
+              },
+              {
+                "id": 12,
+                "email": "rhallawellb@dropbox.com",
+                "phone": "+380 962 542 6549",
+                "stage": "Lead",
+                "company": "Goodwin-Skiles",
+                "jobTitle": "Developer II",
+                "lastName": "Rath",
+                "firstName": "Assunta"
+              },
+              {
+                "id": 13,
+                "email": "lgribbinc@posterous.com",
+                "phone": "+1 609 937 3468",
+                "stage": "Customer",
+                "company": "Casper Inc",
+                "jobTitle": "Sales Associate",
+                "lastName": "Douglas",
+                "firstName": "Trace"
+              },
+              {
+                "id": 14,
+                "email": "mturleyd@tumblr.com",
+                "phone": "+94 912 100 5118",
+                "stage": "Customer",
+                "company": "Schoen Inc",
+                "jobTitle": "Professor",
+                "lastName": "Lynch",
+                "firstName": "Enoch"
+              },
+              {
+                "id": 15,
+                "email": "kminchelle@qq.com",
+                "phone": "+86 581 108 7855",
+                "stage": "Customer",
+                "company": "Hahn-MacGyver",
+                "jobTitle": "Software Test Engineer IV",
+                "lastName": "Halvorson",
+                "firstName": "Jeanne"
+              },
+              {
+                "id": 16,
+                "email": "dpierrof@vimeo.com",
+                "phone": "+420 833 708 0340",
+                "stage": "Customer",
+                "company": "Steuber, Considine and Padberg",
+                "jobTitle": "Geological Engineer",
+                "lastName": "Fadel",
+                "firstName": "Trycia"
+              },
+              {
+                "id": 17,
+                "email": "vcholdcroftg@ucoz.com",
+                "phone": "+420 874 628 3710",
+                "stage": "Customer",
+                "company": "Bogisich and Sons",
+                "jobTitle": "Operator",
+                "lastName": "Prohaska",
+                "firstName": "Bradford"
+              },
+              {
+                "id": 18,
+                "email": "sberminghamh@chron.com",
+                "phone": "+55 886 766 8617",
+                "stage": "Lead",
+                "company": "Metz Group",
+                "jobTitle": "VP Accounting",
+                "lastName": "Skiles",
+                "firstName": "Arely"
+              },
+              {
+                "id": 19,
+                "email": "bleveragei@so-net.ne.jp",
+                "phone": "+86 886 889 0258",
+                "stage": "Customer",
+                "company": "Bahringer, Auer and Wehner",
+                "jobTitle": "Financial Analyst",
+                "lastName": "Purdy",
+                "firstName": "Gust"
+              },
+              {
+                "id": 20,
+                "email": "aeatockj@psu.edu",
+                "phone": "+1 904 601 7177",
+                "stage": "Customer",
+                "company": "Hoppe Group",
+                "jobTitle": "Geologist III",
+                "lastName": "Renner",
+                "firstName": "Lenna"
+              },
+              {
+                "id": 21,
+                "email": "ckensleyk@pen.io",
+                "phone": "+86 634 419 6839",
+                "stage": "Lead",
+                "company": "Brekke Group",
+                "jobTitle": "Programmer Analyst I",
+                "lastName": "Ernser",
+                "firstName": "Doyle"
+              },
+              {
+                "id": 22,
+                "email": "froachel@howstuffworks.com",
+                "phone": "+34 517 104 6248",
+                "stage": "Customer",
+                "company": "Durgan Group",
+                "jobTitle": "VP Quality Control",
+                "lastName": "Weber",
+                "firstName": "Tressa"
+              },
+              {
+                "id": 23,
+                "email": "beykelhofm@wikispaces.com",
+                "phone": "+63 919 564 1690",
+                "stage": "Lead",
+                "company": "Romaguera, Williamson and Kessler",
+                "jobTitle": "Assistant Manager",
+                "lastName": "O'Reilly",
+                "firstName": "Felicity"
+              },
+              {
+                "id": 24,
+                "email": "brickeardn@fema.gov",
+                "phone": "+7 968 462 1292",
+                "stage": "Lead",
+                "company": "Wintheiser-Boehm",
+                "jobTitle": "Research Nurse",
+                "lastName": "Schuster",
+                "firstName": "Jocelyn"
+              },
+              {
+                "id": 25,
+                "email": "dfundello@amazon.co.jp",
+                "phone": "+86 376 986 8945",
+                "stage": "Customer",
+                "company": "Volkman Group",
+                "jobTitle": "Cost Accountant",
+                "lastName": "Ernser",
+                "firstName": "Edwina"
+              },
+              {
+                "id": 26,
+                "email": "lgronaverp@cornell.edu",
+                "phone": "+62 511 790 0161",
+                "stage": "Lead",
+                "company": "Boyle, Boyer and Lang",
+                "jobTitle": "Senior Cost Accountant",
+                "lastName": "Braun",
+                "firstName": "Griffin"
+              },
+              {
+                "id": 27,
+                "email": "fokillq@amazon.co.jp",
+                "phone": "+60 785 960 7918",
+                "stage": "Customer",
+                "company": "O'Hara and Sons",
+                "jobTitle": "Sales Representative",
+                "lastName": "Schowalter",
+                "firstName": "Piper"
+              },
+              {
+                "id": 28,
+                "email": "xisherwoodr@ask.com",
+                "phone": "+81 859 545 8951",
+                "stage": "Customer",
+                "company": "Leffler, Beatty and Kilback",
+                "jobTitle": "Recruiting Manager",
+                "lastName": "Terry",
+                "firstName": "Kody"
+              },
+              {
+                "id": 29,
+                "email": "jissetts@hostgator.com",
+                "phone": "+81 915 649 2384",
+                "stage": "Lead",
+                "company": "Bruen and Sons",
+                "jobTitle": "Structural Analysis Engineer",
+                "lastName": "Greenfelder",
+                "firstName": "Macy"
+              },
+              {
+                "id": 30,
+                "email": "kdulyt@umich.edu",
+                "phone": "+48 143 590 6847",
+                "stage": "Customer",
+                "company": "Balistreri-Kshlerin",
+                "jobTitle": "Quality Engineer",
+                "lastName": "Stracke",
+                "firstName": "Maurine"
+              }
+            ],
+            "fields": {},
+            "runnable": {
+              "name": "Get Customers",
+              "type": "runnableByName",
+              "inlineScript": {
+                "path": "/inline-script/Inline Script 0",
+                "schema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "required": [],
+                  "properties": {}
+                },
+                "content": "export async function main() {\n  const res = await fetch(\"https://dummyjson.com/users\");\n  const json = await res.json();\n  const users = json.users.map((u: any) => ({\n    id: u.id,\n    email: u.email,\n    lastName: u.lastName,\n    firstName: u.firstName,\n    phone: u.phone,\n    jobTitle: u.company.title,\n    company: u.company.name,\n    stage: Math.random() > 0.5 ? \"Lead\" : \"Customer\",\n  }));\n  return users;\n}\n",
+                "language": "deno"
+              }
+            },
+            "fieldType": "array",
+            "subFieldType": "object"
+          }
+        }
+      },
+      {
+        "3": {
+          "h": 1,
+          "w": 1,
+          "x": 0,
+          "y": 10,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 1,
+          "w": 12,
+          "x": 0,
+          "y": 0,
+          "id": "b",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "b",
+        "data": {
+          "id": "b",
+          "card": false,
+          "type": "textcomponent",
+          "softWrap": true,
+          "configuration": {
+            "style": {
+              "type": "static",
+              "value": "Title",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "textStyleOptions"
+            },
+            "extraStyle": {
+              "type": "static",
+              "value": "padding-left: 10px;",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "eval": "Customers",
+            "type": "template",
+            "value": "Hello ${ctx.username}",
+            "fieldType": "template"
+          },
+          "verticalAlignment": "top",
+          "horizontalAlignment": "left"
+        }
+      },
+      {
+        "3": {
+          "h": 1,
+          "w": 1,
+          "x": 1,
+          "y": 10,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 2,
+          "w": 6,
+          "x": 0,
+          "y": 10,
+          "id": "c",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "c",
+        "data": {
+          "id": "c",
+          "card": false,
+          "type": "textcomponent",
+          "softWrap": true,
+          "configuration": {
+            "style": {
+              "type": "static",
+              "value": "Subtitle",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "textStyleOptions"
+            },
+            "extraStyle": {
+              "type": "static",
+              "value": "",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "eval": "${a.selectedRow ? `${a.selectedRow.firstName} ${a.selectedRow.lastName}` : 'Select a row from the table'}",
+            "type": "template",
+            "value": "Hello ${ctx.username}",
+            "fieldType": "template",
+            "connection": {
+              "path": "selectedRow.firstName",
+              "componentId": "a"
+            }
+          },
+          "verticalAlignment": "bottom",
+          "horizontalAlignment": "left"
+        }
+      },
+      {
+        "3": {
+          "h": 1,
+          "w": 1,
+          "x": 2,
+          "y": 10,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 1,
+          "w": 1,
+          "x": 0,
+          "y": 12,
+          "id": "d",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "d",
+        "data": {
+          "id": "d",
+          "card": false,
+          "type": "textcomponent",
+          "softWrap": true,
+          "configuration": {
+            "style": {
+              "type": "static",
+              "value": "Label",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "textStyleOptions"
+            },
+            "extraStyle": {
+              "type": "static",
+              "value": "",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "eval": "Email",
+            "type": "template",
+            "value": "Hello ${ctx.username}",
+            "fieldType": "template"
+          },
+          "verticalAlignment": "center",
+          "horizontalAlignment": "left"
+        }
+      },
+      {
+        "3": {
+          "h": 1,
+          "w": 1,
+          "x": 0,
+          "y": 11,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 1,
+          "w": 1,
+          "x": 0,
+          "y": 13,
+          "id": "e",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "e",
+        "data": {
+          "id": "e",
+          "card": false,
+          "type": "textcomponent",
+          "softWrap": true,
+          "configuration": {
+            "style": {
+              "type": "static",
+              "value": "Label",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "textStyleOptions"
+            },
+            "extraStyle": {
+              "type": "static",
+              "value": "",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "eval": "Phone",
+            "type": "template",
+            "value": "Hello ${ctx.username}",
+            "fieldType": "template"
+          },
+          "verticalAlignment": "center",
+          "horizontalAlignment": "left"
+        }
+      },
+      {
+        "3": {
+          "h": 1,
+          "w": 1,
+          "x": 2,
+          "y": 12,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 2,
+          "w": 6,
+          "x": 0,
+          "y": 14,
+          "id": "p",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "p",
+        "data": {
+          "id": "p",
+          "card": false,
+          "type": "textcomponent",
+          "softWrap": true,
+          "configuration": {
+            "style": {
+              "type": "static",
+              "value": "Subtitle",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "textStyleOptions"
+            },
+            "extraStyle": {
+              "type": "static",
+              "value": "",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "eval": "Send Email${a?.selectedRow?.firstName ? ` to ${a.selectedRow.firstName}` : ''}",
+            "type": "template",
+            "value": "Hello ${ctx.username}",
+            "fieldType": "template"
+          },
+          "verticalAlignment": "bottom",
+          "horizontalAlignment": "left"
+        }
+      },
+      {
+        "3": {
+          "h": 5,
+          "w": 3,
+          "x": 0,
+          "y": 13,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 12,
+          "w": 6,
+          "x": 0,
+          "y": 16,
+          "id": "q",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "q",
+        "data": {
+          "id": "q",
+          "card": true,
+          "type": "formcomponent",
+          "configuration": {
+            "size": {
+              "type": "static",
+              "value": "xs",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "buttonSizeOptions"
+            },
+            "color": {
+              "type": "static",
+              "value": "dark",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "buttonColorOptions"
+            },
+            "label": {
+              "type": "static",
+              "value": "Submit",
+              "fieldType": "text"
+            }
+          },
+          "componentInput": {
+            "type": "runnable",
+            "fields": {
+              "message": {
+                "type": "user",
+                "value": null,
+                "fieldType": "string"
+              },
+              "subject": {
+                "type": "user",
+                "value": null,
+                "fieldType": "string"
+              },
+              "user_id": {
+                "type": "static",
+                "value": "me",
+                "fieldType": "string"
+              },
+              "to_email": {
+                "type": "connected",
+                "value": null,
+                "fieldType": "string",
+                "connection": {
+                  "path": "result",
+                  "componentId": "f"
+                }
+              },
+              "gmail_auth": {
+                "type": "static",
+                "value": "$res:u/adam/my_gmail",
+                "format": "resource-gmail",
+                "fieldType": "object"
+              }
+            },
+            "runnable": {
+              "path": "hub/338/gmail/_send_email",
+              "type": "runnableByPath",
+              "schema": {
+                "type": "object",
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "required": [
+                  "gmail_auth",
+                  "to_email",
+                  "subject",
+                  "message"
+                ],
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "default": null,
+                    "description": ""
+                  },
+                  "subject": {
+                    "type": "string",
+                    "default": null,
+                    "description": ""
+                  },
+                  "user_id": {
+                    "type": "string",
+                    "default": "me",
+                    "description": ""
+                  },
+                  "to_email": {
+                    "type": "string",
+                    "default": null,
+                    "description": ""
+                  },
+                  "gmail_auth": {
+                    "type": "object",
+                    "format": "resource-gmail",
+                    "default": null,
+                    "description": ""
+                  }
+                }
+              },
+              "runType": "hubscript"
+            },
+            "fieldType": "any"
+          },
+          "horizontalAlignment": "center"
+        }
+      },
+      {
+        "3": {
+          "h": 2,
+          "w": 1,
+          "x": 0,
+          "y": 18,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 1,
+          "w": 5,
+          "x": 1,
+          "y": 12,
+          "id": "r",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "r",
+        "data": {
+          "id": "r",
+          "card": false,
+          "type": "htmlcomponent",
+          "softWrap": false,
+          "configuration": {},
+          "componentInput": {
+            "eval": "<a href=\"mailto:${a?.selectedRow?.email}\">\n${a?.selectedRow?.email || 'Select a row'}\n</a>",
+            "type": "template",
+            "value": "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n",
+            "fieldType": "template"
+          }
+        }
+      },
+      {
+        "3": {
+          "h": 2,
+          "w": 1,
+          "x": 1,
+          "y": 18,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 1,
+          "w": 5,
+          "x": 1,
+          "y": 13,
+          "id": "s",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": true,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "s",
+        "data": {
+          "id": "s",
+          "card": false,
+          "type": "htmlcomponent",
+          "softWrap": false,
+          "configuration": {},
+          "componentInput": {
+            "eval": "<a href=\"tel:${a?.selectedRow?.phone}\">\n${a?.selectedRow?.phone || 'Select a row'}\n</a>",
+            "type": "template",
+            "value": "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n",
+            "fieldType": "template"
+          }
+        }
+      },
+      {
+        "3": {
+          "h": 8,
+          "w": 2,
+          "x": 0,
+          "y": 20,
+          "max": {
+            "h": 100,
+            "w": 3
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "12": {
+          "h": 12,
+          "w": 6,
+          "x": 6,
+          "y": 11,
+          "id": "t",
+          "max": {
+            "h": 100,
+            "w": 12
+          },
+          "min": {
+            "h": 1,
+            "w": 1
+          },
+          "fixed": false,
+          "draggable": true,
+          "resizable": true,
+          "customDragger": false,
+          "customResizer": false
+        },
+        "id": "t",
+        "data": {
+          "id": "t",
+          "card": true,
+          "type": "piechartcomponent",
+          "configuration": {
+            "theme": {
+              "type": "static",
+              "value": "theme1",
+              "fieldType": "select",
+              "onlyStatic": true,
+              "optionValuesKey": "chartThemeOptions"
+            },
+            "doughnutStyle": {
+              "type": "static",
+              "value": false,
+              "fieldType": "boolean",
+              "onlyStatic": true
+            }
+          },
+          "componentInput": {
+            "type": "runnable",
+            "value": {
+              "data": [
+                13,
+                17
+              ],
+              "labels": [
+                "Lead",
+                "Customer"
+              ]
+            },
+            "fields": {
+              "tableData": {
+                "type": "connected",
+                "value": null,
+                "format": "",
+                "fieldType": "array",
+                "connection": {
+                  "path": "result",
+                  "componentId": "a"
+                }
+              }
+            },
+            "runnable": {
+              "name": "Pie Chart Data",
+              "type": "runnableByName",
+              "inlineScript": {
+                "path": "u/adam/crm-app/inline-script/Inline Script 0",
+                "schema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "required": [
+                    "tableData"
+                  ],
+                  "properties": {
+                    "tableData": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "format": "",
+                      "default": null,
+                      "description": ""
+                    }
+                  }
+                },
+                "content": "export async function main(tableData: any[]) {\n  if(!Array.isArray(tableData)) {\n    return {\n      'data': [ 0, 0 ],\n      'labels': [ 'Lead', 'Customer' ]\n    }\n  }\n\n  let leads = 0, customers = 0\n  tableData.forEach(row => {\n    if(row.stage === 'Lead') leads++;\n    if(row.stage === 'Customer') customers++;\n  })\n  return {\n    'data': [ leads, customers ],\n    'labels': [ 'Lead', 'Customer' ]\n  }\n}\n",
+                "language": "deno"
+              }
+            },
+            "fieldType": "object"
+          }
+        }
+      }
+    ],
+    "fullscreen": false,
+    "hiddenInlineScripts": [],
+    "unusedInlineScripts": []
+  },
+  "policy": {
+    "on_behalf_of": "u/github",
+    "triggerables": {
+      "script/hub/338/gmail/_send_email": {
+        "user_id": "me",
+        "gmail_auth": "$res:u/adam/my_gmail"
+      },
+      "rawscript/321967753ee3f94ed95de9e3ac8271202d1745a2bf6d77eceba4494736bc755d": {},
+      "rawscript/edd6db23cc9f6675c95c9b4a91dc91b2ed3e42c7bf7d268089fb7054a62f779e": {}
+    },
+    "execution_mode": "publisher",
+    "on_behalf_of_email": "github-sync@windmill.dev"
+  },
+  "summary": "CRM connected to Gmail"
+}

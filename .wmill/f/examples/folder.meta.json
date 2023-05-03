@@ -1,0 +1,10 @@
+{
+  "extra_perms": {
+    "g/all": false,
+    "u/admin": true
+  },
+  "owners": [
+    "u/admin"
+  ],
+  "display_name": "examples"
+}
