@@ -1,0 +1,1162 @@
+summary: Product Dashboard
+value:
+  fullscreen: false
+  grid:
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 15
+        id: a
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 8
+        x: 0
+        y: 2
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 10
+        id: a
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 3
+        x: 0
+        y: 1
+      data:
+        actionButtons: []
+        card: true
+        componentInput:
+          value:
+            - brand: Apple
+              category: smartphones
+              discountPercentage: 12.96
+              id: 1
+              price: 549
+              rating: 4.69
+              stock: 94
+              title: iPhone 9
+            - brand: Apple
+              category: smartphones
+              discountPercentage: 17.94
+              id: 2
+              price: 899
+              rating: 4.44
+              stock: 34
+              title: iPhone X
+            - brand: Samsung
+              category: smartphones
+              discountPercentage: 15.46
+              id: 3
+              price: 1249
+              rating: 4.09
+              stock: 36
+              title: Samsung Universe 9
+            - brand: OPPO
+              category: smartphones
+              discountPercentage: 17.91
+              id: 4
+              price: 280
+              rating: 4.3
+              stock: 123
+              title: OPPOF19
+            - brand: Huawei
+              category: smartphones
+              discountPercentage: 10.58
+              id: 5
+              price: 499
+              rating: 4.09
+              stock: 32
+              title: Huawei P30
+            - brand: APPle
+              category: laptops
+              discountPercentage: 11.02
+              id: 6
+              price: 1749
+              rating: 4.57
+              stock: 83
+              title: MacBook Pro
+            - brand: Samsung
+              category: laptops
+              discountPercentage: 4.15
+              id: 7
+              price: 1499
+              rating: 4.25
+              stock: 50
+              title: Samsung Galaxy Book
+            - brand: Microsoft Surface
+              category: laptops
+              discountPercentage: 10.23
+              id: 8
+              price: 1499
+              rating: 4.43
+              stock: 68
+              title: Microsoft Surface Laptop 4
+            - brand: Infinix
+              category: laptops
+              discountPercentage: 11.83
+              id: 9
+              price: 1099
+              rating: 4.54
+              stock: 96
+              title: Infinix INBOOK
+            - brand: HP Pavilion
+              category: laptops
+              discountPercentage: 6.18
+              id: 10
+              price: 1099
+              rating: 4.43
+              stock: 89
+              title: HP Pavilion 15-DK1056WM
+            - brand: Impression of Acqua Di Gio
+              category: fragrances
+              discountPercentage: 8.4
+              id: 11
+              price: 13
+              rating: 4.26
+              stock: 65
+              title: perfume Oil
+            - brand: Royal_Mirage
+              category: fragrances
+              discountPercentage: 15.66
+              id: 12
+              price: 40
+              rating: 4
+              stock: 52
+              title: Brown Perfume
+            - brand: Fog Scent Xpressio
+              category: fragrances
+              discountPercentage: 8.14
+              id: 13
+              price: 13
+              rating: 4.59
+              stock: 61
+              title: Fog Scent Xpressio Perfume
+            - brand: Al Munakh
+              category: fragrances
+              discountPercentage: 15.6
+              id: 14
+              price: 120
+              rating: 4.21
+              stock: 114
+              title: Non-Alcoholic Concentrated Perfume Oil
+            - brand: Lord - Al-Rehab
+              category: fragrances
+              discountPercentage: 10.99
+              id: 15
+              price: 30
+              rating: 4.7
+              stock: 105
+              title: Eau De Perfume Spray
+            - brand: L'Oreal Paris
+              category: skincare
+              discountPercentage: 13.31
+              id: 16
+              price: 19
+              rating: 4.83
+              stock: 110
+              title: Hyaluronic Acid Serum
+            - brand: Hemani Tea
+              category: skincare
+              discountPercentage: 4.09
+              id: 17
+              price: 12
+              rating: 4.52
+              stock: 78
+              title: Tree Oil 30ml
+            - brand: Dermive
+              category: skincare
+              discountPercentage: 13.1
+              id: 18
+              price: 40
+              rating: 4.56
+              stock: 88
+              title: Oil Free Moisturizer 100ml
+            - brand: ROREC White Rice
+              category: skincare
+              discountPercentage: 10.68
+              id: 19
+              price: 46
+              rating: 4.42
+              stock: 54
+              title: Skin Beauty Serum.
+            - brand: Fair & Clear
+              category: skincare
+              discountPercentage: 16.99
+              id: 20
+              price: 70
+              rating: 4.06
+              stock: 140
+              title: Freckle Treatment Cream- 15gm
+            - brand: Saaf & Khaas
+              category: groceries
+              discountPercentage: 4.81
+              id: 21
+              price: 20
+              rating: 4.44
+              stock: 133
+              title: '- Daal Masoor 500 grams'
+            - brand: Bake Parlor Big
+              category: groceries
+              discountPercentage: 15.58
+              id: 22
+              price: 14
+              rating: 4.57
+              stock: 146
+              title: Elbow Macaroni - 400 gm
+            - brand: Baking Food Items
+              category: groceries
+              discountPercentage: 8.04
+              id: 23
+              price: 14
+              rating: 4.85
+              stock: 26
+              title: Orange Essence Food Flavou
+            - brand: fauji
+              category: groceries
+              discountPercentage: 16.8
+              id: 24
+              price: 46
+              rating: 4.94
+              stock: 113
+              title: cereals muesli fruit nuts
+            - brand: Dry Rose
+              category: groceries
+              discountPercentage: 13.58
+              id: 25
+              price: 70
+              rating: 4.87
+              stock: 47
+              title: Gulab Powder 50 Gram
+            - brand: Boho Decor
+              category: home-decoration
+              discountPercentage: 17.86
+              id: 26
+              price: 41
+              rating: 4.08
+              stock: 131
+              title: Plant Hanger For Home
+            - brand: Flying Wooden
+              category: home-decoration
+              discountPercentage: 15.58
+              id: 27
+              price: 51
+              rating: 4.41
+              stock: 17
+              title: Flying Wooden Bird
+            - brand: LED Lights
+              category: home-decoration
+              discountPercentage: 16.49
+              id: 28
+              price: 20
+              rating: 4.82
+              stock: 54
+              title: 3D Embellishment Art Lamp
+            - brand: luxury palace
+              category: home-decoration
+              discountPercentage: 15.34
+              id: 29
+              price: 60
+              rating: 4.44
+              stock: 7
+              title: Handcraft Chinese style
+            - brand: Golden
+              category: home-decoration
+              discountPercentage: 2.92
+              id: 30
+              price: 30
+              rating: 4.92
+              stock: 54
+              title: Key Holder
+          connection:
+            componentId: c
+            path: result
+          fields: {}
+          fieldType: array
+          runnable:
+            name: All Product Data
+            inlineScript:
+              content: |
+                export async function main() {
+                  const res = await fetch('https://dummyjson.com/products')
+                  const json = await res.json()
+                  return json.products.map((p: Record<string, any>) => {
+                    delete p.images
+                    delete p.thumbnail
+                    delete p.description
+                    return p
+                  })
+                }
+              language: deno
+              path: /inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties: {}
+                required: []
+                type: object
+            type: runnableByName
+          subFieldType: object
+          type: runnable
+        configuration:
+          search:
+            value: Disabled
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: tableSearchOptions
+            type: static
+        id: a
+        type: tablecomponent
+      id: a
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 2
+        id: b
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 12
+        x: 0
+        y: 0
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        id: b
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 3
+        x: 0
+        y: 0
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Product table
+          fieldType: template
+          type: template
+        configuration:
+          extraStyle:
+            value: 'padding-left:10px;'
+            fieldType: text
+            type: static
+          style:
+            value: Title
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: b
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: center
+      id: b
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 15
+        id: d
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 4
+        x: 8
+        y: 2
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 12
+        id: d
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 3
+        x: 0
+        y: 11
+      data:
+        card: false
+        componentInput:
+          value: |2-
+
+                <p class="text-sm text-gray-600 text-center pt-8">
+                  Select a row from the table
+                </p>
+                
+          eval: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
+          fields:
+            id:
+              value: null
+              connection:
+                componentId: a
+                path: selectedRow.id
+              fieldType: number
+              type: connected
+              visible: true
+          fieldType: template
+          runnable:
+            name: One Product Detail
+            inlineScript:
+              content: |
+                export async function main(id: number) {
+                  if (!id) {
+                    return `
+                    <p class="text-sm text-gray-600 text-center pt-8">
+                      Select a row from the table
+                    </p>
+                    `;
+                  }
+                  const res = await fetch("https://dummyjson.com/products/" + id);
+                  const { brand, title, thumbnail, description } = await res.json();
+                  return `
+                  <img width="363" height="200" src="${thumbnail}">
+                  <p class="text-lg font-bold my-1">
+                    ${brand} ${title}
+                  </p>
+                  <p>
+                    ${description}
+                  </p>
+                  `;
+                }
+              language: deno
+              path: /inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  id:
+                    description: ''
+                    default: null
+                    type: number
+                required:
+                  - id
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration: {}
+        id: d
+        softWrap: false
+        type: htmlcomponent
+      id: d
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 8
+        id: e
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 0
+        y: 19
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 8
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 2
+        x: 0
+        y: 23
+      data:
+        card: true
+        componentInput:
+          value:
+            data:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+            labels:
+              - smartphones
+              - laptops
+              - fragrances
+              - skincare
+              - groceries
+              - home-decoration
+          fields:
+            data:
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              type: connected
+          fieldType: object
+          runnable:
+            name: Product Category Count
+            inlineScript:
+              content: |
+                export async function main(data: {category: string}[]) {
+                  const result: {data: number[], labels: string[]} = {
+                    data: [],
+                    labels: []
+                  }
+                  if(!Array.isArray(data)) { return result }
+
+                  const count: Record<string, number> = {}
+                  data.forEach(({category}) => {
+                    if(count[category]) {
+                      count[category]++
+                    } else {
+                      count[category] = 1
+                    }
+                  })
+                  Object.entries(count).forEach(([key, value]) => {
+                    result.data.push(value)
+                    result.labels.push(key)
+                  })
+                  return result
+                }
+              language: deno
+              path: u/adam/products-app/inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  data:
+                    description: ''
+                    default: null
+                    items:
+                      type: string
+                    properties:
+                      category:
+                        description: ''
+                        type: string
+                    type: array
+                required:
+                  - data
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration:
+          line:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          theme:
+            value: theme1
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: chartThemeOptions
+            type: static
+        id: e
+        type: barchartcomponent
+      id: e
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 9
+        id: f
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 6
+        y: 19
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 8
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 2
+        x: 0
+        y: 31
+      data:
+        card: true
+        componentInput:
+          value:
+            data:
+              - 3
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+            labels:
+              - apple
+              - samsung
+              - oppo
+              - huawei
+              - microsoft surface
+              - infinix
+              - hp pavilion
+              - impression of acqua di gio
+              - royal_mirage
+              - fog scent xpressio
+              - al munakh
+              - lord - al-rehab
+              - l'oreal paris
+              - hemani tea
+              - dermive
+              - rorec white rice
+              - fair & clear
+              - saaf & khaas
+              - bake parlor big
+              - baking food items
+              - fauji
+              - dry rose
+              - boho decor
+              - flying wooden
+              - led lights
+              - luxury palace
+              - golden
+          fields:
+            data:
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              type: connected
+          fieldType: object
+          runnable:
+            name: Product Brand Count
+            inlineScript:
+              content: |
+                export async function main(data: {brand: string}[]) {
+                  const result: {data: number[], labels: string[]} = {
+                    data: [],
+                    labels: []
+                  }
+                  if(!Array.isArray(data)) { return result }
+
+                  const count: Record<string, number> = {}
+                  data.forEach(({brand}) => {
+                    brand = brand.toLowerCase()
+                    if(count[brand]) {
+                      count[brand]++
+                    } else {
+                      count[brand] = 1
+                    }
+                  })
+                  Object.entries(count).forEach(([key, value]) => {
+                    result.data.push(value)
+                    result.labels.push(key)
+                  })
+                  return result
+                }
+              language: deno
+              path: u/adam/products-app/inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  data:
+                    description: ''
+                    default: null
+                    items:
+                      type: string
+                    type: array
+                required:
+                  - data
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration:
+          line:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          theme:
+            value: theme1
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: chartThemeOptions
+            type: static
+        id: f
+        type: barchartcomponent
+      id: f
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 2
+        id: h
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 0
+        y: 17
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 2
+        y: 23
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Product Count By Categories
+          fieldType: template
+          type: template
+        configuration:
+          copyButton:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          extraStyle:
+            value: ''
+            fieldType: text
+            tooltip: 'CSS rules like "color: blue;"'
+            type: static
+          style:
+            value: Subtitle
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: h
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: bottom
+      id: h
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 2
+        id: i
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 6
+        x: 6
+        y: 17
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 2
+        y: 24
+      data:
+        card: false
+        componentInput:
+          value: 'Hello ${ctx.username}'
+          eval: Product Count By Brands
+          fieldType: template
+          type: template
+        configuration:
+          copyButton:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          extraStyle:
+            value: ''
+            fieldType: text
+            tooltip: 'CSS rules like "color: blue;"'
+            type: static
+          style:
+            value: Subtitle
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: i
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: bottom
+      id: i
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 2
+        id: j
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 12
+        x: 0
+        y: 28
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 1
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 1
+        x: 2
+        y: 25
+      data:
+        card: false
+        componentInput:
+          value: 'Stock Worth By Product (Total Worth: $765,200)'
+          eval: Stock Worth By Product
+          fields:
+            data:
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              type: connected
+          fieldType: template
+          runnable:
+            name: Stock Worth Title
+            inlineScript:
+              content: >
+                export async function main(data: {stock: number, price:
+                number}[]) {
+                  const base = 'Stock Worth By Product'
+                  if(!Array.isArray(data)) { return base }
+
+                  const total = data.map(row => row.stock * row.price).reduce((acc, curr) => acc + curr)
+                  const formatter = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    maximumFractionDigits: 0,
+                  });
+                  return base + ` (Total Worth: ${formatter.format(total)})`
+                }
+              language: deno
+              path: u/adam/products-app/inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  data:
+                    description: ''
+                    default: null
+                    items:
+                      type: string
+                    type: array
+                required:
+                  - data
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration:
+          copyButton:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          extraStyle:
+            value: ''
+            fieldType: text
+            tooltip: 'CSS rules like "color: blue;"'
+            type: static
+          style:
+            value: Subtitle
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: textStyleOptions
+            type: static
+        horizontalAlignment: left
+        id: j
+        softWrap: true
+        type: textcomponent
+        verticalAlignment: bottom
+      id: j
+    - '12':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 16
+        id: k
+        max:
+          h: 100
+          w: 12
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 12
+        x: 0
+        y: 30
+      '3':
+        customDragger: false
+        customResizer: false
+        draggable: true
+        fixed: false
+        h: 8
+        max:
+          h: 100
+          w: 3
+        min:
+          h: 1
+          w: 1
+        resizable: true
+        w: 2
+        x: 0
+        y: 47
+      data:
+        card: true
+        componentInput:
+          value:
+            data:
+              - 51606
+              - 30566
+              - 44964
+              - 34440
+              - 15968
+              - 145167
+              - 74950
+              - 101932
+              - 105504
+              - 97811
+              - 845
+              - 2080
+              - 793
+              - 13680
+              - 3150
+              - 2090
+              - 936
+              - 3520
+              - 2484
+              - 9800
+              - 2660
+              - 2044
+              - 364
+              - 5198
+              - 3290
+              - 5371
+              - 867
+              - 1080
+              - 420
+              - 1620
+            labels:
+              - Apple iPhone 9
+              - Apple iPhone X
+              - Samsung Samsung Universe 9
+              - OPPO OPPOF19
+              - Huawei Huawei P30
+              - APPle MacBook Pro
+              - Samsung Samsung Galaxy Book
+              - Microsoft Surface Microsoft Surface Laptop 4
+              - Infinix Infinix INBOOK
+              - HP Pavilion HP Pavilion 15-DK1056WM
+              - Impression of Acqua Di Gio perfume Oil
+              - Royal_Mirage Brown Perfume
+              - Fog Scent Xpressio Fog Scent Xpressio Perfume
+              - Al Munakh Non-Alcoholic Concentrated Perfume Oil
+              - Lord - Al-Rehab Eau De Perfume Spray
+              - L'Oreal Paris Hyaluronic Acid Serum
+              - Hemani Tea Tree Oil 30ml
+              - Dermive Oil Free Moisturizer 100ml
+              - ROREC White Rice Skin Beauty Serum.
+              - Fair & Clear Freckle Treatment Cream- 15gm
+              - Saaf & Khaas - Daal Masoor 500 grams
+              - Bake Parlor Big Elbow Macaroni - 400 gm
+              - Baking Food Items Orange Essence Food Flavou
+              - fauji cereals muesli fruit nuts
+              - Dry Rose Gulab Powder 50 Gram
+              - Boho Decor Plant Hanger For Home
+              - Flying Wooden Flying Wooden Bird
+              - LED Lights 3D Embellishment Art Lamp
+              - luxury palace Handcraft Chinese style
+              - Golden Key Holder
+          fields:
+            data:
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              type: connected
+          fieldType: object
+          runnable:
+            name: Product Stock Total Worth
+            inlineScript:
+              content: >
+                export async function main(data: {brand: string, title: string,
+                stock: number, price: number}[]) {
+                  const result: {data: number[], labels: string[]} = {
+                    data: [],
+                    labels: []
+                  }
+                  if(!Array.isArray(data)) { return result }
+
+                  const count: Record<string, number> = {}
+                  data.forEach(row => {
+                    const key = `${row.brand} ${row.title}`
+                    const value = row.stock * row.price
+                    count[key] = value
+                  })
+                  Object.entries(count).forEach(([key, value]) => {
+                    result.data.push(value)
+                    result.labels.push(key)
+                  })
+                  return result
+                }
+              language: deno
+              path: u/adam/products-app/inline-script/Inline Script 0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                properties:
+                  data:
+                    description: ''
+                    default: null
+                    items:
+                      type: string
+                    type: array
+                required:
+                  - data
+                type: object
+            type: runnableByName
+          type: runnable
+        configuration:
+          line:
+            value: false
+            fieldType: boolean
+            onlyStatic: true
+            type: static
+          theme:
+            value: theme1
+            fieldType: select
+            onlyStatic: true
+            optionValuesKey: chartThemeOptions
+            type: static
+        id: k
+        type: barchartcomponent
+      id: k
+  hiddenInlineScripts: []
+  subgrids: {}
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  on_behalf_of: u/github
+  on_behalf_of_email: github-sync@windmill.dev
+  triggerables:
+    rawscript/0b7c4f9a401d090cc96b25069f8cb3846fed012f68437856425adcc7ff23ae9b: {}
+    rawscript/0ce94e9ebe918bee2c0942577d8acc74d9f81e2cad7c380a6098325d468990de: {}
+    rawscript/45cf98f74c1ecaf42702a6ca153a08af48d7b947ba162c25f37e4dcd269970e4: {}
+    rawscript/5bc9c6ea570729546e338f1470382df7ab8f7e5bd90cb49600cddb4d2f2fa858: {}
+    rawscript/d72ff89755c81acdf8f0f7ade4b1d497094ae9a222660ba7fe8cabb32b497906: {}
+    rawscript/f19ca57f66dbe82b11d6b00a3b1ae7fe31e1c608e18bfd338aea9123e29834e3: {}
