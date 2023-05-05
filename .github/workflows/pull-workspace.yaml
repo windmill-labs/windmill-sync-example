@@ -23,8 +23,8 @@ jobs:
       # Pull changes
       - name: Pull changes
         run: |
-          deno run --unstable -A  https://deno.land/x/wmill@v1.94.0/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
-          deno run --unstable -A  https://deno.land/x/wmill@v1.94.0/main.ts sync pull --yes --yaml
+          deno run --unstable -A  https://deno.land/x/wmill@v1.95.0/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill@v1.95.0/main.ts sync pull --yes --yaml
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4

@@ -1,0 +1,40 @@
+summary: Example of same_worker using the './shared' folder
+description: ''
+value:
+  modules:
+    - summary: write to file
+      value:
+        content: '!inline write_to_file.inline_script.ts'
+        input_transforms:
+          path:
+            expr: '`${flow_input.path}`'
+            type: javascript
+        language: deno
+        lock: ''
+        type: rawscript
+      id: a
+      input_transforms: {}
+    - summary: read from file
+      value:
+        content: '!inline read_from_file.inline_script.ts'
+        input_transforms:
+          path:
+            expr: '`${flow_input.path}`'
+            type: javascript
+        language: deno
+        lock: ''
+        type: rawscript
+      id: b
+      input_transforms: {}
+  same_worker: true
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  properties:
+    path:
+      description: ''
+      default: test
+      format: ''
+      type: string
+  required:
+    - path
+  type: object

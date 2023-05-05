@@ -1,0 +1,93 @@
+summary: >-
+  Whenever an HackerNews message contains a mention, publish it to Slack with
+  sentiment analysed
+description: >-
+  We watch all new items on HackerNews and filter those that match one of the
+  parametrized mention.
+
+   For each of them, we attach sentiment analysis through NLTK and then publish it to slack.
+value:
+  modules:
+    - summary: Watch for new message with mentions on HackerNews
+      value:
+        content: >-
+          !inline
+          watch_for_new_message_with_mentions_on_hackernews.inline_script.ts
+        input_transforms:
+          mentions:
+            expr: previous_result.mentions
+            type: javascript
+        language: deno
+        lock: ''
+        type: rawscript
+      id: a
+      input_transforms: {}
+      stop_after_if:
+        expr: result.length == 0
+        skip_if_stopped: true
+    - value:
+        iterator:
+          expr: result
+          type: javascript
+        modules:
+          - summary: Analyse sentiment with nltk
+            value:
+              content: '!inline analyse_sentiment_with_nltk.inline_script.py'
+              input_transforms:
+                text:
+                  expr: '`${flow_input.iter.value.text}`'
+                  type: javascript
+              language: python3
+              type: rawscript
+            id: c
+            input_transforms: {}
+          - summary: Send message to slack
+            value:
+              input_transforms:
+                channel:
+                  expr: '`${flow_input.channel}`'
+                  type: javascript
+                slack:
+                  expr: flow_input.slack
+                  type: javascript
+                text:
+                  expr: >-
+                    `${flow_input.iter.value.id} by ${flow_input.iter.value.by}:
+                    \n ${flow_input.iter.value.text}:
+
+                    ${JSON.stringify(previous_result)}`
+                  type: javascript
+              path: hub/111/slack/send_message_to_channel
+              type: script
+            id: d
+            input_transforms: {}
+        parallel: false
+        skip_failures: true
+        type: forloopflow
+      id: b
+      input_transforms: {}
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  properties:
+    channel:
+      description: slack channel
+      default: demo
+      format: ''
+      type: string
+    mentions:
+      description: The list of mentions to watch for
+      default:
+        - windmill
+        - unicorn
+      format: ''
+      items:
+        type: string
+      type: array
+    slack:
+      description: OAuth slack credentials
+      format: resource-slack
+      type: object
+  required:
+    - mentions
+    - channel
+  type: object
