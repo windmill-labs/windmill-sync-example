@@ -2,9 +2,9 @@ summary: A common file containing logic to be imported by another script (NOT RU
 description: ''
 is_template: false
 kind: script
-lock: []
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties: {}
   required: []
-  type: object
+lock: []

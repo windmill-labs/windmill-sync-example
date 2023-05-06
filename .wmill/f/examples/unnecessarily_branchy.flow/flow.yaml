@@ -10,6 +10,7 @@ value:
         input_transforms: {}
         language: deno
         lock: ''
+      input_transforms: {}
     - id: ap
       value:
         type: rawscript
@@ -20,6 +21,7 @@ value:
             value: ''
         language: deno
         lock: ''
+      input_transforms: {}
     - id: aq
       value:
         type: forloopflow
@@ -33,6 +35,7 @@ value:
               content: '!inline inline_script_2.inline_script.ts'
               input_transforms: {}
               language: deno
+            input_transforms: {}
             stop_after_if:
               expr: result == undefined
               skip_if_stopped: false
@@ -50,11 +53,13 @@ value:
 
                     `${flow_input.iter.value}`
               language: deno
+            input_transforms: {}
             stop_after_if:
               expr: stepresult == undefined
               skip_if_stopped: false
         parallel: false
         skip_failures: true
+      input_transforms: {}
     - id: at
       summary: ''
       value:
@@ -65,9 +70,11 @@ value:
               - id: au
                 value:
                   type: identity
+                input_transforms: {}
               - id: av
                 value:
                   type: identity
+                input_transforms: {}
             parallel: true
             skip_failure: false
           - summary: ''
@@ -75,9 +82,11 @@ value:
               - id: aw
                 value:
                   type: identity
+                input_transforms: {}
               - id: ax
                 value:
                   type: identity
+                input_transforms: {}
             parallel: true
             skip_failure: false
           - summary: ''
@@ -85,6 +94,7 @@ value:
               - id: ay
                 value:
                   type: identity
+                input_transforms: {}
               - id: az
                 summary: ''
                 value:
@@ -96,12 +106,14 @@ value:
                         - id: ba
                           value:
                             type: identity
+                          input_transforms: {}
                     - summary: ''
                       expr: 'true  '
                       modules:
                         - id: bb
                           value:
                             type: identity
+                          input_transforms: {}
                   default:
                     - id: bc
                       value:
@@ -113,11 +125,15 @@ value:
                           - id: bd
                             value:
                               type: identity
+                            input_transforms: {}
                         parallel: false
                         skip_failures: true
+                      input_transforms: {}
+                input_transforms: {}
             parallel: true
             skip_failure: false
         parallel: false
+      input_transforms: {}
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

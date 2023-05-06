@@ -26,6 +26,7 @@ value:
             expr: '`${flow_input.username}`'
         language: deno
         lock: ''
+      input_transforms: {}
     - id: b
       summary: Retrieve email address from username
       value:
@@ -40,6 +41,7 @@ value:
             expr: '`${flow_input.username}`'
         language: deno
         lock: ''
+      input_transforms: {}
     - id: c
       summary: Notify user about ban via email
       value:
@@ -69,6 +71,7 @@ value:
             type: static
             value: me
         path: hub/209/gmail/_send_email
+      input_transforms: {}
     - id: d
       summary: Send a message to Slack reporting the ban
       value:
@@ -86,6 +89,7 @@ value:
               `User ${flow_input.username} was banned. Reason:
               ${flow_input.reason}`
         path: hub/111/slack/send_message_to_channel
+      input_transforms: {}
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

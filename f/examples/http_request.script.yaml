@@ -2,20 +2,20 @@ summary: Do a simple HTTP POST request
 description: This example pass a value as JSON data and use a secret as bearer token
 is_template: true
 kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    my_value:
+      type: string
+      default: null
+      format: ''
+      description: ''
+  required:
+    - my_value
 lock:
   - certifi==2022.12.7
   - charset-normalizer==3.1.0
   - idna==3.4
   - requests==2.28.2
   - urllib3==1.26.15
-schema:
-  $schema: 'https://json-schema.org/draft/2020-12/schema'
-  properties:
-    my_value:
-      description: ''
-      default: null
-      format: ''
-      type: string
-  required:
-    - my_value
-  type: object

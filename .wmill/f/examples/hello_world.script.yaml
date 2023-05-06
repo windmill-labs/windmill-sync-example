@@ -2,14 +2,14 @@ summary: Hello World in Python
 description: The simplest hello world script
 is_template: false
 kind: script
-lock: []
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties:
     name:
-      description: ''
+      type: string
       default: Nicolas Bourbaki
       format: ''
-      type: string
+      description: ''
   required: []
-  type: object
+lock: []

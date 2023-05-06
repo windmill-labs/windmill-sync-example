@@ -27,8 +27,8 @@ jobs:
       # (push will pull first to detect conflicts and only push actual changes)
       - name: Push changes
         run: |
-          deno run --unstable -A  https://deno.land/x/wmill@v1.95.0/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
-          # deno run --unstable -A  https://deno.land/x/wmill@v1.95.0/main.ts sync push --yes --fail-conflicts --yaml
+          deno run --unstable -A  https://deno.land/x/wmill@v1.95.1/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill@v1.95.1/main.ts sync push --yes --fail-conflicts --yaml
 
       # autocommit the new .wmill state after the push                                                             
       - uses: stefanzweifel/git-auto-commit-action@v4

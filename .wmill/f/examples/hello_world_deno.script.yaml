@@ -2,22 +2,22 @@ summary: Hello World in Deno
 description: ''
 is_template: false
 kind: script
-lock: []
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties:
     str:
-      description: ''
+      type: string
       default: default arg
       format: ''
-      type: string
-    union:
       description: ''
+    union:
+      type: string
       default: null
       enum:
         - Hello World
         - Welcome
-      type: string
+      description: ''
   required:
     - union
-  type: object
+lock: []

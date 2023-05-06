@@ -21,6 +21,7 @@ value:
             expr: previous_result.mentions
         language: deno
         lock: ''
+      input_transforms: {}
       stop_after_if:
         expr: result.length == 0
         skip_if_stopped: true
@@ -41,6 +42,7 @@ value:
                   type: javascript
                   expr: '`${flow_input.iter.value.text}`'
               language: python3
+            input_transforms: {}
           - id: d
             summary: Send message to slack
             value:
@@ -60,8 +62,10 @@ value:
 
                     ${JSON.stringify(previous_result)}`
               path: hub/111/slack/send_message_to_channel
+            input_transforms: {}
         parallel: false
         skip_failures: true
+      input_transforms: {}
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

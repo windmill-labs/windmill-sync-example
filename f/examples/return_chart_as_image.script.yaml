@@ -4,6 +4,16 @@ description: >-
   when their dict key is "png"
 is_template: false
 kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    seed:
+      type: integer
+      default: 1234
+      format: ''
+      description: ''
+  required: []
 lock:
   - contourpy==1.0.7
   - cycler==0.11.0
@@ -19,13 +29,3 @@ lock:
   - pytz==2022.7.1
   - seaborn==0.12.2
   - six==1.16.0
-schema:
-  $schema: 'https://json-schema.org/draft/2020-12/schema'
-  properties:
-    seed:
-      description: ''
-      default: 1234
-      format: ''
-      type: integer
-  required: []
-  type: object

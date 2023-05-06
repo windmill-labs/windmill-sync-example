@@ -5,22 +5,22 @@ description: >-
   trigger
 is_template: true
 kind: script
-lock:
-  - slack-sdk==3.20.2
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties:
     response_url:
-      description: ''
+      type: string
       default: null
       format: ''
-      type: string
+      description: ''
     text:
-      description: ''
+      type: string
       default: null
       format: ''
-      type: string
+      description: ''
   required:
     - response_url
     - text
-  type: object
+lock:
+  - slack-sdk==3.20.2

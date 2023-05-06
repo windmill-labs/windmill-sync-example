@@ -13,6 +13,7 @@ value:
             expr: '`${flow_input.path}`'
         language: deno
         lock: ''
+      input_transforms: {}
     - id: b
       summary: read from file
       value:
@@ -24,6 +25,7 @@ value:
             expr: '`${flow_input.path}`'
         language: deno
         lock: ''
+      input_transforms: {}
   same_worker: true
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'

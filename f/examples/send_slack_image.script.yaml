@@ -4,34 +4,34 @@ description: >-
   but not both.
 is_template: false
 kind: script
-lock:
-  - slack-sdk==3.19.5
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties:
     channel:
-      description: ''
+      type: string
       default: null
       format: ''
-      type: string
-    img_data:
       description: ''
+    img_data:
+      type: string
       contentEncoding: base64
       default: null
       format: ''
-      type: string
-    slack_resource:
       description: ''
+    slack_resource:
+      type: object
       default: null
       format: resource-slack
-      properties: {}
-      type: object
-    user:
       description: ''
+      properties: {}
+    user:
+      type: string
       default: null
       format: ''
-      type: string
+      description: ''
   required:
     - slack_resource
     - img_data
-  type: object
+lock:
+  - slack-sdk==3.19.5

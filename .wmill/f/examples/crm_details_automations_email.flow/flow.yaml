@@ -102,10 +102,10 @@ value:
           html5lib==1.1
           idna==3.4
           lxml==4.9.2
-          requests==2.29.0
+          requests==2.30.0
           six==1.16.0
           soupsieve==2.4.1
-          urllib3==1.26.15
+          urllib3==2.0.2
           webencodings==0.5.1
     - id: ak
       summary: Removes empty and duplicates
