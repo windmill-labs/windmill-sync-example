@@ -8,55 +8,55 @@ description: >-
   then build a plot out of it
 value:
   modules:
-    - summary: Get the covid-19 data and store it as parquet
+    - id: a
+      summary: Get the covid-19 data and store it as parquet
       value:
+        type: rawscript
         content: '!inline get_the_covid-19_data_and_store_it_as_parquet.inline_script.py'
         input_transforms: {}
         language: python3
         lock: |-
           cramjam==2.6.2
-          fastparquet==2023.2.0
-          fsspec==2023.3.0
-          numpy==1.24.2
-          packaging==23.0
-          pandas==1.5.3
+          fastparquet==2023.4.0
+          fsspec==2023.4.0
+          numpy==1.24.3
+          packaging==23.1
+          pandas==2.0.1
           python-dateutil==2.8.2
-          pytz==2022.7.1
+          pytz==2023.3
           six==1.16.0
-        type: rawscript
-      id: a
-      input_transforms: {}
-    - summary: Do analytics and build plot
+          tzdata==2023.3
+    - id: b
+      summary: Do analytics and build plot
       value:
+        type: rawscript
         content: '!inline do_analytics_and_build_plot.inline_script.py'
         input_transforms:
           path:
-            expr: results.a
             type: javascript
+            expr: results.a
         language: python3
         lock: |-
           contourpy==1.0.7
           cramjam==2.6.2
           cycler==0.11.0
-          fastparquet==2023.2.0
-          fonttools==4.39.0
-          fsspec==2023.3.0
+          fastparquet==2023.4.0
+          fonttools==4.39.3
+          fsspec==2023.4.0
           kiwisolver==1.4.4
           matplotlib==3.7.1
-          numpy==1.24.2
-          packaging==23.0
-          pandas==1.5.3
-          pillow==9.4.0
+          numpy==1.24.3
+          packaging==23.1
+          pandas==2.0.1
+          pillow==9.5.0
           pyparsing==3.0.9
           python-dateutil==2.8.2
-          pytz==2022.7.1
+          pytz==2023.3
           six==1.16.0
-        type: rawscript
-      id: b
-      input_transforms: {}
+          tzdata==2023.3
   same_worker: true
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties: {}
   required: []
-  type: object

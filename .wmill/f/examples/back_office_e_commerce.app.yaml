@@ -186,9 +186,9 @@ value:
   fullscreen: true
   grid:
     - '12':
+        id: c
         fixed: false
         h: 1
-        id: c
         w: 12
         x: 0
         y: 0
@@ -198,37 +198,37 @@ value:
         w: 1
         x: 0
         y: 8
+      id: c
       data:
+        id: c
+        type: textcomponent
         componentInput:
-          value: 'Hello ${ctx.username}'
+          type: template
           eval: >-
             Note: all editing actions have been disabled in the present example
             as they would affect parent database.
           fieldType: template
-          type: template
+          value: 'Hello ${ctx.username}'
         configuration:
           copyButton:
+            type: static
             value: false
-            type: static
           style:
+            type: static
             value: Body
-            type: static
           tooltip:
-            value: ''
             type: static
+            value: ''
         customCss:
           text:
             class: ''
             style: 'color: #177cc8;'
         horizontalAlignment: left
-        id: c
-        type: textcomponent
         verticalAlignment: top
-      id: c
     - '12':
+        id: f
         fixed: false
         h: 1
-        id: f
         w: 12
         x: 0
         y: 1
@@ -238,38 +238,38 @@ value:
         w: 1
         x: 1
         y: 8
+      id: f
       data:
+        id: f
+        type: textcomponent
         componentInput:
-          value: 'Hello ${ctx.username}'
+          type: template
           eval: 'Tutorial: https://docs.windmill.dev/docs/apps/app_e-commerce'
           fieldType: template
-          type: template
+          value: 'Hello ${ctx.username}'
         configuration:
           copyButton:
+            type: static
             value: false
-            type: static
           style:
+            type: static
             value: Body
-            type: static
           tooltip:
-            value: ''
             type: static
+            value: ''
         customCss:
           text:
             class: ''
             style: ''
         horizontalAlignment: left
-        id: f
-        type: textcomponent
         verticalAlignment: top
-      id: f
     - '12':
+        id: a
         customDragger: false
         customResizer: false
         draggable: true
         fixed: true
         h: 22
-        id: a
         max:
           h: 100
           w: 12
@@ -296,17 +296,20 @@ value:
         w: 2
         x: 0
         y: 0
+      id: a
       data:
+        id: a
+        type: tabscomponent
         card: false
         configuration:
           noPadding:
-            value: true
+            type: static
             fieldType: boolean
+            value: true
             onlyStatic: true
-            type: static
           tabsKind:
-            value: null
             type: static
+            value: null
         customCss:
           allTabs:
             class: ''
@@ -320,7 +323,6 @@ value:
           tabRow:
             class: ''
             style: ''
-        id: a
         numberOfSubgrids: 4
         softWrap: true
         tabs:
@@ -328,45 +330,43 @@ value:
           - Orders
           - Users
           - Manuel order
-        type: tabscomponent
-      id: a
   hiddenInlineScripts:
-    - name: loadProducts
-      autoRefresh: true
+    - autoRefresh: true
+      name: loadProducts
       fields:
         auth:
-          value: '$res:f/examples/demo_supabase'
+          type: static
           fieldType: object
           format: resource-supabase
-          type: static
+          value: '$res:f/examples/demo_supabase'
         columns:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         count:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         filter:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         head:
-          value: null
+          type: static
           fieldType: boolean
-          type: static
+          value: null
         limit:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         order:
-          value: null
+          type: static
           fieldType: object
-          type: static
+          value: null
         table:
-          value: products
-          fieldType: string
           type: static
+          fieldType: string
+          value: products
       inlineScript:
         content: >
           import { Resource } from
@@ -433,96 +433,96 @@ value:
         path: /loadProducts
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
           properties:
             auth:
-              description: ''
+              type: object
               default: null
               format: resource-supabase
-              type: object
+              description: ''
             columns:
-              description: ''
-              default: null
               type: string
-            count:
+              default: null
               description: ''
+            count:
+              type: string
               default: null
               enum:
                 - exact
                 - planned
                 - estimated
-              type: string
+              description: ''
             filter:
-              description: ''
-              default: null
-              properties:
-                value:
-                  description: ''
-                  type: object
-                column:
-                  description: ''
-                  type: string
-                operator:
-                  description: ''
-                  type: string
               type: object
+              default: null
+              description: ''
+              properties:
+                column:
+                  type: string
+                  description: ''
+                value:
+                  type: object
+                  description: ''
+                operator:
+                  type: string
+                  description: ''
             head:
-              description: ''
-              default: null
               type: boolean
-            limit:
-              description: ''
               default: null
+              description: ''
+            limit:
+              type: object
+              default: null
+              description: ''
               properties:
                 count:
-                  description: ''
                   type: number
-                foreignTable:
                   description: ''
+                foreignTable:
                   type: string
-              type: object
+                  description: ''
             order:
-              description: ''
+              type: object
               default: null
+              description: ''
               properties:
                 ascending:
-                  description: ''
                   type: boolean
+                  description: ''
                 column:
-                  description: ''
                   type: string
+                  description: ''
                 foreignTable:
-                  description: ''
                   type: string
-                nullsFirst:
                   description: ''
+                nullsFirst:
                   type: boolean
-              type: object
+                  description: ''
             table:
-              description: ''
-              default: null
               type: string
+              default: null
+              description: ''
           required:
             - auth
             - table
-          type: object
       recomputeOnInputChanged: true
-    - name: getProductImageUrl
-      autoRefresh: true
+    - autoRefresh: true
+      name: getProductImageUrl
       fields:
         productId:
-          value: null
+          type: connected
           connection:
             componentId: j
             path: selectedRow.id
           fieldType: string
-          type: connected
-        products:
           value: null
+        products:
+          type: connected
           connection:
             componentId: bg_0
             path: result.data
           fieldType: array
-          type: connected
+          value: null
       inlineScript:
         content: |
           export async function main(productId: string, products: any[]) {
@@ -532,58 +532,58 @@ value:
         path: /getProductImageUrl
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
           properties:
             productId:
-              description: ''
-              default: null
               type: string
-            products:
-              description: ''
               default: null
+              description: ''
+            products:
+              type: array
+              default: null
+              description: ''
               items:
                 type: string
-              type: array
           required:
             - productId
             - products
-          type: object
       recomputeOnInputChanged: true
-    - name: loadOrders
-      autoRefresh: true
+    - autoRefresh: true
+      name: loadOrders
       fields:
         auth:
-          value: '$res:f/examples/demo_supabase'
+          type: static
           fieldType: object
           format: resource-supabase
-          type: static
+          value: '$res:f/examples/demo_supabase'
         columns:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         count:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         filter:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         head:
-          value: null
+          type: static
           fieldType: boolean
-          type: static
+          value: null
         limit:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         order:
-          value: null
+          type: static
           fieldType: object
-          type: static
+          value: null
         table:
-          value: orders
-          fieldType: string
           type: static
+          fieldType: string
+          value: orders
       inlineScript:
         content: >
           import { Resource } from
@@ -653,43 +653,45 @@ value:
         path: /loadOrders
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
           properties:
             auth:
+              type: object
               default: null
               format: resource-supabase
-              type: object
             columns:
-              default: null
               type: string
+              default: null
             count:
+              type: string
               default: null
               enum:
                 - exact
                 - planned
                 - estimated
-              type: string
             filter:
+              type: object
               default: null
               properties:
-                value:
-                  type: object
                 column:
                   type: string
+                value:
+                  type: object
                 operator:
                   type: string
-              type: object
             head:
-              default: null
               type: boolean
+              default: null
             limit:
+              type: object
               default: null
               properties:
                 count:
                   type: number
                 foreignTable:
                   type: string
-              type: object
             order:
+              type: object
               default: null
               properties:
                 ascending:
@@ -700,51 +702,49 @@ value:
                   type: string
                 nullsFirst:
                   type: boolean
-              type: object
             table:
-              default: null
               type: string
+              default: null
           required:
             - auth
             - table
-          type: object
       recomputeOnInputChanged: true
-    - name: loadCustomers
-      autoRefresh: true
+    - autoRefresh: true
+      name: loadCustomers
       fields:
         auth:
-          value: '$res:f/examples/demo_supabase'
+          type: static
           fieldType: object
           format: resource-supabase
-          type: static
+          value: '$res:f/examples/demo_supabase'
         columns:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         count:
-          value: null
-          fieldType: string
           type: static
+          fieldType: string
+          value: null
         filter:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         head:
-          value: null
+          type: static
           fieldType: boolean
-          type: static
+          value: null
         limit:
-          value: null
-          fieldType: object
           type: static
+          fieldType: object
+          value: null
         order:
-          value: null
+          type: static
           fieldType: object
-          type: static
+          value: null
         table:
-          value: customers
-          fieldType: string
           type: static
+          fieldType: string
+          value: customers
       inlineScript:
         content: >
           import { Resource } from
@@ -812,89 +812,89 @@ value:
         path: /loadCustomers
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
           properties:
             auth:
-              description: ''
+              type: object
               default: null
               format: resource-supabase
-              type: object
+              description: ''
             columns:
-              description: ''
-              default: null
               type: string
-            count:
+              default: null
               description: ''
+            count:
+              type: string
               default: null
               enum:
                 - exact
                 - planned
                 - estimated
-              type: string
+              description: ''
             filter:
-              description: ''
-              default: null
-              properties:
-                value:
-                  description: ''
-                  type: object
-                column:
-                  description: ''
-                  type: string
-                operator:
-                  description: ''
-                  type: string
               type: object
+              default: null
+              description: ''
+              properties:
+                column:
+                  type: string
+                  description: ''
+                value:
+                  type: object
+                  description: ''
+                operator:
+                  type: string
+                  description: ''
             head:
-              description: ''
-              default: null
               type: boolean
-            limit:
-              description: ''
               default: null
+              description: ''
+            limit:
+              type: object
+              default: null
+              description: ''
               properties:
                 count:
-                  description: ''
                   type: number
-                foreignTable:
                   description: ''
+                foreignTable:
                   type: string
-              type: object
+                  description: ''
             order:
-              description: ''
+              type: object
               default: null
+              description: ''
               properties:
                 ascending:
-                  description: ''
                   type: boolean
+                  description: ''
                 column:
-                  description: ''
                   type: string
+                  description: ''
                 foreignTable:
-                  description: ''
                   type: string
-                nullsFirst:
                   description: ''
+                nullsFirst:
                   type: boolean
-              type: object
+                  description: ''
             table:
-              description: ''
-              default: null
               type: string
+              default: null
+              description: ''
           required:
             - auth
             - table
-          type: object
       recomputeOnInputChanged: true
-    - name: listUser
-      autoRefresh: true
+    - autoRefresh: true
+      name: listUser
       fields:
         users:
-          value: null
+          type: connected
           connection:
             componentId: bg_3
             path: result.data
           fieldType: array
-          type: connected
+          value: null
       inlineScript:
         content: >
           // import * as wmill from
@@ -911,19 +911,19 @@ value:
         path: /listUser
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
           properties:
             users:
-              description: ''
+              type: array
               default: null
+              description: ''
               items:
                 type: string
-              type: array
           required:
             - users
-          type: object
       recomputeOnInputChanged: true
-    - name: deleteCart
-      autoRefresh: false
+    - autoRefresh: false
+      name: deleteCart
       fields: {}
       inlineScript:
         content: 'state.cart = []'
@@ -933,12 +933,12 @@ value:
   subgrids:
     a-0:
       - '12':
+          id: b
           customDragger: false
           customResizer: false
           draggable: true
           fixed: true
           h: 1
-          id: b
           max:
             h: 100
             w: 12
@@ -965,58 +965,58 @@ value:
           w: 1
           x: 0
           y: 0
+        id: b
         data:
+          id: b
+          type: drawercomponent
           card: false
           configuration:
             color:
-              value: dark
+              type: static
               fieldType: select
+              value: dark
               onlyStatic: true
               optionValuesKey: buttonColorOptions
-              type: static
             disabled:
+              type: eval
               expr: 'false'
               fieldType: boolean
-              type: eval
             drawerTitle:
+              type: static
+              fieldType: text
               value: Drawer title
-              fieldType: text
               onlyStatic: true
-              type: static
             fillContainer:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             label:
-              value: Add a new product
+              type: static
               fieldType: text
-              type: static
+              value: Add a new product
             noPadding:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             size:
-              value: xs
+              type: static
               fieldType: select
+              value: xs
               onlyStatic: true
               optionValuesKey: buttonSizeOptions
-              type: static
           horizontalAlignment: right
-          id: b
           numberOfSubgrids: 1
           softWrap: true
-          type: drawercomponent
           verticalAlignment: center
-        id: b
       - '12':
+          id: i
           customDragger: false
           customResizer: false
           draggable: true
           fixed: true
           h: 19
-          id: i
           max:
             h: 100
             w: 12
@@ -1043,34 +1043,34 @@ value:
           w: 2
           x: 1
           y: 0
+        id: i
         data:
+          id: i
+          type: verticalsplitpanescomponent
           card: false
           configuration:
             noPadding:
-              value: true
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: true
+              onlyStatic: true
           customCss:
             container:
               class: ''
               style: ''
-          id: i
           numberOfSubgrids: 2
           panes:
             - 60
             - 40
           softWrap: true
-          type: verticalsplitpanescomponent
-        id: i
     a-1:
       - '12':
+          id: d
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 20
-          id: d
           max:
             h: 100
             w: 12
@@ -1097,14 +1097,17 @@ value:
           w: 2
           x: 0
           y: 0
+        id: d
         data:
+          id: d
+          type: tabscomponent
           card: false
           configuration:
             noPadding:
-              value: true
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: true
+              onlyStatic: true
           customCss:
             allTabs:
               class: ''
@@ -1118,23 +1121,20 @@ value:
             tabRow:
               class: ''
               style: ''
-          id: d
           numberOfSubgrids: 3
           softWrap: true
           tabs:
             - List of orders
             - Analytics
             - Shipping map
-          type: tabscomponent
-        id: d
     a-2:
       - '12':
+          id: aw
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 20
-          id: aw
           max:
             h: 100
             w: 12
@@ -1161,34 +1161,34 @@ value:
           w: 2
           x: 0
           y: 10
+        id: aw
         data:
+          id: aw
+          type: verticalsplitpanescomponent
           card: false
           configuration:
             noPadding:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             container:
               class: ''
               style: ''
-          id: aw
           numberOfSubgrids: 2
           panes:
             - 50
             - 50
           softWrap: true
-          type: verticalsplitpanescomponent
-        id: aw
     a-3:
       - '12':
+          id: al
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 20
-          id: al
           max:
             h: 100
             w: 12
@@ -1215,34 +1215,34 @@ value:
           w: 2
           x: 0
           y: 0
+        id: al
         data:
+          id: al
+          type: verticalsplitpanescomponent
           card: false
           configuration:
             noPadding:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             container:
               class: ''
               style: ''
-          id: al
           numberOfSubgrids: 2
           panes:
             - 60
             - 40
           softWrap: true
-          type: verticalsplitpanescomponent
-        id: al
     ab-0:
       - '12':
+          id: ac
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 17
-          id: ac
           max:
             h: 100
             w: 12
@@ -1269,26 +1269,32 @@ value:
           w: 3
           x: 0
           y: 0
+        id: ac
         data:
+          id: ac
           actionButtons:
-            - card: false
+            - id: ac_a
+              type: buttoncomponent
+              card: false
               componentInput:
+                type: runnable
                 fields:
                   auth:
-                    value: '$res:u/henri/wm_showcases_supabase'
+                    type: static
                     fieldType: object
                     format: resource-supabase
-                    type: static
+                    value: '$res:u/henri/wm_showcases_supabase'
                   orderId:
-                    value: ''
+                    type: connected
                     connection:
                       componentId: ac
                       path: selectedRow.id
                     fieldType: string
-                    type: connected
+                    value: ''
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: toggleRefund
                   inlineScript:
                     content: >-
@@ -1370,154 +1376,153 @@ value:
                     path: /toggleRefund
                     schema:
                       $schema: 'https://json-schema.org/draft/2020-12/schema'
+                      type: object
                       properties:
                         auth:
-                          description: ''
+                          type: object
                           default: null
                           format: resource-supabase
-                          type: object
-                        orderId:
                           description: ''
-                          default: null
+                        orderId:
                           type: string
+                          default: null
+                          description: ''
                       required:
                         - auth
                         - orderId
-                      type: object
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
-                  value: DollarSign
+                  type: static
                   fieldType: icon-select
+                  value: DollarSign
                   onlyStatic: true
-                  type: static
                 color:
-                  value: dark
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: dark
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 fillContainer:
                   type: static
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Refund
-                  fieldType: text
                   type: static
+                  fieldType: text
+                  value: Refund
                 onSuccess:
                   configuration:
                     '': {}
                   selected: ''
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
                 triggerOnAppLoad:
                   type: static
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ac_a
               recomputeIds:
                 - bg_0
                 - bg_2
+            - id: ac_b
               type: buttoncomponent
-            - card: false
+              card: false
               componentInput:
+                type: runnable
                 fields: {}
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: Inline Script 0
                   inlineScript:
                     content: 'setTab(''a'', 2)'
                     language: frontend
                     path: frontend script
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
-                  value: User
+                  type: static
                   fieldType: icon-select
+                  value: User
                   onlyStatic: true
-                  type: static
                 color:
-                  value: light
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: light
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Go to user
+                  type: static
                   fieldType: text
-                  type: static
+                  value: Go to user
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ac_b
-              type: buttoncomponent
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: runnable
             fields:
               orders:
-                value: null
+                type: connected
                 connection:
                   componentId: bg_2
                   path: result.data
                 fieldType: array
-                type: connected
+                value: null
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: selectOrdersColumns
               inlineScript:
                 content: |
@@ -1531,30 +1536,28 @@ value:
                 path: /selectOrdersColumns
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     orders:
-                      description: ''
+                      type: array
                       default: null
+                      description: ''
                       items:
                         type: string
-                      type: array
                   required:
                     - orders
-                  type: object
-              type: runnableByName
             subFieldType: object
-            type: runnable
           configuration:
             pagination:
               configuration:
                 '': {}
               selected: ''
             search:
-              value: By Component
+              type: static
               fieldType: select
+              value: By Component
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -1568,17 +1571,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: ac
-          type: tablecomponent
-        id: ac
     ab-1:
       - '12':
+          id: ad
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 17
-          id: ad
           max:
             h: 100
             w: 12
@@ -1605,31 +1605,31 @@ value:
           w: 2
           x: 0
           y: 0
+        id: ad
         data:
+          id: ad
+          type: containercomponent
           card: false
           configuration:
             noPadding:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             container:
               class: m-2
               style: ''
-          id: ad
           numberOfSubgrids: 1
           softWrap: true
-          type: containercomponent
-        id: ad
     ad-0:
       - '12':
+          id: af
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: af
           max:
             h: 100
             w: 12
@@ -1656,42 +1656,42 @@ value:
           w: 1
           x: 0
           y: 10
+        id: af
         data:
+          id: af
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Order items
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: af
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: af
       - '12':
+          id: ae
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 15
-          id: ae
           max:
             h: 100
             w: 12
@@ -1718,99 +1718,104 @@ value:
           w: 3
           x: 0
           y: 0
+        id: ae
         data:
+          id: ae
           actionButtons:
-            - card: false
+            - id: ae_a
+              type: buttoncomponent
+              card: false
               componentInput:
+                type: runnable
                 fields: {}
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: Inline Script 0
                   inlineScript:
                     content: 'setTab(''a'', 0)'
                     language: frontend
                     path: frontend script
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
-                  value: ArrowUpRight
+                  type: static
                   fieldType: icon-select
+                  value: ArrowUpRight
                   onlyStatic: true
-                  type: static
                 color:
-                  value: dark
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: dark
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Go to product
+                  type: static
                   fieldType: text
-                  type: static
+                  value: Go to product
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ae_a
-              type: buttoncomponent
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: runnable
             fields:
               orders:
-                value: null
+                type: connected
                 connection:
                   componentId: bg_2
                   path: result.data
                 fieldType: array
-                type: connected
-              products:
                 value: null
+              products:
+                type: connected
                 connection:
                   componentId: bg_0
                   path: result.data
                 fieldType: array
-                type: connected
-              selectedOrderIndex:
                 value: null
+              selectedOrderIndex:
+                type: connected
                 connection:
                   componentId: ac
                   path: selectedRowIndex
                 fieldType: number
-                type: connected
+                value: null
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: getOrderProducts
               inlineScript:
                 content: >
@@ -1843,39 +1848,37 @@ value:
                 path: /getOrderProducts
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     orders:
+                      type: array
                       default: null
                       items:
                         type: string
-                      type: array
                     products:
+                      type: array
                       default: null
                       items:
                         type: string
-                      type: array
                     selectedOrderIndex:
-                      default: null
                       type: number
+                      default: null
                   required:
                     - selectedOrderIndex
                     - orders
                     - products
-                  type: object
-              type: runnableByName
             subFieldType: object
-            type: runnable
           configuration:
             pagination:
               configuration:
                 '': {}
               selected: ''
             search:
-              value: Disabled
+              type: static
               fieldType: select
+              value: Disabled
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -1889,17 +1892,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: ae
-          type: tablecomponent
-        id: ae
     al-0:
       - '12':
+          id: an
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: an
           max:
             h: 100
             w: 12
@@ -1926,25 +1926,28 @@ value:
           w: 1
           x: 2
           y: 0
+        id: an
         data:
+          id: an
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Select a user
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
             tooltip:
               type: static
           customCss:
@@ -1952,18 +1955,15 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: an
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: an
       - '12':
+          id: am
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: am
           max:
             h: 100
             w: 12
@@ -1990,49 +1990,49 @@ value:
           w: 2
           x: 0
           y: 0
+        id: am
         data:
+          id: am
+          type: selectcomponent
           card: false
           configuration:
             create:
-              value: false
+              type: static
               fieldType: boolean
+              value: false
               onlyStatic: true
-              type: static
             defaultValue:
-              fieldType: object
               type: static
+              fieldType: object
             items:
+              type: connected
+              connection:
+                componentId: bg_4
+                path: result
+              fieldType: array
               value:
                 - value: foo
                   label: Foo
                 - value: bar
                   label: Bar
-              connection:
-                componentId: bg_4
-                path: result
-              fieldType: array
               subFieldType: object
-              type: connected
             placeholder:
-              value: Select an item
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Select an item
+              onlyStatic: true
           customCss:
             input:
               style: ''
-          id: am
           softWrap: true
-          type: selectcomponent
           verticalAlignment: center
-        id: am
       - '12':
+          id: ao
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 17
-          id: ao
           max:
             h: 100
             w: 12
@@ -2059,14 +2059,20 @@ value:
           w: 3
           x: 0
           y: 1
+        id: ao
         data:
+          id: ao
           actionButtons:
-            - card: false
+            - id: ao_a
+              type: buttoncomponent
+              card: false
               componentInput:
+                type: runnable
                 fields: {}
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: addToCart
                   inlineScript:
                     content: |
@@ -2078,84 +2084,81 @@ value:
                       }
                     language: frontend
                     path: /addToCart
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
-                  value: PlusCircle
+                  type: static
                   fieldType: icon-select
+                  value: PlusCircle
                   onlyStatic: true
-                  type: static
                 color:
-                  value: blue
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: blue
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 fillContainer:
                   type: static
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Add
-                  fieldType: text
                   type: static
+                  fieldType: text
+                  value: Add
                 onSuccess:
                   configuration:
                     '': {}
                   selected: ''
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
                 triggerOnAppLoad:
                   type: static
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ao_a
               recomputeIds:
                 - ap
-              type: buttoncomponent
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: connected
             connection:
               componentId: j
               path: result
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             subFieldType: object
-            type: connected
           configuration:
             search:
-              value: By Component
+              type: static
               fieldType: select
+              value: By Component
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -2169,17 +2172,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: ao
-          type: tablecomponent
-        id: ao
     al-1:
       - '12':
+          id: aq
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: aq
           max:
             h: 100
             w: 12
@@ -2206,42 +2206,42 @@ value:
           w: 1
           x: 0
           y: 10
+        id: aq
         data:
+          id: aq
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Cart
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: aq
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: aq
       - '12':
+          id: ap
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 14
-          id: ap
           max:
             h: 100
             w: 12
@@ -2268,14 +2268,20 @@ value:
           w: 3
           x: 0
           y: 0
+        id: ap
         data:
+          id: ap
           actionButtons:
-            - card: false
+            - id: ap_a
+              type: buttoncomponent
+              card: false
               componentInput:
+                type: runnable
                 fields: {}
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: Inline Script 0
                   inlineScript:
                     content: |-
@@ -2284,66 +2290,65 @@ value:
                       }
                     language: frontend
                     path: frontend script
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 color:
-                  value: red
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: red
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Remove
+                  type: static
                   fieldType: text
-                  type: static
+                  value: Remove
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ap_a
               recomputeIds:
                 - ap
-              type: buttoncomponent
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: runnable
             fields: {}
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: loadCartFromState
               inlineScript:
                 content: >-
@@ -2352,20 +2357,18 @@ value:
                   x.id === id)) : []
                 language: frontend
                 path: /loadCartFromState
-              type: runnableByName
             subFieldType: object
-            type: runnable
           configuration:
             pagination:
               configuration:
                 '': {}
               selected: ''
             search:
-              value: Disabled
+              type: static
               fieldType: select
+              value: Disabled
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -2379,16 +2382,13 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: ap
-          type: tablecomponent
-        id: ap
       - '12':
+          id: ba
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: ba
           max:
             h: 100
             w: 12
@@ -2415,44 +2415,44 @@ value:
           w: 1
           x: 0
           y: 12
+        id: ba
         data:
+          id: ba
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: >-
               Total: ${ap.result.reduce((accu, curr) => accu + curr.price/100,
               0)} CHF
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: right
-          id: ba
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: ba
       - '12':
+          id: at
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: at
           max:
             h: 100
             w: 12
@@ -2479,93 +2479,93 @@ value:
           w: 1
           x: 0
           y: 11
+        id: at
         data:
+          id: at
+          type: buttoncomponent
           card: false
           componentInput:
+            type: runnable
             fields: {}
             fieldType: any
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: Inline Script 0
               inlineScript:
                 content: 'state.cart = []'
                 language: frontend
                 path: /Inline Script 0
-              type: runnableByName
-            type: runnable
           configuration:
             afterIcon:
+              type: static
               fieldType: icon-select
               onlyStatic: true
-              type: static
             beforeIcon:
-              value: Trash
-              fieldType: icon-select
-              onlyStatic: true
               type: static
+              fieldType: icon-select
+              value: Trash
+              onlyStatic: true
             color:
-              value: red
+              type: static
               fieldType: select
+              value: red
               onlyStatic: true
               optionValuesKey: buttonColorOptions
-              type: static
             disabled:
+              type: eval
               expr: 'false'
               fieldType: boolean
-              type: eval
             fillContainer:
+              type: static
+              fieldType: boolean
               value: false
-              fieldType: boolean
               onlyStatic: true
-              type: static
             goto:
+              type: static
+              fieldType: text
               value: ''
-              fieldType: text
               tooltip: Go to an url on success if not empty
-              type: static
             gotoNewTab:
-              value: true
+              type: static
               fieldType: boolean
+              value: true
               tooltip: Go to create a new tab
-              type: static
             label:
-              value: Delete cart
-              fieldType: text
               type: static
+              fieldType: text
+              value: Delete cart
             onSuccess:
               configuration:
                 '': {}
               selected: ''
             size:
-              value: xs
+              type: static
               fieldType: select
+              value: xs
               onlyStatic: true
               optionValuesKey: buttonSizeOptions
-              type: static
             triggerOnAppLoad:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             button:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: at
           recomputeIds:
             - ap
           softWrap: true
-          type: buttoncomponent
           verticalAlignment: center
-        id: at
       - '12':
+          id: ar
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: ar
           max:
             h: 100
             w: 12
@@ -2592,32 +2592,37 @@ value:
           w: 1
           x: 1
           y: 10
+        id: ar
         data:
+          id: ar
+          type: buttoncomponent
           card: false
           componentInput:
+            type: runnable
             fields:
               auth:
-                value: '$res:f/examples/demo_supabase'
+                type: static
                 fieldType: object
                 format: resource-supabase
-                type: static
+                value: '$res:f/examples/demo_supabase'
               customerId:
-                value: null
+                type: connected
                 connection:
                   componentId: am
                   path: result
                 fieldType: string
-                type: connected
+                value: null
               productIds:
-                value: []
+                type: connected
                 connection:
                   componentId: state
                   path: cart
                 fieldType: array
-                type: connected
+                value: []
             fieldType: any
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: checkout
               inlineScript:
                 content: >-
@@ -2690,104 +2695,99 @@ value:
                 path: /checkout
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     auth:
-                      description: ''
+                      type: object
                       default: null
                       format: resource-supabase
-                      type: object
+                      description: ''
                     customerId:
-                      description: ''
-                      default: null
                       type: string
-                    productIds:
-                      description: ''
                       default: null
+                      description: ''
+                    productIds:
+                      type: array
+                      default: null
+                      description: ''
                       items:
                         type: string
-                      type: array
                   required:
                     - auth
                     - customerId
                     - productIds
-                  type: object
-              type: runnableByName
-            type: runnable
           configuration:
             afterIcon:
+              type: static
               fieldType: icon-select
               onlyStatic: true
-              type: static
             beforeIcon:
-              value: ArrowRight
-              fieldType: icon-select
-              onlyStatic: true
               type: static
+              fieldType: icon-select
+              value: ArrowRight
+              onlyStatic: true
             color:
-              value: dark
+              type: static
               fieldType: select
+              value: dark
               onlyStatic: true
               optionValuesKey: buttonColorOptions
-              type: static
             disabled:
+              type: eval
               expr: state.cart?.length === 0
               fieldType: boolean
-              type: eval
             fillContainer:
+              type: static
+              fieldType: boolean
               value: false
-              fieldType: boolean
               onlyStatic: true
-              type: static
             goto:
+              type: static
+              fieldType: text
               value: ''
-              fieldType: text
               tooltip: Go to an url on success if not empty
-              type: static
             gotoNewTab:
-              value: true
+              type: static
               fieldType: boolean
+              value: true
               tooltip: Go to create a new tab
-              type: static
             label:
-              value: Checkout
-              fieldType: text
               type: static
+              fieldType: text
+              value: Checkout
             onSuccess:
               configuration:
                 '': {}
               selected: ''
             size:
-              value: xs
+              type: static
               fieldType: select
+              value: xs
               onlyStatic: true
               optionValuesKey: buttonSizeOptions
-              type: static
             triggerOnAppLoad:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             button:
               class: ''
               style: ''
           horizontalAlignment: right
-          id: ar
           recomputeIds:
             - bg_6
             - bg_5
           softWrap: true
-          type: buttoncomponent
           verticalAlignment: center
-        id: ar
     aw-0:
       - '12':
+          id: aj
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 19
-          id: aj
           max:
             h: 100
             w: 12
@@ -2814,30 +2814,33 @@ value:
           w: 3
           x: 0
           y: 0
+        id: aj
         data:
+          id: aj
           actionButtons: []
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: connected
             connection:
               componentId: bg_3
               path: result.data
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             subFieldType: object
-            type: connected
           configuration:
             search:
-              value: By Component
+              type: static
               fieldType: select
+              value: By Component
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -2851,17 +2854,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: aj
-          type: tablecomponent
-        id: aj
     aw-1:
       - '12':
+          id: ay
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: ay
           max:
             h: 100
             w: 12
@@ -2888,44 +2888,44 @@ value:
           w: 1
           x: 0
           y: 10
+        id: ay
         data:
+          id: ay
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: >-
               Orders of ${aj.selectedRow.first_name}
               ${aj.selectedRow.last_name} 
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: ay
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: ay
       - '12':
+          id: ax
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 18
-          id: ax
           max:
             h: 100
             w: 12
@@ -2952,89 +2952,94 @@ value:
           w: 3
           x: 0
           y: 0
+        id: ax
         data:
+          id: ax
           actionButtons:
-            - card: false
+            - id: ax_a
+              type: buttoncomponent
+              card: false
               componentInput:
+                type: runnable
                 fields: {}
                 fieldType: any
                 recomputeOnInputChanged: true
                 runnable:
+                  type: runnableByName
                   name: Inline Script 0
                   inlineScript:
                     content: 'setTab(''a'', 1)'
                     language: frontend
                     path: frontend script
-                  type: runnableByName
-                type: runnable
               configuration:
                 afterIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 beforeIcon:
+                  type: static
                   fieldType: icon-select
                   onlyStatic: true
-                  type: static
                 color:
-                  value: dark
-                  fieldType: select
-                  optionValuesKey: buttonColorOptions
                   type: static
+                  fieldType: select
+                  value: dark
+                  optionValuesKey: buttonColorOptions
                 disabled:
+                  type: eval
                   expr: 'false'
                   fieldType: boolean
-                  type: eval
                 goto:
+                  type: static
+                  fieldType: text
                   value: ''
-                  fieldType: text
                   tooltip: Go to an url on success if not empty
-                  type: static
                 gotoNewTab:
-                  value: true
+                  type: static
                   fieldType: boolean
+                  value: true
                   tooltip: Go to create a new tab
-                  type: static
                 label:
-                  value: Go to order
+                  type: static
                   fieldType: text
-                  type: static
+                  value: Go to order
                 size:
-                  value: xs
-                  fieldType: select
-                  optionValuesKey: buttonSizeOptions
                   type: static
+                  fieldType: select
+                  value: xs
+                  optionValuesKey: buttonSizeOptions
               customCss:
                 button:
                   class: ''
                   style: ''
-              id: ax_a
-              type: buttoncomponent
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - name: A cell with a long name
-                age: 42
-                id: 1
-              - name: A briefer cell
-                age: 84
-                id: 2
+            type: runnable
             fields:
               auth:
-                value: '$res:f/examples/demo_supabase'
+                type: static
                 fieldType: object
                 format: resource-supabase
-                type: static
+                value: '$res:f/examples/demo_supabase'
               customerId:
-                value: null
+                type: connected
                 connection:
                   componentId: aj
                   path: selectedRow.id
                 fieldType: string
-                type: connected
+                value: null
             fieldType: array
+            value:
+              - id: 1
+                age: 42
+                name: A cell with a long name
+              - id: 2
+                age: 84
+                name: A briefer cell
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: loadOrderByCustomer
               inlineScript:
                 content: >
@@ -3061,34 +3066,32 @@ value:
                 path: /loadOrderByCustomer
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     auth:
-                      description: ''
+                      type: object
                       default: null
                       format: resource-supabase
-                      type: object
-                    customerId:
                       description: ''
-                      default: null
+                    customerId:
                       type: string
+                      default: null
+                      description: ''
                   required:
                     - auth
                     - customerId
-                  type: object
-              type: runnableByName
             subFieldType: object
-            type: runnable
           configuration:
             pagination:
               configuration:
                 '': {}
               selected: ''
             search:
-              value: Disabled
+              type: static
               fieldType: select
+              value: Disabled
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: ''
@@ -3102,17 +3105,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: ax
-          type: tablecomponent
-        id: ax
     b-0:
       - '12':
+          id: s
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: s
           max:
             h: 100
             w: 12
@@ -3139,42 +3139,42 @@ value:
           w: 1
           x: 0
           y: 0
+        id: s
         data:
+          id: s
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Name
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: s
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: s
       - '12':
+          id: t
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: t
           max:
             h: 100
             w: 12
@@ -3201,33 +3201,33 @@ value:
           w: 2
           x: 1
           y: 0
+        id: t
         data:
+          id: t
+          type: textinputcomponent
           card: false
           configuration:
             defaultValue:
-              fieldType: text
               type: static
+              fieldType: text
             placeholder:
-              value: Type...
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Type...
+              onlyStatic: true
           customCss:
             input:
               class: ''
               style: ''
-          id: t
           softWrap: true
-          type: textinputcomponent
           verticalAlignment: center
-        id: t
       - '12':
+          id: v
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: v
           max:
             h: 100
             w: 12
@@ -3254,42 +3254,42 @@ value:
           w: 1
           x: 0
           y: 5
+        id: v
         data:
+          id: v
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Description
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: v
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: v
       - '12':
+          id: w
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: w
           max:
             h: 100
             w: 12
@@ -3316,33 +3316,33 @@ value:
           w: 2
           x: 1
           y: 5
+        id: w
         data:
+          id: w
+          type: textinputcomponent
           card: false
           configuration:
             defaultValue:
-              fieldType: text
               type: static
+              fieldType: text
             placeholder:
-              value: Type...
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Type...
+              onlyStatic: true
           customCss:
             input:
               class: ''
               style: ''
-          id: w
           softWrap: true
-          type: textinputcomponent
           verticalAlignment: center
-        id: w
       - '12':
+          id: x
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: x
           max:
             h: 100
             w: 12
@@ -3369,42 +3369,42 @@ value:
           w: 1
           x: 0
           y: 6
+        id: x
         data:
+          id: x
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Quantity
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: x
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: x
       - '12':
+          id: y
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: y
           max:
             h: 100
             w: 12
@@ -3431,45 +3431,45 @@ value:
           w: 2
           x: 1
           y: 6
+        id: y
         data:
+          id: y
+          type: numberinputcomponent
           card: false
           configuration:
             defaultValue:
-              value: 1
-              fieldType: number
               type: static
+              fieldType: number
+              value: 1
             max:
-              fieldType: number
               type: static
+              fieldType: number
             min:
+              type: static
+              fieldType: number
               value: 0
-              fieldType: number
-              type: static
             placeholder:
-              value: Type...
+              type: static
               fieldType: text
+              value: Type...
               onlyStatic: true
-              type: static
             step:
-              value: 1
-              fieldType: number
               type: static
+              fieldType: number
+              value: 1
           customCss:
             input:
               class: ''
               style: ''
-          id: y
           softWrap: true
-          type: numberinputcomponent
           verticalAlignment: center
-        id: y
       - '12':
+          id: z
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: z
           max:
             h: 100
             w: 12
@@ -3496,42 +3496,42 @@ value:
           w: 1
           x: 0
           y: 7
+        id: z
         data:
+          id: z
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Image
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: z
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: z
       - '12':
+          id: u
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 6
-          id: u
           max:
             h: 100
             w: 12
@@ -3558,41 +3558,41 @@ value:
           w: 3
           x: 0
           y: 1
+        id: u
         data:
+          id: u
+          type: fileinputcomponent
           card: false
           configuration:
             acceptedFileTypes:
+              type: static
+              fieldType: array
               value:
                 - image/*
                 - application/pdf
-              fieldType: array
               onlyStatic: true
-              type: static
             allowMultiple:
-              value: false
+              type: static
               fieldType: boolean
+              value: false
               onlyStatic: true
               tooltip: 'If allowed, the user will be able to select more than one file'
-              type: static
             text:
-              value: Drag and drop files or click to select them
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Drag and drop files or click to select them
+              onlyStatic: true
           customCss:
             container:
               class: ''
               style: ''
-          id: u
-          type: fileinputcomponent
-        id: u
       - '12':
+          id: aa
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 2
-          id: aa
           max:
             h: 100
             w: 12
@@ -3619,84 +3619,84 @@ value:
           w: 1
           x: 1
           y: 7
+        id: aa
         data:
+          id: aa
+          type: buttoncomponent
           card: false
           componentInput:
+            type: runnable
             fields: {}
             fieldType: any
-            type: runnable
           configuration:
             afterIcon:
+              type: static
               fieldType: icon-select
               onlyStatic: true
-              type: static
             beforeIcon:
-              value: Plus
-              fieldType: icon-select
-              onlyStatic: true
               type: static
+              fieldType: icon-select
+              value: Plus
+              onlyStatic: true
             color:
-              value: gray
+              type: static
               fieldType: select
+              value: gray
               onlyStatic: true
               optionValuesKey: buttonColorOptions
-              type: static
             disabled:
+              type: eval
               expr: 'false'
               fieldType: boolean
-              type: eval
             fillContainer:
+              type: static
+              fieldType: boolean
               value: false
-              fieldType: boolean
               onlyStatic: true
-              type: static
             goto:
+              type: static
+              fieldType: text
               value: ''
-              fieldType: text
               tooltip: Go to an url on success if not empty
-              type: static
             gotoNewTab:
-              value: true
+              type: static
               fieldType: boolean
+              value: true
               tooltip: Go to create a new tab
-              type: static
             label:
-              value: Create product
-              fieldType: text
               type: static
+              fieldType: text
+              value: Create product
             onSuccess:
               configuration:
                 '': {}
               selected: ''
             size:
-              value: sm
+              type: static
               fieldType: select
+              value: sm
               onlyStatic: true
               optionValuesKey: buttonSizeOptions
-              type: static
             triggerOnAppLoad:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             button:
               class: ''
               style: ''
           horizontalAlignment: center
-          id: aa
           softWrap: true
-          type: buttoncomponent
           verticalAlignment: center
-        id: aa
     d-0:
       - '12':
+          id: ab
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 18
-          id: ab
           max:
             h: 100
             w: 12
@@ -3723,34 +3723,34 @@ value:
           w: 2
           x: 0
           y: 0
+        id: ab
         data:
+          id: ab
+          type: verticalsplitpanescomponent
           card: false
           configuration:
             noPadding:
-              value: true
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: true
+              onlyStatic: true
           customCss:
             container:
               class: ''
               style: ''
-          id: ab
           numberOfSubgrids: 2
           panes:
             - 60
             - 40
           softWrap: true
-          type: verticalsplitpanescomponent
-        id: ab
     d-1:
       - '12':
+          id: e
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 7
-          id: e
           max:
             h: 100
             w: 12
@@ -3777,9 +3777,22 @@ value:
           w: 2
           x: 0
           y: 0
+        id: e
         data:
+          id: e
+          type: piechartcomponent
           card: true
           componentInput:
+            type: runnable
+            fields:
+              orders:
+                type: connected
+                connection:
+                  componentId: bg_2
+                  path: result.data
+                fieldType: array
+                value: null
+            fieldType: object
             value:
               data:
                 - 25
@@ -3789,17 +3802,9 @@ value:
                 - Pie
                 - Charts
                 - <3
-            fields:
-              orders:
-                value: null
-                connection:
-                  componentId: bg_2
-                  path: result.data
-                fieldType: array
-                type: connected
-            fieldType: object
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: pieChartData
               inlineScript:
                 content: |
@@ -3835,45 +3840,40 @@ value:
                 path: /pieChartData
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     orders:
-                      description: ''
+                      type: array
                       default: null
+                      description: ''
                       items:
                         type: string
-                      type: array
                   required:
                     - orders
-                  type: object
-              type: runnableByName
-            type: runnable
           configuration:
             doughnutStyle:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             theme:
-              value: theme2
+              type: static
               fieldType: select
+              value: theme2
               onlyStatic: true
               optionValuesKey: chartThemeOptions
-              type: static
           customCss:
             container:
               class: ''
               style: ''
-          id: e
-          type: piechartcomponent
-        id: e
     d-2:
       - '12':
+          id: bb
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 10
-          id: bb
           max:
             h: 100
             w: 12
@@ -3900,18 +3900,26 @@ value:
           w: 3
           x: 0
           y: 1
+        id: bb
         data:
+          id: bb
+          type: mapcomponent
           card: false
           configuration:
             latitude:
+              type: static
+              fieldType: number
               value: 50
-              fieldType: number
-              type: static
             longitude:
-              value: 15
-              fieldType: number
               type: static
+              fieldType: number
+              value: 15
             markers:
+              type: static
+              fieldType: array
+              fileUpload:
+                accept: application/json
+                convertTo: text
               value:
                 - color: '#dc2626'
                   lat: 41.902783
@@ -3923,31 +3931,23 @@ value:
                 - lat: 51.507359
                   lon: -0.136439
                   title: London
-              fieldType: array
-              fileUpload:
-                accept: application/json
-                convertTo: text
               subFieldType: object
-              type: static
             zoom:
-              value: 3
-              fieldType: number
               type: static
+              fieldType: number
+              value: 3
           customCss:
             map:
               class: ''
               style: ''
-          id: bb
-          type: mapcomponent
-        id: bb
     i-0:
       - '12':
+          id: j
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 18
-          id: j
           max:
             h: 100
             w: 12
@@ -3974,29 +3974,34 @@ value:
           w: 3
           x: 0
           y: 0
+        id: j
         data:
+          id: j
           actionButtons: []
+          type: tablecomponent
           card: true
           componentInput:
-            value:
-              - description: The latest smartphone from Apple
-                price: 999
-                quantity: 50
-                title: iPhone 13
+            type: runnable
             connection:
               componentId: bg_0
               path: result.data
             fields:
               products:
-                value: null
+                type: connected
                 connection:
                   componentId: bg_0
                   path: result.data
                 fieldType: array
-                type: connected
+                value: null
             fieldType: array
+            value:
+              - description: The latest smartphone from Apple
+                price: 999
+                quantity: 50
+                title: iPhone 13
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: selectProductColumns
               inlineScript:
                 content: |
@@ -4010,30 +4015,28 @@ value:
                 path: /selectProductColumns
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
                     products:
-                      description: ''
+                      type: array
                       default: null
+                      description: ''
                       items:
                         type: string
-                      type: array
                   required:
                     - products
-                  type: object
-              type: runnableByName
             subFieldType: object
-            type: runnable
           configuration:
             pagination:
               configuration:
                 '': {}
               selected: ''
             search:
-              value: By Component
+              type: static
               fieldType: select
+              value: By Component
               onlyStatic: true
               optionValuesKey: tableSearchOptions
-              type: static
           customCss:
             container:
               class: 'capitalize '
@@ -4047,17 +4050,14 @@ value:
             tableHeader:
               class: ''
               style: ''
-          id: j
-          type: tablecomponent
-        id: j
     i-1:
       - '12':
+          id: m
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: m
           max:
             h: 100
             w: 12
@@ -4084,42 +4084,42 @@ value:
           w: 1
           x: 0
           y: 1
+        id: m
         data:
+          id: m
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Name
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: m
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: m
       - '12':
+          id: n
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: n
           max:
             h: 100
             w: 12
@@ -4146,36 +4146,36 @@ value:
           w: 2
           x: 1
           y: 1
+        id: n
         data:
+          id: n
+          type: textinputcomponent
           card: false
           configuration:
             defaultValue:
+              type: connected
               connection:
                 componentId: j
                 path: selectedRow.title
               fieldType: text
-              type: connected
             placeholder:
-              value: Type...
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Type...
+              onlyStatic: true
           customCss:
             input:
               class: ''
               style: ''
-          id: n
           softWrap: true
-          type: textinputcomponent
           verticalAlignment: center
-        id: n
       - '12':
+          id: o
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: o
           max:
             h: 100
             w: 12
@@ -4202,42 +4202,42 @@ value:
           w: 1
           x: 0
           y: 2
+        id: o
         data:
+          id: o
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Description
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: o
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: o
       - '12':
+          id: p
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: p
           max:
             h: 100
             w: 12
@@ -4264,36 +4264,36 @@ value:
           w: 2
           x: 1
           y: 2
+        id: p
         data:
+          id: p
+          type: textinputcomponent
           card: false
           configuration:
             defaultValue:
+              type: connected
               connection:
                 componentId: j
                 path: selectedRow.description
               fieldType: text
-              type: connected
             placeholder:
-              value: Type...
-              fieldType: text
-              onlyStatic: true
               type: static
+              fieldType: text
+              value: Type...
+              onlyStatic: true
           customCss:
             input:
               class: ''
               style: ''
-          id: p
           softWrap: true
-          type: textinputcomponent
           verticalAlignment: center
-        id: p
       - '12':
+          id: l
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: l
           max:
             h: 100
             w: 12
@@ -4320,42 +4320,42 @@ value:
           w: 1
           x: 2
           y: 0
+        id: l
         data:
+          id: l
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Quantity
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: l
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: l
       - '12':
+          id: k
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: k
           max:
             h: 100
             w: 12
@@ -4382,46 +4382,46 @@ value:
           w: 2
           x: 0
           y: 0
+        id: k
         data:
+          id: k
+          type: numberinputcomponent
           card: false
           configuration:
             defaultValue:
+              type: connected
               connection:
                 componentId: j
                 path: selectedRow.quantity
               fieldType: number
-              type: connected
             max:
-              fieldType: number
               type: static
+              fieldType: number
             min:
-              fieldType: number
               type: static
+              fieldType: number
             placeholder:
-              value: Type...
+              type: static
               fieldType: text
+              value: Type...
               onlyStatic: true
-              type: static
             step:
-              value: 1
-              fieldType: number
               type: static
+              fieldType: number
+              value: 1
           customCss:
             input:
               class: ''
               style: ''
-          id: k
           softWrap: true
-          type: numberinputcomponent
           verticalAlignment: center
-        id: k
       - '12':
+          id: au
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: au
           max:
             h: 100
             w: 12
@@ -4448,42 +4448,42 @@ value:
           w: 1
           x: 1
           y: 3
+        id: au
         data:
+          id: au
+          type: textcomponent
           card: false
           componentInput:
-            value: 'Hello ${ctx.username}'
+            type: template
             eval: Price
             fieldType: template
-            type: template
+            value: 'Hello ${ctx.username}'
           configuration:
             copyButton:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
             style:
-              value: Label
+              type: static
               fieldType: select
+              value: Label
               onlyStatic: true
               optionValuesKey: textStyleOptions
-              type: static
           customCss:
             text:
               class: ''
               style: ''
           horizontalAlignment: left
-          id: au
           softWrap: false
-          type: textcomponent
           verticalAlignment: center
-        id: au
       - '12':
+          id: av
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: av
           max:
             h: 100
             w: 12
@@ -4510,46 +4510,46 @@ value:
           w: 2
           x: 0
           y: 8
+        id: av
         data:
+          id: av
+          type: numberinputcomponent
           card: false
           configuration:
             defaultValue:
+              type: connected
               connection:
                 componentId: j
                 path: selectedRow.price
               fieldType: number
-              type: connected
             max:
-              fieldType: number
               type: static
+              fieldType: number
             min:
-              fieldType: number
               type: static
+              fieldType: number
             placeholder:
-              value: Type...
+              type: static
               fieldType: text
+              value: Type...
               onlyStatic: true
-              type: static
             step:
-              value: 1
-              fieldType: number
               type: static
+              fieldType: number
+              value: 1
           customCss:
             input:
               class: ''
               style: ''
-          id: av
           softWrap: true
-          type: numberinputcomponent
           verticalAlignment: center
-        id: av
       - '12':
+          id: r
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 6
-          id: r
           max:
             h: 100
             w: 12
@@ -4576,25 +4576,28 @@ value:
           w: 3
           x: 0
           y: 4
+        id: r
         data:
+          id: r
+          type: imagecomponent
           card: false
           configuration:
             altText:
-              value: ''
+              type: static
               fieldType: text
+              value: ''
               onlyStatic: true
               tooltip: >-
                 This text will appear if the image can't be loaded for any
                 reason
-              type: static
             imageFit:
-              value: contain
+              type: static
               fieldType: select
+              value: contain
               onlyStatic: true
               optionValuesKey: objectFitOptions
-              type: static
             source:
-              value: /logo.svg
+              type: connected
               connection:
                 componentId: bg_1
                 path: result
@@ -4602,21 +4605,18 @@ value:
               fileUpload:
                 accept: image/*
                 convertTo: base64
-              type: connected
+              value: /logo.svg
           customCss:
             image:
               class: ''
               style: ''
-          id: r
-          type: imagecomponent
-        id: r
       - '12':
+          id: q
           customDragger: false
           customResizer: false
           draggable: true
           fixed: false
           h: 1
-          id: q
           max:
             h: 100
             w: 12
@@ -4643,53 +4643,58 @@ value:
           w: 1
           x: 0
           y: 3
+        id: q
         data:
+          id: q
+          type: buttoncomponent
           card: false
           componentInput:
+            type: runnable
             fields:
-              description:
-                value: null
-                connection:
-                  componentId: p
-                  path: result
-                fieldType: string
-                type: connected
-              auth:
-                value: '$res:f/examples/demo_supabase'
-                fieldType: object
-                format: resource-supabase
-                type: static
               id:
-                value: null
+                type: connected
                 connection:
                   componentId: j
                   path: selectedRow.id
                 fieldType: string
-                type: connected
-              price:
                 value: null
+              auth:
+                type: static
+                fieldType: object
+                format: resource-supabase
+                value: '$res:f/examples/demo_supabase'
+              description:
+                type: connected
+                connection:
+                  componentId: p
+                  path: result
+                fieldType: string
+                value: null
+              price:
+                type: connected
                 connection:
                   componentId: av
                   path: result
                 fieldType: number
-                type: connected
-              quantity:
                 value: null
+              quantity:
+                type: connected
                 connection:
                   componentId: k
                   path: result
                 fieldType: number
-                type: connected
-              title:
                 value: null
+              title:
+                type: connected
                 connection:
                   componentId: n
                   path: result
                 fieldType: string
-                type: connected
+                value: null
             fieldType: any
             recomputeOnInputChanged: true
             runnable:
+              type: runnableByName
               name: updateProduct
               inlineScript:
                 content: >
@@ -4719,32 +4724,33 @@ value:
                 path: hub/648/supabase/update_data
                 schema:
                   $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
                   properties:
-                    description:
-                      description: ''
-                      default: null
+                    id:
                       type: string
-                    auth:
+                      default: null
                       description: ''
+                    auth:
+                      type: object
                       default: null
                       format: resource-supabase
-                      type: object
-                    id:
                       description: ''
-                      default: null
+                    description:
                       type: string
+                      default: null
+                      description: ''
                     price:
-                      description: ''
-                      default: null
                       type: number
+                      default: null
+                      description: ''
                     quantity:
-                      description: ''
-                      default: null
                       type: number
-                    title:
-                      description: ''
                       default: null
+                      description: ''
+                    title:
                       type: string
+                      default: null
+                      description: ''
                   required:
                     - auth
                     - id
@@ -4752,76 +4758,70 @@ value:
                     - description
                     - quantity
                     - price
-                  type: object
-              type: runnableByName
-            type: runnable
           configuration:
             afterIcon:
+              type: static
               fieldType: icon-select
               onlyStatic: true
-              type: static
             beforeIcon:
-              value: Save
-              fieldType: icon-select
-              onlyStatic: true
               type: static
+              fieldType: icon-select
+              value: Save
+              onlyStatic: true
             color:
-              value: dark
+              type: static
               fieldType: select
+              value: dark
               onlyStatic: true
               optionValuesKey: buttonColorOptions
-              type: static
             disabled:
+              type: eval
               expr: 'false'
               fieldType: boolean
-              type: eval
             fillContainer:
-              value: true
+              type: static
               fieldType: boolean
+              value: true
               onlyStatic: true
-              type: static
             goto:
+              type: static
+              fieldType: text
               value: ''
-              fieldType: text
               tooltip: Go to an url on success if not empty
-              type: static
             gotoNewTab:
-              value: true
+              type: static
               fieldType: boolean
+              value: true
               tooltip: Go to create a new tab
-              type: static
             label:
-              value: Save
-              fieldType: text
               type: static
+              fieldType: text
+              value: Save
             size:
-              value: xs
+              type: static
               fieldType: select
+              value: xs
               onlyStatic: true
               optionValuesKey: buttonSizeOptions
-              type: static
             triggerOnAppLoad:
-              value: false
-              fieldType: boolean
-              onlyStatic: true
               type: static
+              fieldType: boolean
+              value: false
+              onlyStatic: true
           customCss:
             button:
               class: ''
               style: ''
           horizontalAlignment: right
-          id: q
           recomputeIds:
             - bg_0
           softWrap: true
-          type: buttoncomponent
           verticalAlignment: center
-        id: q
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/henri
-  on_behalf_of_email: henri@windmill.dev
+  on_behalf_of: u/user
+  on_behalf_of_email: user@windmill.dev
   triggerables:
     rawscript/0fc9afb3c876f0393da742d9e43c29bbd011397034da32caa19cdb7f4e069b4c:
       auth: '$res:f/examples/demo_supabase'

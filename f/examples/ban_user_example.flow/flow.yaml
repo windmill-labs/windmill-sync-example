@@ -9,46 +9,47 @@ description: >-
   operation.
 value:
   modules:
-    - summary: Flag user in users table
+    - id: a
+      summary: Flag user in users table
       value:
+        type: rawscript
         content: '!inline flag_user_in_users_table.inline_script.ts'
         input_transforms:
           db:
+            type: javascript
             expr: flow_input.db
-            type: javascript
           reason:
+            type: javascript
             expr: '`${flow_input.reason}`'
-            type: javascript
           username:
-            expr: '`${flow_input.username}`'
             type: javascript
+            expr: '`${flow_input.username}`'
         language: deno
         lock: ''
-        type: rawscript
-      id: a
-      input_transforms: {}
-    - summary: Retrieve email address from username
+    - id: b
+      summary: Retrieve email address from username
       value:
+        type: rawscript
         content: '!inline retrieve_email_address_from_username.inline_script.ts'
         input_transforms:
           db:
+            type: javascript
             expr: flow_input.db
-            type: javascript
           username:
-            expr: '`${flow_input.username}`'
             type: javascript
+            expr: '`${flow_input.username}`'
         language: deno
         lock: ''
-        type: rawscript
-      id: b
-      input_transforms: {}
-    - summary: Notify user about ban via email
+    - id: c
+      summary: Notify user about ban via email
       value:
+        type: script
         input_transforms:
           gmail_auth:
-            expr: flow_input.gmail
             type: javascript
+            expr: flow_input.gmail
           message:
+            type: javascript
             expr: >-
               `Hello ${flow_input.username},
 
@@ -58,69 +59,65 @@ value:
               ${flow_input.reason}
 
               Best regards`
-            type: javascript
           subject:
+            type: static
             value: You have been banned
-            type: static
           to_email:
-            expr: '`${step(1)[0][0]}`'
             type: javascript
+            expr: '`${step(1)[0][0]}`'
           userId:
-            value: me
             type: static
+            value: me
         path: hub/209/gmail/_send_email
-        type: script
-      id: c
-      input_transforms: {}
-    - summary: Send a message to Slack reporting the ban
+    - id: d
+      summary: Send a message to Slack reporting the ban
       value:
+        type: script
         input_transforms:
           channel:
+            type: javascript
             expr: '`${flow_input.slack_channel}`'
-            type: javascript
           slack:
-            expr: flow_input.slack
             type: javascript
+            expr: flow_input.slack
           text:
+            type: javascript
             expr: >-
               `User ${flow_input.username} was banned. Reason:
               ${flow_input.reason}`
-            type: javascript
         path: hub/111/slack/send_message_to_channel
-        type: script
-      id: d
-      input_transforms: {}
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
   properties:
     db:
-      description: Database containing the users table
+      type: object
       default: '$res:g/all/demodb'
       format: resource-postgresql
-      type: object
+      description: Database containing the users table
     gmail:
-      description: GMail account used to send the notification email
-      format: resource-gmail
       type: object
+      format: resource-gmail
+      description: GMail account used to send the notification email
     reason:
-      description: Brief description for the reason of the ban
+      type: string
       default: aggressive towards windmills
       format: ''
-      type: string
+      description: Brief description for the reason of the ban
     slack:
-      description: Slack Account used to send notification message
-      format: resource-slack
       type: object
+      format: resource-slack
+      description: Slack Account used to send notification message
     slack_channel:
-      description: Channel name to send the notification to
+      type: string
       default: bans
       format: ''
-      type: string
+      description: Channel name to send the notification to
     username:
-      description: Username in the database
+      type: string
       default: don
       format: ''
-      type: string
+      description: Username in the database
   required:
     - username
     - slack_channel
@@ -134,4 +131,3 @@ schema:
     - gmail
     - db
     - slack
-  type: object
