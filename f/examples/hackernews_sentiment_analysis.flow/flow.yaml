@@ -19,8 +19,8 @@ value:
           mentions:
             type: javascript
             expr: previous_result.mentions
-        language: deno
         lock: ''
+        language: deno
       input_transforms: {}
       stop_after_if:
         expr: result.length == 0
@@ -28,9 +28,6 @@ value:
     - id: b
       value:
         type: forloopflow
-        iterator:
-          type: javascript
-          expr: result
         modules:
           - id: c
             summary: Analyse sentiment with nltk
@@ -63,6 +60,9 @@ value:
                     ${JSON.stringify(previous_result)}`
               path: hub/111/slack/send_message_to_channel
             input_transforms: {}
+        iterator:
+          type: javascript
+          expr: result
         parallel: false
         skip_failures: true
       input_transforms: {}
@@ -72,22 +72,22 @@ schema:
   properties:
     channel:
       type: string
+      description: slack channel
       default: demo
       format: ''
-      description: slack channel
     mentions:
       type: array
+      description: The list of mentions to watch for
       default:
         - windmill
         - unicorn
       format: ''
-      description: The list of mentions to watch for
       items:
         type: string
     slack:
       type: object
-      format: resource-slack
       description: OAuth slack credentials
+      format: resource-slack
   required:
     - mentions
     - channel

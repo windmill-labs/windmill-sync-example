@@ -14,7 +14,6 @@ value:
         type: rawscript
         content: '!inline get_the_covid-19_data_and_store_it_as_parquet.inline_script.py'
         input_transforms: {}
-        language: python3
         lock: |-
           cramjam==2.6.2
           fastparquet==2023.2.0
@@ -25,6 +24,7 @@ value:
           python-dateutil==2.8.2
           pytz==2022.7.1
           six==1.16.0
+        language: python3
       input_transforms: {}
     - id: b
       summary: Do analytics and build plot
@@ -35,7 +35,6 @@ value:
           path:
             type: javascript
             expr: results.a
-        language: python3
         lock: |-
           contourpy==1.0.7
           cramjam==2.6.2
@@ -53,6 +52,7 @@ value:
           python-dateutil==2.8.2
           pytz==2022.7.1
           six==1.16.0
+        language: python3
       input_transforms: {}
   same_worker: true
 schema:

@@ -24,8 +24,8 @@ value:
           username:
             type: javascript
             expr: '`${flow_input.username}`'
-        language: deno
         lock: ''
+        language: deno
       input_transforms: {}
     - id: b
       summary: Retrieve email address from username
@@ -39,8 +39,8 @@ value:
           username:
             type: javascript
             expr: '`${flow_input.username}`'
-        language: deno
         lock: ''
+        language: deno
       input_transforms: {}
     - id: c
       summary: Notify user about ban via email
@@ -96,32 +96,32 @@ schema:
   properties:
     db:
       type: object
+      description: Database containing the users table
       default: '$res:g/all/demodb'
       format: resource-postgresql
-      description: Database containing the users table
     gmail:
       type: object
-      format: resource-gmail
       description: GMail account used to send the notification email
+      format: resource-gmail
     reason:
       type: string
+      description: Brief description for the reason of the ban
       default: aggressive towards windmills
       format: ''
-      description: Brief description for the reason of the ban
     slack:
       type: object
-      format: resource-slack
       description: Slack Account used to send notification message
+      format: resource-slack
     slack_channel:
       type: string
+      description: Channel name to send the notification to
       default: bans
       format: ''
-      description: Channel name to send the notification to
     username:
       type: string
+      description: Username in the database
       default: don
       format: ''
-      description: Username in the database
   required:
     - username
     - slack_channel

@@ -8,8 +8,8 @@ value:
         type: rawscript
         content: '!inline inline_script_0.inline_script.ts'
         input_transforms: {}
-        language: deno
         lock: ''
+        language: deno
       input_transforms: {}
     - id: ap
       value:
@@ -19,15 +19,12 @@ value:
           x:
             type: static
             value: ''
-        language: deno
         lock: ''
+        language: deno
       input_transforms: {}
     - id: aq
       value:
         type: forloopflow
-        iterator:
-          type: javascript
-          expr: '[]'
         modules:
           - id: ar
             value:
@@ -57,6 +54,9 @@ value:
             stop_after_if:
               expr: stepresult == undefined
               skip_if_stopped: false
+        iterator:
+          type: javascript
+          expr: '[]'
         parallel: false
         skip_failures: true
       input_transforms: {}
@@ -101,31 +101,31 @@ value:
                   type: branchone
                   branches:
                     - summary: ''
-                      expr: 'true'
                       modules:
                         - id: ba
                           value:
                             type: identity
                           input_transforms: {}
+                      expr: 'true'
                     - summary: ''
-                      expr: 'true  '
                       modules:
                         - id: bb
                           value:
                             type: identity
                           input_transforms: {}
+                      expr: 'true  '
                   default:
                     - id: bc
                       value:
                         type: forloopflow
-                        iterator:
-                          type: javascript
-                          expr: previous_result
                         modules:
                           - id: bd
                             value:
                               type: identity
                             input_transforms: {}
+                        iterator:
+                          type: javascript
+                          expr: previous_result
                         parallel: false
                         skip_failures: true
                       input_transforms: {}
