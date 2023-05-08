@@ -1,0 +1,36 @@
+summary: ''
+description: ''
+lock: []
+is_template: false
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    a:
+      type: number
+      description: ''
+      default: null
+    b:
+      type: string
+      description: ''
+      default: null
+      enum:
+        - my
+        - enum
+    c:
+      type: object
+      description: ''
+      default:
+        nested: object
+      properties:
+        nested:
+          type: string
+          description: ''
+    d:
+      type: string
+      description: ''
+      default: inferred type string from default arg
+  required:
+    - a
+    - b

@@ -4820,8 +4820,8 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/henri
-  on_behalf_of_email: henri@windmill.dev
+  on_behalf_of: u/ruben
+  on_behalf_of_email: ruben@rubenfiszel.com
   triggerables:
     rawscript/0fc9afb3c876f0393da742d9e43c29bbd011397034da32caa19cdb7f4e069b4c:
       auth: '$res:f/examples/demo_supabase'
