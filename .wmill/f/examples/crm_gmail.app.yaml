@@ -38,13 +38,11 @@ value:
       id: a
       data:
         id: a
-        actionButtons: []
         type: tablecomponent
+        actionButtons: []
         card: true
         componentInput:
           type: runnable
-          fields: {}
-          fieldType: array
           value:
             - id: 1
               company: Blanda-O'Keefe
@@ -286,6 +284,8 @@ value:
               lastName: Stracke
               phone: +48 143 590 6847
               stage: Customer
+          fields: {}
+          fieldType: array
           runnable:
             type: runnableByName
             name: Get Customers
@@ -317,8 +317,8 @@ value:
         configuration:
           search:
             type: static
-            fieldType: select
             value: Disabled
+            fieldType: select
             onlyStatic: true
             optionValuesKey: tableSearchOptions
     - '12':
@@ -361,18 +361,18 @@ value:
         card: false
         componentInput:
           type: template
+          value: 'Hello ${ctx.username}'
           eval: Customers
           fieldType: template
-          value: 'Hello ${ctx.username}'
         configuration:
           extraStyle:
             type: static
-            fieldType: text
             value: 'padding-left: 10px;'
+            fieldType: text
           style:
             type: static
-            fieldType: select
             value: Title
+            fieldType: select
             onlyStatic: true
             optionValuesKey: textStyleOptions
         horizontalAlignment: left
@@ -418,6 +418,7 @@ value:
         card: false
         componentInput:
           type: template
+          value: 'Hello ${ctx.username}'
           connection:
             componentId: a
             path: selectedRow.firstName
@@ -425,16 +426,15 @@ value:
             ${a.selectedRow ? `${a.selectedRow.firstName}
             ${a.selectedRow.lastName}` : 'Select a row from the table'}
           fieldType: template
-          value: 'Hello ${ctx.username}'
         configuration:
           extraStyle:
             type: static
-            fieldType: text
             value: ''
+            fieldType: text
           style:
             type: static
-            fieldType: select
             value: Subtitle
+            fieldType: select
             onlyStatic: true
             optionValuesKey: textStyleOptions
         horizontalAlignment: left
@@ -480,18 +480,18 @@ value:
         card: false
         componentInput:
           type: template
+          value: 'Hello ${ctx.username}'
           eval: Email
           fieldType: template
-          value: 'Hello ${ctx.username}'
         configuration:
           extraStyle:
             type: static
-            fieldType: text
             value: ''
+            fieldType: text
           style:
             type: static
-            fieldType: select
             value: Label
+            fieldType: select
             onlyStatic: true
             optionValuesKey: textStyleOptions
         horizontalAlignment: left
@@ -537,18 +537,18 @@ value:
         card: false
         componentInput:
           type: template
+          value: 'Hello ${ctx.username}'
           eval: Phone
           fieldType: template
-          value: 'Hello ${ctx.username}'
         configuration:
           extraStyle:
             type: static
-            fieldType: text
             value: ''
+            fieldType: text
           style:
             type: static
-            fieldType: select
             value: Label
+            fieldType: select
             onlyStatic: true
             optionValuesKey: textStyleOptions
         horizontalAlignment: left
@@ -594,20 +594,20 @@ value:
         card: false
         componentInput:
           type: template
+          value: 'Hello ${ctx.username}'
           eval: >-
             Send Email${a?.selectedRow?.firstName ? ` to
             ${a.selectedRow.firstName}` : ''}
           fieldType: template
-          value: 'Hello ${ctx.username}'
         configuration:
           extraStyle:
             type: static
-            fieldType: text
             value: ''
+            fieldType: text
           style:
             type: static
-            fieldType: select
             value: Subtitle
+            fieldType: select
             onlyStatic: true
             optionValuesKey: textStyleOptions
         horizontalAlignment: left
@@ -656,28 +656,28 @@ value:
           fields:
             gmail_auth:
               type: static
+              value: '$res:u/adam/my_gmail'
               fieldType: object
               format: resource-gmail
-              value: '$res:u/adam/my_gmail'
             message:
               type: user
-              fieldType: string
               value: null
+              fieldType: string
             subject:
               type: user
-              fieldType: string
               value: null
+              fieldType: string
             to_email:
               type: connected
+              value: null
               connection:
                 componentId: f
                 path: result
               fieldType: string
-              value: null
             user_id:
               type: static
-              fieldType: string
               value: me
+              fieldType: string
           fieldType: any
           runnable:
             type: runnableByPath
@@ -689,25 +689,25 @@ value:
               properties:
                 gmail_auth:
                   type: object
+                  description: ''
                   default: null
                   format: resource-gmail
-                  description: ''
                 message:
                   type: string
-                  default: null
                   description: ''
+                  default: null
                 subject:
                   type: string
-                  default: null
                   description: ''
+                  default: null
                 to_email:
                   type: string
-                  default: null
                   description: ''
+                  default: null
                 user_id:
                   type: string
-                  default: me
                   description: ''
+                  default: me
               required:
                 - gmail_auth
                 - to_email
@@ -716,18 +716,18 @@ value:
         configuration:
           color:
             type: static
-            fieldType: select
             value: dark
+            fieldType: select
             onlyStatic: true
             optionValuesKey: buttonColorOptions
           label:
             type: static
-            fieldType: text
             value: Submit
+            fieldType: text
           size:
             type: static
-            fieldType: select
             value: xs
+            fieldType: select
             onlyStatic: true
             optionValuesKey: buttonSizeOptions
         horizontalAlignment: center
@@ -771,12 +771,12 @@ value:
         card: false
         componentInput:
           type: template
+          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
           eval: |-
             <a href="mailto:${a?.selectedRow?.email}">
             ${a?.selectedRow?.email || 'Select a row'}
             </a>
           fieldType: template
-          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
         configuration: {}
         softWrap: false
     - '12':
@@ -819,12 +819,12 @@ value:
         card: false
         componentInput:
           type: template
+          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
           eval: |-
             <a href="tel:${a?.selectedRow?.phone}">
             ${a?.selectedRow?.phone || 'Select a row'}
             </a>
           fieldType: template
-          value: "<img\n\tsrc=\"https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1024&amp;h=1280&amp;q=80\"\n>\n<div class=\"absolute top-4 left-2  text-white\">\n\tHello ${ctx.username}\n</div>\t\t\t\n"
         configuration: {}
         softWrap: false
     - '12':
@@ -867,16 +867,6 @@ value:
         card: true
         componentInput:
           type: runnable
-          fields:
-            tableData:
-              type: connected
-              connection:
-                componentId: a
-                path: result
-              fieldType: array
-              format: ''
-              value: null
-          fieldType: object
           value:
             data:
               - 13
@@ -884,6 +874,16 @@ value:
             labels:
               - Lead
               - Customer
+          fields:
+            tableData:
+              type: connected
+              value: null
+              connection:
+                componentId: a
+                path: result
+              fieldType: array
+              format: ''
+          fieldType: object
           runnable:
             type: runnableByName
             name: Pie Chart Data
@@ -915,9 +915,9 @@ value:
                 properties:
                   tableData:
                     type: array
+                    description: ''
                     default: null
                     format: ''
-                    description: ''
                     items:
                       type: string
                 required:
@@ -925,21 +925,21 @@ value:
         configuration:
           doughnutStyle:
             type: static
-            fieldType: boolean
             value: false
+            fieldType: boolean
             onlyStatic: true
           theme:
             type: static
-            fieldType: select
             value: theme1
+            fieldType: select
             onlyStatic: true
             optionValuesKey: chartThemeOptions
   hiddenInlineScripts: []
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/henri
-  on_behalf_of_email: henri@windmill.dev
+  on_behalf_of: u/github
+  on_behalf_of_email: github-sync@windmill.dev
   triggerables:
     rawscript/321967753ee3f94ed95de9e3ac8271202d1745a2bf6d77eceba4494736bc755d: {}
     rawscript/edd6db23cc9f6675c95c9b4a91dc91b2ed3e42c7bf7d268089fb7054a62f779e: {}

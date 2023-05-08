@@ -1,4 +1,4 @@
-summary: Example of same_worker using the './shared' folder
+summary: Same worker example of using the './shared' folder
 description: ''
 value:
   modules:
