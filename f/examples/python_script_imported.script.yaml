@@ -1,5 +1,6 @@
 summary: A common file containing logic to be imported by another script (NOT RUNNABLE)
 description: ''
+lock: []
 is_template: false
 kind: script
 schema:
@@ -7,4 +8,3 @@ schema:
   type: object
   properties: {}
   required: []
-lock: []

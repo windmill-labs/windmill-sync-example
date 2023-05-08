@@ -1,5 +1,6 @@
 summary: Sleep and logs streaming showcase
 description: ''
+lock: []
 is_template: false
 kind: script
 schema:
@@ -7,4 +8,3 @@ schema:
   type: object
   properties: {}
   required: []
-lock: []

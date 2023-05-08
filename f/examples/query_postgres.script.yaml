@@ -1,5 +1,6 @@
 summary: Execute an arbitrary SQL query on a Postgres resource
 description: 'An example of how to use resources from scripts. '
+lock: []
 is_template: false
 kind: script
 schema:
@@ -8,13 +9,12 @@ schema:
   properties:
     db:
       type: object
+      description: ''
       default: '$res:f/examples/demodb'
       format: resource-postgresql
-      description: ''
     query:
       type: string
+      description: ''
       default: SELECT * FROM demo
       format: sql
-      description: ''
   required: []
-lock: []

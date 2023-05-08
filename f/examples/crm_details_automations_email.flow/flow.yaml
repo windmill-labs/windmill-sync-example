@@ -1,0 +1,468 @@
+summary: Automatically Populate CRM Contact Details from Simple Email
+description: >-
+  Populate your CRM contacts' details from only emails. Note: this Workflow
+  works with a table that has specific columns names, customize them to your
+  needs.
+
+  Tutorial: https://www.windmill.dev/blog/automatically-populate-crm
+value:
+  modules:
+    - id: a
+      summary: Parses email
+      value:
+        type: rawscript
+        content: '!inline parses_email.inline_script.ts'
+        input_transforms:
+          email:
+            type: javascript
+            expr: flow_input.email
+        lock: ''
+        language: deno
+    - id: c
+      summary: Scrape Web
+      value:
+        type: rawscript
+        content: '!inline scrape_web.inline_script.py'
+        input_transforms:
+          name:
+            type: javascript
+            expr: results.a.name
+          domain:
+            type: javascript
+            expr: results.a.domain
+          name_space:
+            type: javascript
+            expr: results.a.name_space
+        lock: |-
+          beautifulsoup4==4.12.2
+          bs4==0.0.1
+          certifi==2022.12.7
+          charset-normalizer==3.1.0
+          html5lib==1.1
+          idna==3.4
+          lxml==4.9.2
+          requests==2.30.0
+          six==1.16.0
+          soupsieve==2.4.1
+          urllib3==2.0.2
+          webencodings==0.5.1
+        language: python3
+    - id: ak
+      summary: Removes empty and duplicates
+      value:
+        type: rawscript
+        content: '!inline removes_empty_and_duplicates.inline_script.ts'
+        input_transforms:
+          r1:
+            type: javascript
+            expr: 'results.c[0][0]'
+          r2:
+            type: javascript
+            expr: 'results.c[0][1]'
+          r3:
+            type: javascript
+            expr: 'results.c[1][0]'
+          r4:
+            type: javascript
+            expr: 'results.c[1][1]'
+        lock: ''
+        language: deno
+    - id: al
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: ''
+            modules:
+              - id: ac
+                value:
+                  type: forloopflow
+                  modules:
+                    - id: ae
+                      summary: Open AI to tell if relevant result
+                      value:
+                        type: script
+                        input_transforms:
+                          auth:
+                            type: javascript
+                            expr: 'flow_input["Open AI"]'
+                          best_of:
+                            type: static
+                            value: null
+                          echo:
+                            type: static
+                            value: false
+                          frequency_penalty:
+                            type: static
+                            value: null
+                          logit_bias:
+                            type: static
+                            value: null
+                          logprobs:
+                            type: static
+                            value: null
+                          max_tokens:
+                            type: static
+                            value: 300
+                          model:
+                            type: static
+                            value: text-davinci-003
+                          n:
+                            type: static
+                            value: 1
+                          presence_penalty:
+                            type: static
+                            value: null
+                          prompt:
+                            type: javascript
+                            expr: >-
+                              "Here is a tagline of a business profile: " +
+                              flow_input.iter.value + ". If it somehow matches
+                              the email " + flow_input.email + ", just say
+                              'Match', otherwise say 'Doesn't match'."
+                          stop:
+                            type: static
+                            value: ''
+                          stream:
+                            type: static
+                            value: false
+                          suffix:
+                            type: static
+                            value: ''
+                          temperature:
+                            type: static
+                            value: 0
+                          top_p:
+                            type: static
+                            value: null
+                        path: hub/687/openai/create_completion
+                    - id: af
+                      summary: ''
+                      value:
+                        type: branchone
+                        branches:
+                          - summary: Match
+                            modules:
+                              - id: ad
+                                summary: Kill Professional Websites mentions
+                                value:
+                                  type: rawscript
+                                  content: >-
+                                    !inline
+                                    kill_professional_websites_mentions.inline_script.ts
+                                  input_transforms:
+                                    search_result:
+                                      type: javascript
+                                      expr: flow_input.iter.value
+                                  language: deno
+                              - id: ag
+                                summary: Return matching result
+                                value:
+                                  type: rawscript
+                                  content: >-
+                                    !inline
+                                    return_matching_result.inline_script.ts
+                                  input_transforms:
+                                    x:
+                                      type: javascript
+                                      expr: results.ad
+                                  language: deno
+                            expr: 'results.ae.choices[0].text.trim() === ''Match'''
+                        default:
+                          - id: ah
+                            summary: Does not match -> gives empty value
+                            value:
+                              type: rawscript
+                              content: >-
+                                !inline
+                                does_not_match_->_gives_empty_value.inline_script.ts
+                              input_transforms:
+                                x:
+                                  type: static
+                                  value: ''
+                              language: deno
+                  iterator:
+                    type: javascript
+                    expr: results.ak
+                  parallel: false
+                  skip_failures: true
+              - id: aj
+                summary: ''
+                value:
+                  type: branchone
+                  branches:
+                    - summary: ''
+                      modules:
+                        - id: aa
+                          summary: Open AI to make sense of web info
+                          value:
+                            type: script
+                            input_transforms:
+                              auth:
+                                type: javascript
+                                expr: 'flow_input["Open AI"]'
+                              best_of:
+                                type: static
+                                value: null
+                              echo:
+                                type: static
+                                value: false
+                              frequency_penalty:
+                                type: static
+                                value: null
+                              logit_bias:
+                                type: static
+                                value: null
+                              logprobs:
+                                type: static
+                                value: null
+                              max_tokens:
+                                type: static
+                                value: 350
+                              model:
+                                type: static
+                                value: text-davinci-003
+                              n:
+                                type: static
+                                value: 1
+                              presence_penalty:
+                                type: static
+                                value: null
+                              prompt:
+                                type: javascript
+                                expr: >-
+                                  "Give with the exact format 'Number. Category:
+                                  Result + jump line' the 1. First Name, 2. Last
+                                  Name, 3. Profession, 4. Company and 5. What
+                                  the Company Does of: email = " +
+                                  flow_input.email + ". Some infos: " +
+                                  results.ac[0] + ". " + results.ac[1] + ". " +
+                                  results.ac[2] + ". " + results.ac[3] + ". Say
+                                  'n/a' if not sure. Do not make up names but
+                                  you can guess where to split first name and
+                                  last name from email (but do not add just a
+                                  letter as a name). You can take more risk for
+                                  What the Company Does"
+                              stop:
+                                type: static
+                                value: ''
+                              stream:
+                                type: static
+                                value: false
+                              suffix:
+                                type: static
+                                value: ''
+                              temperature:
+                                type: static
+                                value: 0
+                              top_p:
+                                type: static
+                                value: null
+                            path: hub/687/openai/create_completion
+                        - id: y
+                          summary: Parser
+                          value:
+                            type: rawscript
+                            content: '!inline parser.inline_script.ts'
+                            input_transforms:
+                              completion:
+                                type: javascript
+                                expr: 'results.aa.choices[0].text'
+                            language: deno
+                        - id: v
+                          summary: Create Single Record (Airtable)
+                          value:
+                            type: rawscript
+                            content: >-
+                              !inline
+                              create_single_record_(airtable).inline_script.ts
+                            input_transforms:
+                              at_con:
+                                type: javascript
+                                expr: 'flow_input["Airtable Account"]'
+                              at_table:
+                                type: javascript
+                                expr: 'flow_input["Airtable Table"]'
+                              automatic:
+                                type: static
+                                value: true
+                              company:
+                                type: javascript
+                                expr: results.y.company
+                              email:
+                                type: javascript
+                                expr: flow_input.email
+                              first_name:
+                                type: javascript
+                                expr: results.y.first_name
+                              last_name:
+                                type: javascript
+                                expr: results.y.last_name
+                              role:
+                                type: javascript
+                                expr: results.y.profession
+                              what_company_does:
+                                type: javascript
+                                expr: results.y.what_company_does
+                            language: deno
+                            path: hub/714/airtable/create_single_record
+                      expr: >-
+                        [results.ac[0],results.ac[1],results.ac[2]].some((x)=>x!="")
+                  default:
+                    - id: z
+                      summary: Create Single Record (Airtable)
+                      value:
+                        type: rawscript
+                        content: >-
+                          !inline
+                          create_single_record_(airtable).inline_script.ts
+                        input_transforms:
+                          at_con:
+                            type: javascript
+                            expr: 'flow_input["Airtable Account"]'
+                          at_table:
+                            type: javascript
+                            expr: 'flow_input["Airtable Table"]'
+                          automatic:
+                            type: static
+                            value: true
+                          company:
+                            type: static
+                            value: n/a
+                          email:
+                            type: javascript
+                            expr: flow_input.email
+                          first_name:
+                            type: static
+                            value: n/a
+                          last_name:
+                            type: static
+                            value: n/a
+                          role:
+                            type: static
+                            value: n/a
+                          what_company_does:
+                            type: static
+                            value: n/a
+                        language: deno
+            expr: results.c.some((x)=>x!="")
+        default:
+          - id: an
+            summary: Create Single Record (Airtable)
+            value:
+              type: rawscript
+              content: '!inline create_single_record_(airtable).inline_script.ts'
+              input_transforms:
+                at_con:
+                  type: javascript
+                  expr: 'flow_input["Airtable Account"]'
+                at_table:
+                  type: javascript
+                  expr: 'flow_input["Airtable Table"]'
+                automatic:
+                  type: static
+                  value: true
+                company:
+                  type: static
+                  value: n/a
+                email:
+                  type: javascript
+                  expr: flow_input.email
+                first_name:
+                  type: static
+                  value: n/a
+                last_name:
+                  type: static
+                  value: n/a
+                role:
+                  type: static
+                  value: n/a
+                what_company_does:
+                  type: static
+                  value: n/a
+              language: deno
+  failure_module:
+    id: failure
+    value:
+      type: rawscript
+      content: >-
+        import * as wmill from "https://deno.land/x/windmill@v1.70.1/mod.ts";
+
+        import { Airtable } from "https://deno.land/x/airtable/mod.ts";
+
+
+        export async function main(at_con: wmill.Resource<"airtable">, at_table:
+        wmill.Resource<"airtable_table">, first_name: string = "n/a", last_name:
+        string = "n/a", email: string, company: string = "n/a", role: string =
+        "n/a", what_company_does: string = "n/a", automatic: boolean = true) {
+
+            const airtable = new Airtable({...at_con, ...at_table});
+            
+            const new_record = {
+                "First name": first_name,
+                "Last name": last_name,
+                "Email": email,
+                "Company": company,
+                "Role": role,
+                "What company does": what_company_does,
+                "Generated automatically": automatic
+            };
+
+            const createOne = await airtable.create(new_record);
+
+            return { message: "Created record in table"}
+        }
+      input_transforms:
+        at_con:
+          type: javascript
+          expr: 'flow_input["Airtable Account"]'
+        at_table:
+          type: javascript
+          expr: 'flow_input["Airtable Table"]'
+        automatic:
+          type: static
+          value: true
+        company:
+          type: static
+          value: n/a
+        email:
+          type: javascript
+          expr: flow_input.email
+        first_name:
+          type: static
+          value: n/a
+        last_name:
+          type: static
+          value: n/a
+        role:
+          type: static
+          value: n/a
+        what_company_does:
+          type: static
+          value: n/a
+      language: deno
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    Airtable Account:
+      type: object
+      description: ''
+      default: ''
+      format: resource-airtable
+    Airtable Table:
+      type: object
+      description: ''
+      default: ''
+      format: resource-airtable_table
+    email:
+      type: string
+      description: ''
+      default: ''
+      format: ''
+    Open AI:
+      type: object
+      description: ''
+      default: ''
+      format: resource-openai
+  required: []

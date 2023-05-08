@@ -1,5 +1,10 @@
 summary: Execute a query on Postgres in Python
 description: ''
+lock:
+  - 'psycopg[binary,pool]==3.1.8'
+  - psycopg-binary==3.1.8
+  - psycopg-pool==3.1.6
+  - typing-extensions==4.5.0
 is_template: false
 kind: script
 schema:
@@ -8,18 +13,13 @@ schema:
   properties:
     pg_con:
       type: object
+      description: ''
       default: '$res:f/examples/demodb'
       format: resource-postgresql
-      description: ''
       properties: {}
     query:
       type: string
+      description: ''
       default: SELECT * FROM demo
       format: ''
-      description: ''
   required: []
-lock:
-  - 'psycopg[binary,pool]==3.1.8'
-  - psycopg-binary==3.1.8
-  - psycopg-pool==3.1.6
-  - typing-extensions==4.5.0

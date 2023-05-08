@@ -1,5 +1,7 @@
 summary: Use polars for blazingly fast data processing
 description: ''
+lock:
+  - polars==0.16.5
 is_template: false
 kind: script
 schema:
@@ -7,5 +9,3 @@ schema:
   type: object
   properties: {}
   required: []
-lock:
-  - polars==0.16.5

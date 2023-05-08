@@ -4,7 +4,7 @@ description: >-
   settings and whom parameters fit exactly the one passed by the Slack command
   trigger
 lock:
-  - slack-sdk==3.19.5
+  - slack-sdk==3.20.2
 is_template: true
 kind: script
 schema:

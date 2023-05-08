@@ -1,5 +1,6 @@
 summary: Hello World in Python
 description: The simplest hello world script
+lock: []
 is_template: false
 kind: script
 schema:
@@ -8,8 +9,7 @@ schema:
   properties:
     name:
       type: string
+      description: ''
       default: Nicolas Bourbaki
       format: ''
-      description: ''
   required: []
-lock: []

@@ -1,5 +1,6 @@
 summary: Hello World in Deno
 description: ''
+lock: []
 is_template: false
 kind: script
 schema:
@@ -8,16 +9,15 @@ schema:
   properties:
     str:
       type: string
+      description: ''
       default: default arg
       format: ''
-      description: ''
     union:
       type: string
+      description: ''
       default: null
       enum:
         - Hello World
         - Welcome
-      description: ''
   required:
     - union
-lock: []

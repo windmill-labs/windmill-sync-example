@@ -2,6 +2,8 @@ summary: Send image to Slack
 description: >-
   Send a base64 image to a slack channel or user. Choose one of user or channel
   but not both.
+lock:
+  - slack-sdk==3.19.5
 is_template: false
 kind: script
 schema:
@@ -10,28 +12,26 @@ schema:
   properties:
     channel:
       type: string
+      description: ''
       default: null
       format: ''
-      description: ''
     img_data:
       type: string
+      description: ''
       contentEncoding: base64
       default: null
       format: ''
-      description: ''
     slack_resource:
       type: object
+      description: ''
       default: null
       format: resource-slack
-      description: ''
       properties: {}
     user:
       type: string
+      description: ''
       default: null
       format: ''
-      description: ''
   required:
     - slack_resource
     - img_data
-lock:
-  - slack-sdk==3.19.5
