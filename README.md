@@ -37,7 +37,7 @@ manually to see that everything works.
 
 ### Security
 
-We recommend creating and using a separate account in Windmill from which to use the token of. This will allow better tracking of the use of the token.
+We recommend using the token from a dedicated account in Windmill. This will allow better tracking of the use of the token, and keep it from being reliant on accounts held by individuals.
 
 It may additionally be useful to restrict the GitHub environment.
 [The GitHub help article](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
