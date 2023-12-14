@@ -2,18 +2,6 @@ summary: Build Seaborn charts and return a rendered image
 description: >-
   This script showcase that image can be rendered from their base64 encoding
   when their dict key is "png"
-is_template: false
-kind: script
-schema:
-  $schema: 'https://json-schema.org/draft/2020-12/schema'
-  type: object
-  properties:
-    seed:
-      type: integer
-      default: 1234
-      format: ''
-      description: ''
-  required: []
 lock:
   - contourpy==1.0.7
   - cycler==0.11.0
@@ -29,3 +17,16 @@ lock:
   - pytz==2022.7.1
   - seaborn==0.12.2
   - six==1.16.0
+is_template: false
+kind: script
+restart_unless_cancelled: false
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    seed:
+      type: integer
+      description: ''
+      default: 1234
+      format: ''
+  required: []

@@ -466,3 +466,4 @@ schema:
       default: ''
       format: resource-openai
   required: []
+ws_error_handler_muted: false
