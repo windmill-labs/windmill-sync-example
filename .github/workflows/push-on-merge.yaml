@@ -1,11 +1,12 @@
-name: "Push main to windmill workspace"
+name: "Push main to @indmill workspace"
 on:
   workflow_dispatch:
   push:
     branches:
       - "main"
-  # schedule:
-  #  - cron:  '0 * * * *'
+    # if the windmill workspace is persisted in a subfolder of this repos, you can add the following to avoid pushing to windmill when there's no change
+    # paths:
+    #   - wm/**
 
 env:
   WMILL_URL: https://app.windmill.dev/

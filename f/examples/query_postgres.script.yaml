@@ -3,6 +3,7 @@ description: 'An example of how to use resources from scripts. '
 lock: []
 is_template: false
 kind: script
+restart_unless_cancelled: false
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

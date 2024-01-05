@@ -1,6 +1,0 @@
-extra_perms:
-  g/all: false
-  u/admin: true
-display_name: examples
-owners:
-  - u/admin
