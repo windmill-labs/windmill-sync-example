@@ -19,7 +19,7 @@ First the Github repo needs to be setup and Windmill needs to be able to commit 
 1. Create a Github repository
 1. Generate a [Github token with write permission](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) to this repository. This is necessary for Windmill to push commits to the repo everytime a change is made to the staging workspase. (keep the token value somewhere, we will need it in the following setup steps)
 1. In the repository settings > Actions > General, tick the [Allow GitHub Actions to create and approve pull requests](https://docs.github.com/en/enterprise-server@3.10/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests). This is necessary for the Github action automatically creating PRs when Windmill commits a change
-1. From Windmill, create a token under User settings > Token and (save it as a secret)[https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository] named `WMILL_TOKEN` in the repo settings > "Secret and Variable" > "Actions". This is necessary for Windmill to push to the production workspace
+1. From Windmill, create a token under User settings > Token and [save it as a secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) named `WMILL_TOKEN` in the repo settings > "Secret and Variable" > "Actions". This is necessary for Windmill to push to the production workspace
 ![](./img/token_creation.png)
 
 #### Windmill setup
