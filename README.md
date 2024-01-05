@@ -1,48 +1,36 @@
 # Windmill Sync Example
 
-Example repo that demonstrate how to use a github repo as source of truth for part or all of your Windmill workspace.
+Example repo that demonstrate how to leverage Github to orchestrate your development cycles with Windmill.
 
-Users of this repo can commit changes to the main branches and have it deployed to their Windmill workspace thanks to a github action that will simply uses the [windmill cli's](https://github.com/windmill-labs/windmill/tree/main/cli) `wmill sync push` under the hood.
+## How it works
 
-This repo is used for syncing with the example folder on the demo workspace
+This repo illustrates the following process:
+- Users iterates and make their changes in a "staging" Windmill workspace, called `github-sync-example-staging` for this tutorial
+- Everytime a Windmill App, Flow or Script is deployed to that workspace (via Windmill's UI), Windmill automatically commits it to this repo and creates one branch per app/flow/script.
+- On every commit, PRs are automatically created via a Github action. Approved Github users can review and merge those PRs.
+- Everytime a PR is merged, another Github action automatically deploys the change to a "production" Windmill workspace, called `github-sync-example-prod` for this tutorial
 
 ## Setup
 
-Write access to the workspace is required. This is done using an access token.
-To generate a new token log into your windmill instance
-(https://app.windmill.dev/ for cloud hosted instances) and navigate to the
-account settings, which contains a "Tokens" section, use the relevant button
-there to generate a new token. Note that you will only be able to copy this
-token once!
+#### Github repository setup
 
-![](./img/account-settings.png) ![](./img/tokens.png)
+First the Github repo needs to be setup and Windmill needs to be able to commit to it. 
 
-Add an environment "windmill" to the repository via the settings. You may name
-this anything, but will need to adjust the workflow accordingly. Then add a
-secret "WMILL_TOKEN" to this environment.
+1. Create a Github repository
+1. Generate a Github token with write permission to this repository. This is necessary for Windmill to push commits to the repo everytime a change is made to the staging workspase. (keep the token value somewhere, we will need it in the following setup steps)
+1. In the repository settings > Actions > General, tick the "Allow GitHub Actions to create and approve pull requests". This is necessary for the Github action automatically creating PRs when Windmill commits a change
+1. Create a Windmill token and save it as a secret named `WMILL_TOKEN` in the repo settings > "Secret and Variable" > "Actions". This is necessary for Windmill to push to the production workspace
 
-![](./img/gh-environment.png#gh-dark-mode-only)
-![](./img/gh-environment-light.png#gh-light-mode-only)
+#### Windmill setup
 
-Edit the workflows:
-- [.github/workflows/push-on-merge.yaml](./.github/workflows/push-on-merge.yaml) to push on merge to main, usually you'll
-only need to fill out the `env` variables, then activate GitHub actions by
-navigating to the "Actions" tab in GitHub. You may want to run the action once
-manually to see that everything works.
+1. In Windmill, create a `git_repository` resource pointing to the Github repository and containing the token generated previously. You URL should be `https://[USERNAME]:[TOKEN]@github.com/[ORG|USER]/[REPO_NAME].git`.
+1. In Windmill workspace settings > Git sync tab, pick the `git_repository` resource and toggle ON "Create one branch per per deployed script/flow/app"
 
-- [.github/workflows/pull-workspace.yaml](./.github/workflows/pull-workspace.yaml) to sync back any changes made in Windmill UI to this repo under the form of either a Pull Request or a commit to main directly.
+TODO: Add screenshot
 
-![](./img/configure.png#gh-dark-mode-only)
-![](./img/configure-light.png#gh-light-mode-only)
+#### Github actions setup
 
-### Security
+Two actions are needed.
 
-We recommend using the token from a dedicated account in Windmill. This will allow better tracking of the use of the token, and keep it from being reliant on accounts held by individuals.
-
-It may additionally be useful to restrict the GitHub environment.
-[The GitHub help article](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
-goes into detail of all the options.
-
-## .wmillignore
-
-Use the .wmillignore file to filter the contents to sync (like only the content of some folders), it supports the .gitignore syntax.
+1. The first one to automatically create a PR when Windmill commits a change after a user deployed a script/flow/app in the staging workspace. It is [open-pr-on-commit.yaml](./.github/workflows/open-pr-on-commit.yaml). All branches created by Windmill will have a `wm_deploy/` prefix, which is handy to triger this action only when a branch mathcing this pattern is created.
+1. The second one to automatically push the content of the repo to the Windmill production workspace when a PR is merged. It is [push-on-merge.yaml](./.github/workflows/push-on-merge.yaml). This action uses the [Github CLI](https://cli.github.com/) which is available by default on Github action workers.

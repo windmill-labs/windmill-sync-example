@@ -91,3 +91,4 @@ schema:
   required:
     - mentions
     - channel
+ws_error_handler_muted: false

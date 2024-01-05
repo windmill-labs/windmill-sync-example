@@ -36,3 +36,4 @@ schema:
       format: ''
   required:
     - path
+ws_error_handler_muted: false

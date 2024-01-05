@@ -135,3 +135,4 @@ schema:
     - gmail
     - db
     - slack
+ws_error_handler_muted: false

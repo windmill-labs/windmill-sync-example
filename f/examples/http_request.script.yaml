@@ -8,6 +8,7 @@ lock:
   - urllib3==1.26.15
 is_template: true
 kind: script
+restart_unless_cancelled: false
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
