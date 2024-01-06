@@ -22,7 +22,7 @@ schema:
       description: ''
       default: null
       enum:
-        - Hello World!
+        - Hello World
         - Welcome
   required:
     - union
