@@ -1,4 +1,4 @@
-name: "Push main to @indmill workspace"
+name: "Push main to Windmill workspace"
 on:
   workflow_dispatch:
   push:
