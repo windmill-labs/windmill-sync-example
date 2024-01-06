@@ -1,6 +1,10 @@
 summary: Hello World in Deno
 description: ''
-lock: []
+lock:
+  - '{'
+  - '  "version": "3",'
+  - '  "remote": {}'
+  - '}'
 is_template: false
 kind: script
 restart_unless_cancelled: false
@@ -18,7 +22,7 @@ schema:
       description: ''
       default: null
       enum:
-        - Hello World
+        - Hello World!
         - Welcome
   required:
     - union
