@@ -11,7 +11,11 @@ value:
           path:
             type: javascript
             expr: '`${flow_input.path}`'
-        lock: ''
+        lock: |
+          {
+            "version": "3",
+            "remote": {}
+          }
         language: deno
     - id: b
       summary: read from file
@@ -22,7 +26,11 @@ value:
           path:
             type: javascript
             expr: '`${flow_input.path}`'
-        lock: ''
+        lock: |
+          {
+            "version": "3",
+            "remote": {}
+          }
         language: deno
   same_worker: true
 schema:

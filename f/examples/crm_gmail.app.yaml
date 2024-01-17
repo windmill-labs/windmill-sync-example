@@ -938,8 +938,8 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/ruben
-  on_behalf_of_email: ruben@rubenfiszel.com
+  on_behalf_of: u/admin
+  on_behalf_of_email: admin@windmill.dev
   triggerables:
     rawscript/321967753ee3f94ed95de9e3ac8271202d1745a2bf6d77eceba4494736bc755d: {}
     rawscript/edd6db23cc9f6675c95c9b4a91dc91b2ed3e42c7bf7d268089fb7054a62f779e: {}

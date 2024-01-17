@@ -3,7 +3,6 @@ description: The simplest hello world script
 lock: []
 is_template: false
 kind: script
-restart_unless_cancelled: false
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

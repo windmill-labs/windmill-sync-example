@@ -7,7 +7,6 @@ lock:
   - slack-sdk==3.20.2
 is_template: true
 kind: script
-restart_unless_cancelled: false
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object

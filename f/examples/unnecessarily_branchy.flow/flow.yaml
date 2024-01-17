@@ -8,9 +8,139 @@ value:
         type: rawscript
         content: '!inline inline_script_0.inline_script.ts'
         input_transforms: {}
-        lock: ''
+        lock: |
+          {
+            "version": "3",
+            "redirects": {
+              "https://deno.land/x/sleep/mod.ts": "https://deno.land/x/sleep@v1.2.1/mod.ts"
+            },
+            "remote": {
+              "https://deno.land/x/sleep@v1.2.1/mod.ts": "f2d3c9e1ef1fb2852f580f6960384bed36bc18a2da357c35f11a089fcca44273",
+              "https://deno.land/x/sleep@v1.2.1/sleep.ts": "2426efe5d3ce5de0b8af08bd36a8700deb5dc60e752f5f8f05d5e815a7e8cb0e",
+              "https://deno.land/x/windmill@v1.27.2/mod.ts": "0ad4665e996ed3442221d166d19ed872da80da61396d67070d5e9619a88c7591",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/AdminApi.ts": "a79bbb98803362e8aedc3b503b4aaf3ae4b9738aa4c563f1f332012d50902ff4",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/AuditApi.ts": "45ab569fce6be4eff5c892f323e94ae03f8e0f7438e4f4d7d34ede5efa831ae7",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/FlowApi.ts": "2064fc03ce91f3925b033ec8d6f1f8a16546ff4164cef02ef5bf8065af7221a5",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/GranularAclApi.ts": "28a98c50576a905459f81d568891b946b8909896d768935c03ea16236f174880",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/GroupApi.ts": "1181595c5b16f8f34ccafd123c0f8ac9f2b5d10b44bac85b99b7638fdd87845d",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/JobApi.ts": "870a7bbe19d78bd46819a48b470166c81848008d6dbcbaaafb47fb55ebb44f2e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/OauthApi.ts": "381ad0175d72d7f9d6db3f3bdefdfae561b63dc7a37e1740c492c6ff9a0ac212",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ResourceApi.ts": "ce07703e10a2696687f5b21799b54a9ec0b6501bcde2319a5b9d0f43fe1f7b51",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ScheduleApi.ts": "97a4708e66f80a650846616929301ec363018c2678f4423b371de2f4f87b7610",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ScriptApi.ts": "491d39ad899fd7af33852276d6e9fe518d573bde149c38d8a9ffcb3dee49758d",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/SettingsApi.ts": "6b7d2ce4ed85a5e52a9f5726a1bb8b8db1db5de9fd354108f968d7aac2a938fb",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/UserApi.ts": "42b219d54414a4b328725eafc12d5f04a880ec789eab7a0d2e4c23dc4e9e9ddb",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/VariableApi.ts": "50bf2188328b0017a35574d7059e6cc8dda88078d5e5f49cf00dd3a80cd9a1af",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/WorkerApi.ts": "7c6d497424c2639b170576e9d0ceee7cdf7f2e72373e31dc59386e06ce892a5f",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/WorkspaceApi.ts": "6bb598741a6afbf1058635b658f3ce7bca9dd3ef1eaf216736ffc3b56a1cb0c1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/baseapi.ts": "63fc3f4b201a0601ea4e4ffda4bd910d60bfd01f4240238d869edf232860ab4a",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/exception.ts": "cb2f686c25a14f62203264e7e502a06e88a589107413c70f1a479d6c61fde24e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/auth/auth.ts": "f94dde63829ef34171286808f251ee4c5bdb6f0aabe2dfaec613d27d98bab4a0",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/configuration.ts": "de5f55186a95f94fb28fd36122d33a18001bd681b531326ac894453a31c92aad",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/http/http.ts": "e44ca8effa266839386b17cc96f28a857db35c79ea8245311bdc3f2887c345cc",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/http/isomorphic-fetch.ts": "680f74105a78770422703f07717a35e96f393bfd408d94b197eaf1c85ec3ecc5",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/index.ts": "3f145a939bfa5ef512d7d5b42c8cf5a4c6912a6323ba66c35eb7d36e7501708f",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/middleware.ts": "a04008411fc83935492d6cdf2f2b3919eb569d819cc80d8c7607a9305d172411",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/AuditLog.ts": "a13b7e9e034916b8e51d3f24e3a082aab9f017d79f9cb9635e1135c672c80f5e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CompletedJob.ts": "d085a15199217edc8ecb151fb79263728d0d9fc2f6de2c6ed1ac8c7fba3dee44",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ContextualVariable.ts": "bdc59b69f07315c5e9b30400aa597fed8a5b50c64286ccca1e634355f4e0b172",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateResource.ts": "7f7e150759df483cb57c365ee30582f9ad5ba5095521c163b5704b6aab2ef303",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateVariable.ts": "c5e3c31438ca6312bff556189e307bc85bcbda93c3581e5e9b86a63409d1a9a2",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateWorkspace.ts": "2076f62f1f4d798a58f05943200cc51100e3366bf93a20694638452650da98d0",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditResource.ts": "3e377cd693d5bf25afd8b216db0c7073c1881232fdaab7bcf6ef1c2ab5af0f46",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditResourceType.ts": "4b1cdc3b896f6c67115476f5ec1fe516c16444e597525a0e33f1379c4624a631",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditSchedule.ts": "9e53f9d5167882adc5da78de12d1c88f4797e3ace69279023803e16102f49888",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditVariable.ts": "c571944d0190277b26d3cc5b107186dc5e88743c3dfb75a4a6299231a1c19605",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditWorkspaceUser.ts": "286e1f4bb456b4d55e3541099ef0ff250231d57984b167e37cfa3d3b4595003a",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Flow.ts": "63dc6d99c5b2d98eee9963bf3890a54f95e87a75946d4b9500d0b2f324919613",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowMetadata.ts": "8353ddbc38ca6c59cad397d12320dd581026db349f57e7db16065c4468d45c9c",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowModule.ts": "eacc2d627448a49578e1d73ff5a7ec240c089950f6523ddd6b9e320a673fbd48",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowModuleValue.ts": "91a04f48b9e0980098f51f1a65c72dd9c5e2b26d5bbaa2161827d79c64099bd0",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowPreview.ts": "8dbc1eae997f602479b6da88aca23385925435f390e2bb26fab1d3bdd98585fb",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatus.ts": "c0658a91b5bcc2182feafe84de4dc5f2aa8a9faf9ad827c65632ab7f6b5434fd",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatusModule.ts": "8fce4ae8595591a78090a486afae9d395d955d50c16cddc7c954521a70595aaf",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatusModuleIterator.ts": "829e28d2f341f3fd3ada4fb1170f611e37bbe23171d5f1baa7aa8c8191db8e2d",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowValue.ts": "2427fc84b72cebb8e7cf13fefcf6bf40e20b240d4f9b73b6ccbeedbb422af355",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ForloopFlow.ts": "15c3f2e21fb11868bec41e9244cbf1bf71ec680f4d4cda23568adeb2af6f171e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/GlobalUserInfo.ts": "3f8a0055bcc62e3b3b3128983cb95884f358bea5df085f0111189a8a2d5842cc",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Group.ts": "f78228df1505095c2cc805716ddb3149d8fee1710eafb4db5ded68e0825a989e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject.ts": "c3d2445f882213f20998322444c6556fe54045ea1600fd02bfe3c6552ed2cad4",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject1.ts": "b6b7ad54fa3f1423a506a386db78703d1b92d07f574af8574d9cba5135572abd",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject10.ts": "7bf43f815818f9b0ef73fb9b2df8404857a5e55856be1694c3578cb07f1bdd01",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject11.ts": "5e4dfb70c6fb8bd77ebfe07fb401a80840b6d9ab76280d986b08054bb18bada1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject12.ts": "8637b2c14ac78e5e83fc6773f739e83de145d58bd81737e0cc578c7c056c8140",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject13.ts": "8db47ee9016e5c60cab565ee728b720da21645a1816627189f11290dbb27a355",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject14.ts": "9678bad5f8c3d18cc195ba699a433f4db53c64aa6911b2c1520513df2026da29",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject15.ts": "f455f5a970b46381f2e5009b22c193f2aeb7795eb6ef87e7051cfbcd5d0857ee",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject16.ts": "c0da450392f1e13e6b139a262f6ec7b409c94a0111de3996f44b42fe18978e14",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject17.ts": "98790bbb877370b14fc78f5b3887e8a1e03f7c88790265aef35a9cc907c3e7e8",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject18.ts": "a6bf2b3c8ee33f5422faf47dffbf3f6aa231743de1801881ee7272e3f0c577b4",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject19.ts": "8275dd49ff43fc00f5a4c2492fb7a759509efb83459814a1f58d6049254e17c6",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject2.ts": "012312556999103f56fcbb4e37e7bfc93a657008508f86d475860c03e1083550",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject20.ts": "a11636c234755a6c4ae03ca82a895cefa9f1aabed314cfb2166968711536935d",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject21.ts": "c7cadc732a3d130c7415f3f42b8f37dfff4378d616609590126ef44b6da7cbb7",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject22.ts": "d1fcad32b7e996f008d4619475a0aba2ba564954240295e87401abbc38876a1b",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject23.ts": "5be5172115646b5770ff7d72289ca96a7167eb008a613b88c76421ea84d609e3",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject24.ts": "4e5b795146af5845ff5eb5dd389d1f992c6dd5a81f697aaa1154b614390eeaec",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject3.ts": "2247c2178c9fbc72ebcaf4c09762ebc8e53ad60bdb2aac9d6ce171cc11ad2873",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject4.ts": "2d82c05b3c9e500aad0f4f9821087d4886cfaa641572eb28551ebd38800ae9db",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject5.ts": "ff1a5fda7a8dcf20ad59321ebd7dae2b9233ad4314e88e4360ed116f6f59176e",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject6.ts": "bb1b942a00b3eeb7b72b56be8dc1f5ec73c5175c20f8f2288be89c3ac23a3f40",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject7.ts": "be5ad552b9555787d538665c7369c4c616c94eef6deb55fbfcdb356899f714e4",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject8.ts": "3dabf1fec605289a008f44b63ff327dd9125b9cb9f1e3f312dbdaf5050853f14",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject9.ts": "02f0c7c1bdc37fa39a47505f7bc8321da1c32740c27109714838338d4e5896a4",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse200.ts": "61ecd4aef6ba4fc2e96417af0b0ec2a58fa1f3f4183b80cc8e2adfd95932bf77",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2001.ts": "1263327e9471c6f392705669a9e8a7c9d3d2a05c1f58896be653275e5fd4fbe8",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2001Asks.ts": "dfd6a9e46663cd85abfdf52e4dfc1679f105f89dabc6a7539e4626ebc21a53e3",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2002.ts": "def850eb031384194065fe62465a3890d468c66cb660be7096ef5825d0675703",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2002Flows.ts": "41df60baed62fc2385817ca51b3aea8a6504abd5d87fbb3a689202c6b6c25cc8",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2003.ts": "58e833c2a51712621fb9ae3c61afa1b92f5affdd31cd9f13ed05c84c2353bd37",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2004.ts": "8c5d86e47b395c4dc49c1915fdb93fea3ff91e75f99921e054c1693a2c646e04",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2005.ts": "e5888e4a84370630eaa563a97e81f669ef956cf88fbbee46ebca40ab06781140",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InputTransform.ts": "089372f691739665a73c224f30cb6b8e7946b64686f6fedd53e24d5af47dc99a",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/JavascriptTransform.ts": "e2f1b7a8d677fe314ea82dcdbd81a9fba71f295086d870f9b3df0a7b92e37927",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Job.ts": "93c729dca01136f5ce709fe5a85cb6e4439c64729659539df7a288d75d865ad6",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/JobAllOf.ts": "4ac5574f4881312ae643065f7a6e668ef949fa33cbc6531d08abbef6f98420b5",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ListableVariable.ts": "4e9d5ab13ec57149653f1296c3487609e9aca75d0b6d159d01132f0b10351cc3",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Login.ts": "e6ae20fea478ddbd415b8a46e67445818c3ca3275b997a59e04faef24e0504c3",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/MainArgSignature.ts": "a56afeb9a9ea275f6bc00fd363a9f59fc0ee7925312046d6d5e20d0748177484",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/MainArgSignatureArgs.ts": "57925a8e34baef601906945a343a08e6c60d4a1ca16e69762f5894f44323e8d2",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewSchedule.ts": "c1a52bbf62c9a24801594756a823c78ecea8cddd882a6fac501194a0b51c73a5",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewToken.ts": "eeea4b88dd4616a76503932ff2da6440fc2a4a529cb31e692850bba7d7421ad6",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewUser.ts": "6196645d5c3fc2c8a8df72a8f04fd2791337e12bb4f31b216d598f28491f03cf",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ObjectSerializer.ts": "4faa82a65b5dde05431f8e4f0db974dd1cd1152e9afc20e55291e58661f1a0af",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/OpenFlow.ts": "6e779af817cabf127ad2ebab52877647ef3bda530e38f11d7842aa526b3c8afa",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/OpenFlowWPath.ts": "ff40116bb5ca071adee88ed96b479b909b4f4a3d8db6788041677fd0ddb1f179",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/PathFlow.ts": "968277115402cdb7978a18c2d3b919923f6fbeba3d0d24070f182480d1eda360",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/PathScript.ts": "2bbe652649b9d97f5d7e41f457d7835d0d8ab34373b14f4ab9521c830b7a84d1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Preview.ts": "115f50afedcb7fdd656d33409b6a76555eff979cab25782d2fb56147aa3c0452",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/QueuedJob.ts": "9b969c536281a9067c666a42c450e2052793fc2c086d932683358e497ae45490",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/RawScript.ts": "c505e76dfb6e07335d61f6eef59300dfdd1fef2d40d072d0a133dbbe37bc6447",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Resource.ts": "b86c15152bf53e4c379fedb68f3d897d52e8611a224ae940975a91c88f956b7a",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ResourceType.ts": "f637b6b3219f8d64f64bdf1c838c163ca3d5fde71692b58161d4bb987093fa2f",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Schedule.ts": "90571034ff950a5588f0ca48b1bf5d4917b70e76fd7c7bc2ec6340169350c22b",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Script.ts": "45d74757db4b0ce4e302485149dcfb9880e038e988e98ab9a7358460ade73087",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/SlackToken.ts": "6c64f7bad87731da0f851999501234d620aa0e98454e0644d08da24a41714588",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/SlackTokenBot.ts": "850b9ab5783ce96c8db19da87b5fac63525570e5ee156fd8032b3182aba4c8e8",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/StaticTransform.ts": "69757261a6b79fa51be57f2104bdd17f6fae8cc8db12f86d47c9503a4c7e28a0",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/TokenResponse.ts": "7b1d1489a6f545ab159ba25ec77733a0f7b2175bbece957e228341e33ab169a3",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/TruncatedToken.ts": "2f0abdf7882b5252394c52eef2feae96f59a78b417c3dda0ecad03f38b9da32a",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Usage.ts": "17f7995743978285e0c8ab5cd553c3d51cb3b6836fca0c25545d3044077b1fd1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/User.ts": "c84bb564ca4792e3a3de61425adb0402579e0e7d8a1696d0f9c530cd9f32966b",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/UserWorkspaceList.ts": "b54aa222cbb1425bf9e8e2a33787de1ea6fba160e7bc401a071f35c3555800f1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/UserWorkspaceListWorkspaces.ts": "9f98819db9a0efc0fc6eee49550e8f77f41ab59e0fedbe93176a12e4889ecd7c",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/WorkerPing.ts": "4d5a9e2ef647512beb12c032581bd1d1c3a37c0e10775597c11260804ecf3fe7",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Workspace.ts": "7122da311954e72e65b25dd5ae1616d255049a63bf83a7a40c752ef166dff9b1",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/WorkspaceInvite.ts": "01a507ae47c5afe2ae740bf5db363443eb9b53cefc4e58c189a1482ba2ea4723",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/models/all.ts": "ba0659ee806bf4daeb0b3cd5cc30973c78f8458ec7400343b558aef43fb08d80",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/rxjsStub.ts": "98cd8d27d6683864ed23a3df07be1615a9d569eb79f34ea8d4a51d70bb55c958",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/servers.ts": "1fbcb179782e1220513c74eeb2f7c265fcf99b1140775dfb04003a76bdef320b",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/types/ObservableAPI.ts": "fc625731cf47f69822639752351b3b1f92413725a9e7059bf2a193460206a6ae",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/types/PromiseAPI.ts": "c1ad5663a7dc99833e7b7318c3455a025dd929bb75e0fa56b09be957b7a84095",
+              "https://deno.land/x/windmill@v1.27.2/windmill-api/util.ts": "4883e20799352fb0ac3cfcff050fb3b98bf0f1a485e389b7f18f1ad6f50d208b"
+            }
+          }
         language: deno
-      input_transforms: {}
     - id: ap
       value:
         type: rawscript
@@ -19,9 +149,12 @@ value:
           x:
             type: static
             value: ''
-        lock: ''
+        lock: |
+          {
+            "version": "3",
+            "remote": {}
+          }
         language: deno
-      input_transforms: {}
     - id: aq
       value:
         type: forloopflow
@@ -31,8 +164,139 @@ value:
               type: rawscript
               content: '!inline inline_script_2.inline_script.ts'
               input_transforms: {}
+              lock: |
+                {
+                  "version": "3",
+                  "redirects": {
+                    "https://deno.land/x/sleep/mod.ts": "https://deno.land/x/sleep@v1.2.1/mod.ts"
+                  },
+                  "remote": {
+                    "https://deno.land/x/sleep@v1.2.1/mod.ts": "f2d3c9e1ef1fb2852f580f6960384bed36bc18a2da357c35f11a089fcca44273",
+                    "https://deno.land/x/sleep@v1.2.1/sleep.ts": "2426efe5d3ce5de0b8af08bd36a8700deb5dc60e752f5f8f05d5e815a7e8cb0e",
+                    "https://deno.land/x/windmill@v1.27.2/mod.ts": "0ad4665e996ed3442221d166d19ed872da80da61396d67070d5e9619a88c7591",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/AdminApi.ts": "a79bbb98803362e8aedc3b503b4aaf3ae4b9738aa4c563f1f332012d50902ff4",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/AuditApi.ts": "45ab569fce6be4eff5c892f323e94ae03f8e0f7438e4f4d7d34ede5efa831ae7",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/FlowApi.ts": "2064fc03ce91f3925b033ec8d6f1f8a16546ff4164cef02ef5bf8065af7221a5",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/GranularAclApi.ts": "28a98c50576a905459f81d568891b946b8909896d768935c03ea16236f174880",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/GroupApi.ts": "1181595c5b16f8f34ccafd123c0f8ac9f2b5d10b44bac85b99b7638fdd87845d",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/JobApi.ts": "870a7bbe19d78bd46819a48b470166c81848008d6dbcbaaafb47fb55ebb44f2e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/OauthApi.ts": "381ad0175d72d7f9d6db3f3bdefdfae561b63dc7a37e1740c492c6ff9a0ac212",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ResourceApi.ts": "ce07703e10a2696687f5b21799b54a9ec0b6501bcde2319a5b9d0f43fe1f7b51",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ScheduleApi.ts": "97a4708e66f80a650846616929301ec363018c2678f4423b371de2f4f87b7610",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/ScriptApi.ts": "491d39ad899fd7af33852276d6e9fe518d573bde149c38d8a9ffcb3dee49758d",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/SettingsApi.ts": "6b7d2ce4ed85a5e52a9f5726a1bb8b8db1db5de9fd354108f968d7aac2a938fb",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/UserApi.ts": "42b219d54414a4b328725eafc12d5f04a880ec789eab7a0d2e4c23dc4e9e9ddb",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/VariableApi.ts": "50bf2188328b0017a35574d7059e6cc8dda88078d5e5f49cf00dd3a80cd9a1af",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/WorkerApi.ts": "7c6d497424c2639b170576e9d0ceee7cdf7f2e72373e31dc59386e06ce892a5f",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/WorkspaceApi.ts": "6bb598741a6afbf1058635b658f3ce7bca9dd3ef1eaf216736ffc3b56a1cb0c1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/baseapi.ts": "63fc3f4b201a0601ea4e4ffda4bd910d60bfd01f4240238d869edf232860ab4a",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/apis/exception.ts": "cb2f686c25a14f62203264e7e502a06e88a589107413c70f1a479d6c61fde24e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/auth/auth.ts": "f94dde63829ef34171286808f251ee4c5bdb6f0aabe2dfaec613d27d98bab4a0",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/configuration.ts": "de5f55186a95f94fb28fd36122d33a18001bd681b531326ac894453a31c92aad",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/http/http.ts": "e44ca8effa266839386b17cc96f28a857db35c79ea8245311bdc3f2887c345cc",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/http/isomorphic-fetch.ts": "680f74105a78770422703f07717a35e96f393bfd408d94b197eaf1c85ec3ecc5",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/index.ts": "3f145a939bfa5ef512d7d5b42c8cf5a4c6912a6323ba66c35eb7d36e7501708f",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/middleware.ts": "a04008411fc83935492d6cdf2f2b3919eb569d819cc80d8c7607a9305d172411",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/AuditLog.ts": "a13b7e9e034916b8e51d3f24e3a082aab9f017d79f9cb9635e1135c672c80f5e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CompletedJob.ts": "d085a15199217edc8ecb151fb79263728d0d9fc2f6de2c6ed1ac8c7fba3dee44",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ContextualVariable.ts": "bdc59b69f07315c5e9b30400aa597fed8a5b50c64286ccca1e634355f4e0b172",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateResource.ts": "7f7e150759df483cb57c365ee30582f9ad5ba5095521c163b5704b6aab2ef303",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateVariable.ts": "c5e3c31438ca6312bff556189e307bc85bcbda93c3581e5e9b86a63409d1a9a2",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/CreateWorkspace.ts": "2076f62f1f4d798a58f05943200cc51100e3366bf93a20694638452650da98d0",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditResource.ts": "3e377cd693d5bf25afd8b216db0c7073c1881232fdaab7bcf6ef1c2ab5af0f46",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditResourceType.ts": "4b1cdc3b896f6c67115476f5ec1fe516c16444e597525a0e33f1379c4624a631",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditSchedule.ts": "9e53f9d5167882adc5da78de12d1c88f4797e3ace69279023803e16102f49888",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditVariable.ts": "c571944d0190277b26d3cc5b107186dc5e88743c3dfb75a4a6299231a1c19605",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/EditWorkspaceUser.ts": "286e1f4bb456b4d55e3541099ef0ff250231d57984b167e37cfa3d3b4595003a",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Flow.ts": "63dc6d99c5b2d98eee9963bf3890a54f95e87a75946d4b9500d0b2f324919613",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowMetadata.ts": "8353ddbc38ca6c59cad397d12320dd581026db349f57e7db16065c4468d45c9c",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowModule.ts": "eacc2d627448a49578e1d73ff5a7ec240c089950f6523ddd6b9e320a673fbd48",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowModuleValue.ts": "91a04f48b9e0980098f51f1a65c72dd9c5e2b26d5bbaa2161827d79c64099bd0",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowPreview.ts": "8dbc1eae997f602479b6da88aca23385925435f390e2bb26fab1d3bdd98585fb",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatus.ts": "c0658a91b5bcc2182feafe84de4dc5f2aa8a9faf9ad827c65632ab7f6b5434fd",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatusModule.ts": "8fce4ae8595591a78090a486afae9d395d955d50c16cddc7c954521a70595aaf",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowStatusModuleIterator.ts": "829e28d2f341f3fd3ada4fb1170f611e37bbe23171d5f1baa7aa8c8191db8e2d",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/FlowValue.ts": "2427fc84b72cebb8e7cf13fefcf6bf40e20b240d4f9b73b6ccbeedbb422af355",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ForloopFlow.ts": "15c3f2e21fb11868bec41e9244cbf1bf71ec680f4d4cda23568adeb2af6f171e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/GlobalUserInfo.ts": "3f8a0055bcc62e3b3b3128983cb95884f358bea5df085f0111189a8a2d5842cc",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Group.ts": "f78228df1505095c2cc805716ddb3149d8fee1710eafb4db5ded68e0825a989e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject.ts": "c3d2445f882213f20998322444c6556fe54045ea1600fd02bfe3c6552ed2cad4",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject1.ts": "b6b7ad54fa3f1423a506a386db78703d1b92d07f574af8574d9cba5135572abd",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject10.ts": "7bf43f815818f9b0ef73fb9b2df8404857a5e55856be1694c3578cb07f1bdd01",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject11.ts": "5e4dfb70c6fb8bd77ebfe07fb401a80840b6d9ab76280d986b08054bb18bada1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject12.ts": "8637b2c14ac78e5e83fc6773f739e83de145d58bd81737e0cc578c7c056c8140",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject13.ts": "8db47ee9016e5c60cab565ee728b720da21645a1816627189f11290dbb27a355",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject14.ts": "9678bad5f8c3d18cc195ba699a433f4db53c64aa6911b2c1520513df2026da29",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject15.ts": "f455f5a970b46381f2e5009b22c193f2aeb7795eb6ef87e7051cfbcd5d0857ee",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject16.ts": "c0da450392f1e13e6b139a262f6ec7b409c94a0111de3996f44b42fe18978e14",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject17.ts": "98790bbb877370b14fc78f5b3887e8a1e03f7c88790265aef35a9cc907c3e7e8",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject18.ts": "a6bf2b3c8ee33f5422faf47dffbf3f6aa231743de1801881ee7272e3f0c577b4",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject19.ts": "8275dd49ff43fc00f5a4c2492fb7a759509efb83459814a1f58d6049254e17c6",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject2.ts": "012312556999103f56fcbb4e37e7bfc93a657008508f86d475860c03e1083550",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject20.ts": "a11636c234755a6c4ae03ca82a895cefa9f1aabed314cfb2166968711536935d",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject21.ts": "c7cadc732a3d130c7415f3f42b8f37dfff4378d616609590126ef44b6da7cbb7",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject22.ts": "d1fcad32b7e996f008d4619475a0aba2ba564954240295e87401abbc38876a1b",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject23.ts": "5be5172115646b5770ff7d72289ca96a7167eb008a613b88c76421ea84d609e3",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject24.ts": "4e5b795146af5845ff5eb5dd389d1f992c6dd5a81f697aaa1154b614390eeaec",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject3.ts": "2247c2178c9fbc72ebcaf4c09762ebc8e53ad60bdb2aac9d6ce171cc11ad2873",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject4.ts": "2d82c05b3c9e500aad0f4f9821087d4886cfaa641572eb28551ebd38800ae9db",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject5.ts": "ff1a5fda7a8dcf20ad59321ebd7dae2b9233ad4314e88e4360ed116f6f59176e",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject6.ts": "bb1b942a00b3eeb7b72b56be8dc1f5ec73c5175c20f8f2288be89c3ac23a3f40",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject7.ts": "be5ad552b9555787d538665c7369c4c616c94eef6deb55fbfcdb356899f714e4",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject8.ts": "3dabf1fec605289a008f44b63ff327dd9125b9cb9f1e3f312dbdaf5050853f14",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineObject9.ts": "02f0c7c1bdc37fa39a47505f7bc8321da1c32740c27109714838338d4e5896a4",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse200.ts": "61ecd4aef6ba4fc2e96417af0b0ec2a58fa1f3f4183b80cc8e2adfd95932bf77",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2001.ts": "1263327e9471c6f392705669a9e8a7c9d3d2a05c1f58896be653275e5fd4fbe8",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2001Asks.ts": "dfd6a9e46663cd85abfdf52e4dfc1679f105f89dabc6a7539e4626ebc21a53e3",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2002.ts": "def850eb031384194065fe62465a3890d468c66cb660be7096ef5825d0675703",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2002Flows.ts": "41df60baed62fc2385817ca51b3aea8a6504abd5d87fbb3a689202c6b6c25cc8",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2003.ts": "58e833c2a51712621fb9ae3c61afa1b92f5affdd31cd9f13ed05c84c2353bd37",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2004.ts": "8c5d86e47b395c4dc49c1915fdb93fea3ff91e75f99921e054c1693a2c646e04",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InlineResponse2005.ts": "e5888e4a84370630eaa563a97e81f669ef956cf88fbbee46ebca40ab06781140",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/InputTransform.ts": "089372f691739665a73c224f30cb6b8e7946b64686f6fedd53e24d5af47dc99a",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/JavascriptTransform.ts": "e2f1b7a8d677fe314ea82dcdbd81a9fba71f295086d870f9b3df0a7b92e37927",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Job.ts": "93c729dca01136f5ce709fe5a85cb6e4439c64729659539df7a288d75d865ad6",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/JobAllOf.ts": "4ac5574f4881312ae643065f7a6e668ef949fa33cbc6531d08abbef6f98420b5",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ListableVariable.ts": "4e9d5ab13ec57149653f1296c3487609e9aca75d0b6d159d01132f0b10351cc3",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Login.ts": "e6ae20fea478ddbd415b8a46e67445818c3ca3275b997a59e04faef24e0504c3",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/MainArgSignature.ts": "a56afeb9a9ea275f6bc00fd363a9f59fc0ee7925312046d6d5e20d0748177484",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/MainArgSignatureArgs.ts": "57925a8e34baef601906945a343a08e6c60d4a1ca16e69762f5894f44323e8d2",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewSchedule.ts": "c1a52bbf62c9a24801594756a823c78ecea8cddd882a6fac501194a0b51c73a5",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewToken.ts": "eeea4b88dd4616a76503932ff2da6440fc2a4a529cb31e692850bba7d7421ad6",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/NewUser.ts": "6196645d5c3fc2c8a8df72a8f04fd2791337e12bb4f31b216d598f28491f03cf",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ObjectSerializer.ts": "4faa82a65b5dde05431f8e4f0db974dd1cd1152e9afc20e55291e58661f1a0af",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/OpenFlow.ts": "6e779af817cabf127ad2ebab52877647ef3bda530e38f11d7842aa526b3c8afa",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/OpenFlowWPath.ts": "ff40116bb5ca071adee88ed96b479b909b4f4a3d8db6788041677fd0ddb1f179",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/PathFlow.ts": "968277115402cdb7978a18c2d3b919923f6fbeba3d0d24070f182480d1eda360",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/PathScript.ts": "2bbe652649b9d97f5d7e41f457d7835d0d8ab34373b14f4ab9521c830b7a84d1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Preview.ts": "115f50afedcb7fdd656d33409b6a76555eff979cab25782d2fb56147aa3c0452",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/QueuedJob.ts": "9b969c536281a9067c666a42c450e2052793fc2c086d932683358e497ae45490",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/RawScript.ts": "c505e76dfb6e07335d61f6eef59300dfdd1fef2d40d072d0a133dbbe37bc6447",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Resource.ts": "b86c15152bf53e4c379fedb68f3d897d52e8611a224ae940975a91c88f956b7a",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/ResourceType.ts": "f637b6b3219f8d64f64bdf1c838c163ca3d5fde71692b58161d4bb987093fa2f",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Schedule.ts": "90571034ff950a5588f0ca48b1bf5d4917b70e76fd7c7bc2ec6340169350c22b",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Script.ts": "45d74757db4b0ce4e302485149dcfb9880e038e988e98ab9a7358460ade73087",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/SlackToken.ts": "6c64f7bad87731da0f851999501234d620aa0e98454e0644d08da24a41714588",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/SlackTokenBot.ts": "850b9ab5783ce96c8db19da87b5fac63525570e5ee156fd8032b3182aba4c8e8",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/StaticTransform.ts": "69757261a6b79fa51be57f2104bdd17f6fae8cc8db12f86d47c9503a4c7e28a0",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/TokenResponse.ts": "7b1d1489a6f545ab159ba25ec77733a0f7b2175bbece957e228341e33ab169a3",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/TruncatedToken.ts": "2f0abdf7882b5252394c52eef2feae96f59a78b417c3dda0ecad03f38b9da32a",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Usage.ts": "17f7995743978285e0c8ab5cd553c3d51cb3b6836fca0c25545d3044077b1fd1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/User.ts": "c84bb564ca4792e3a3de61425adb0402579e0e7d8a1696d0f9c530cd9f32966b",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/UserWorkspaceList.ts": "b54aa222cbb1425bf9e8e2a33787de1ea6fba160e7bc401a071f35c3555800f1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/UserWorkspaceListWorkspaces.ts": "9f98819db9a0efc0fc6eee49550e8f77f41ab59e0fedbe93176a12e4889ecd7c",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/WorkerPing.ts": "4d5a9e2ef647512beb12c032581bd1d1c3a37c0e10775597c11260804ecf3fe7",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/Workspace.ts": "7122da311954e72e65b25dd5ae1616d255049a63bf83a7a40c752ef166dff9b1",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/WorkspaceInvite.ts": "01a507ae47c5afe2ae740bf5db363443eb9b53cefc4e58c189a1482ba2ea4723",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/models/all.ts": "ba0659ee806bf4daeb0b3cd5cc30973c78f8458ec7400343b558aef43fb08d80",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/rxjsStub.ts": "98cd8d27d6683864ed23a3df07be1615a9d569eb79f34ea8d4a51d70bb55c958",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/servers.ts": "1fbcb179782e1220513c74eeb2f7c265fcf99b1140775dfb04003a76bdef320b",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/types/ObservableAPI.ts": "fc625731cf47f69822639752351b3b1f92413725a9e7059bf2a193460206a6ae",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/types/PromiseAPI.ts": "c1ad5663a7dc99833e7b7318c3455a025dd929bb75e0fa56b09be957b7a84095",
+                    "https://deno.land/x/windmill@v1.27.2/windmill-api/util.ts": "4883e20799352fb0ac3cfcff050fb3b98bf0f1a485e389b7f18f1ad6f50d208b"
+                  }
+                }
               language: deno
-            input_transforms: {}
             stop_after_if:
               expr: result == undefined
               skip_if_stopped: false
@@ -49,8 +313,12 @@ value:
 
 
                     `${flow_input.iter.value}`
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
+                }
               language: deno
-            input_transforms: {}
             stop_after_if:
               expr: stepresult == undefined
               skip_if_stopped: false
@@ -59,7 +327,6 @@ value:
           expr: '[]'
         parallel: false
         skip_failures: true
-      input_transforms: {}
     - id: at
       summary: ''
       value:
@@ -70,11 +337,9 @@ value:
               - id: au
                 value:
                   type: identity
-                input_transforms: {}
               - id: av
                 value:
                   type: identity
-                input_transforms: {}
             parallel: true
             skip_failure: false
           - summary: ''
@@ -82,11 +347,9 @@ value:
               - id: aw
                 value:
                   type: identity
-                input_transforms: {}
               - id: ax
                 value:
                   type: identity
-                input_transforms: {}
             parallel: true
             skip_failure: false
           - summary: ''
@@ -94,7 +357,6 @@ value:
               - id: ay
                 value:
                   type: identity
-                input_transforms: {}
               - id: az
                 summary: ''
                 value:
@@ -105,14 +367,12 @@ value:
                         - id: ba
                           value:
                             type: identity
-                          input_transforms: {}
                       expr: 'true'
                     - summary: ''
                       modules:
                         - id: bb
                           value:
                             type: identity
-                          input_transforms: {}
                       expr: 'true  '
                   default:
                     - id: bc
@@ -122,18 +382,14 @@ value:
                           - id: bd
                             value:
                               type: identity
-                            input_transforms: {}
                         iterator:
                           type: javascript
                           expr: previous_result
                         parallel: false
                         skip_failures: true
-                      input_transforms: {}
-                input_transforms: {}
             parallel: true
             skip_failure: false
         parallel: false
-      input_transforms: {}
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
