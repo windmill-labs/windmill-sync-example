@@ -305,6 +305,11 @@ value:
                     return p
                   })
                 }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
+                }
               language: deno
               path: /inline-script/Inline Script 0
               schema:
@@ -461,6 +466,11 @@ value:
                   </p>
                   `;
                 }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
+                }
               language: deno
               path: /inline-script/Inline Script 0
               schema:
@@ -564,6 +574,11 @@ value:
                     result.labels.push(key)
                   })
                   return result
+                }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
                 }
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
@@ -727,6 +742,11 @@ value:
                     result.labels.push(key)
                   })
                   return result
+                }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
                 }
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
@@ -949,6 +969,11 @@ value:
                   });
                   return base + ` (Total Worth: ${formatter.format(total)})`
                 }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
+                }
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
               schema:
@@ -1119,6 +1144,11 @@ value:
                     result.labels.push(key)
                   })
                   return result
+                }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
                 }
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0

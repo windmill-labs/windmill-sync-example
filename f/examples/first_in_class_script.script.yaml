@@ -1,6 +1,10 @@
 summary: ''
 description: ''
-lock: []
+lock: |
+  {
+    "version": "3",
+    "remote": {}
+  }
 is_template: false
 kind: script
 schema:

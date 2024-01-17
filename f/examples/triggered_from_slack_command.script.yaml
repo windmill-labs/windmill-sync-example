@@ -3,8 +3,7 @@ description: >-
   An example of a script that can be triggered from Slack in the workspace
   settings and whom parameters fit exactly the one passed by the Slack command
   trigger
-lock:
-  - slack-sdk==3.20.2
+lock: slack-sdk==3.20.2
 is_template: true
 kind: script
 schema:

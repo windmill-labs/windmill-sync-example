@@ -1,23 +1,23 @@
 summary: OCR an image with Tesseract
 description: Recognize text from an image using tesseract's OCR  and output it
-lock:
-  - '{'
-  - '  "version": "3",'
-  - '  "remote": {'
-  - '    "https://deno.land/std@0.145.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",'
-  - '    "https://deno.land/std@0.145.0/async/deferred.ts": "bc18e28108252c9f67dfca2bbc4587c3cbf3aeb6e155f8c864ca8ecff992b98a",'
-  - '    "https://deno.land/std@0.145.0/bytes/bytes_list.ts": "aba5e2369e77d426b10af1de0dcc4531acecec27f9b9056f4f7bfbf8ac147ab4",'
-  - '    "https://deno.land/std@0.145.0/bytes/equals.ts": "3c3558c3ae85526f84510aa2b48ab2ad7bdd899e2e0f5b7a8ffc85acb3a6043a",'
-  - '    "https://deno.land/std@0.145.0/bytes/mod.ts": "763f97d33051cc3f28af1a688dfe2830841192a9fea0cbaa55f927b49d49d0bf",'
-  - '    "https://deno.land/std@0.145.0/io/buffer.ts": "bd0c4bf53db4b4be916ca5963e454bddfd3fcd45039041ea161dbf826817822b",'
-  - '    "https://deno.land/std@0.145.0/streams/buffer.ts": "ee47194022d47fa23d4749b8afbadc83c237c4595467a9bddb322af0dd205815",'
-  - '    "https://deno.land/std@0.145.0/streams/conversion.ts": "fc3db02026183da795fa32ac7549868e9f19c75ba029d4b4c3739af62b48517a",'
-  - '    "https://deno.land/std@0.145.0/streams/delimiter.ts": "81574a35e433d3b392887118d02fce12fec611fe3ff6b8f3d3758d141b7201e9",'
-  - '    "https://deno.land/std@0.145.0/streams/merge.ts": "88ed3dfa030ae076802688e4cadd762a251a41d81ed1776dfd9a2a9a0e970195",'
-  - '    "https://deno.land/std@0.145.0/streams/mod.ts": "d7d8fa97f79bca052eba8b6df9c4602403d144cf97ec9f6d0896c787dae0a9de",'
-  - '    "https://deno.land/x/tesseract@1.0.1/mod.ts": "70bc82c3d64fc49318fb445b79627460b70d412e81767d3e29cf118c3141b9b4"'
-  - '  }'
-  - '}'
+lock: |
+  {
+    "version": "3",
+    "remote": {
+      "https://deno.land/std@0.145.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
+      "https://deno.land/std@0.145.0/async/deferred.ts": "bc18e28108252c9f67dfca2bbc4587c3cbf3aeb6e155f8c864ca8ecff992b98a",
+      "https://deno.land/std@0.145.0/bytes/bytes_list.ts": "aba5e2369e77d426b10af1de0dcc4531acecec27f9b9056f4f7bfbf8ac147ab4",
+      "https://deno.land/std@0.145.0/bytes/equals.ts": "3c3558c3ae85526f84510aa2b48ab2ad7bdd899e2e0f5b7a8ffc85acb3a6043a",
+      "https://deno.land/std@0.145.0/bytes/mod.ts": "763f97d33051cc3f28af1a688dfe2830841192a9fea0cbaa55f927b49d49d0bf",
+      "https://deno.land/std@0.145.0/io/buffer.ts": "bd0c4bf53db4b4be916ca5963e454bddfd3fcd45039041ea161dbf826817822b",
+      "https://deno.land/std@0.145.0/streams/buffer.ts": "ee47194022d47fa23d4749b8afbadc83c237c4595467a9bddb322af0dd205815",
+      "https://deno.land/std@0.145.0/streams/conversion.ts": "fc3db02026183da795fa32ac7549868e9f19c75ba029d4b4c3739af62b48517a",
+      "https://deno.land/std@0.145.0/streams/delimiter.ts": "81574a35e433d3b392887118d02fce12fec611fe3ff6b8f3d3758d141b7201e9",
+      "https://deno.land/std@0.145.0/streams/merge.ts": "88ed3dfa030ae076802688e4cadd762a251a41d81ed1776dfd9a2a9a0e970195",
+      "https://deno.land/std@0.145.0/streams/mod.ts": "d7d8fa97f79bca052eba8b6df9c4602403d144cf97ec9f6d0896c787dae0a9de",
+      "https://deno.land/x/tesseract@1.0.1/mod.ts": "70bc82c3d64fc49318fb445b79627460b70d412e81767d3e29cf118c3141b9b4"
+    }
+  }
 is_template: false
 kind: script
 schema:

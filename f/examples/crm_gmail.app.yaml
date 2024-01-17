@@ -306,6 +306,11 @@ value:
                   }));
                   return users;
                 }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
+                }
               language: deno
               path: /inline-script/Inline Script 0
               schema:
@@ -906,6 +911,11 @@ value:
                     'data': [ leads, customers ],
                     'labels': [ 'Lead', 'Customer' ]
                   }
+                }
+              lock: |
+                {
+                  "version": "3",
+                  "remote": {}
                 }
               language: deno
               path: u/adam/crm-app/inline-script/Inline Script 0
