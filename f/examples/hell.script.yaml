@@ -1,6 +1,8 @@
 summary: ''
 description: ''
-lock: ''
+lock: 
+  - "foo"
+  - "bar"
 is_template: false
 kind: script
 schema:
