@@ -3,6 +3,8 @@ description: ''
 lock: 
   - "foo"
   - "bar"
+  - "zed"
+  - "ammo"
 is_template: false
 kind: script
 schema:
