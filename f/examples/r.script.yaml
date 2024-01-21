@@ -1,0 +1,14 @@
+summary: ''
+description: ''
+lock: |
+  {
+    "version": "3",
+    "remote": {}
+  }
+is_template: false
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []
