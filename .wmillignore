@@ -1,4 +1,2 @@
-# This works like .gitignore but for windmill
-
-*
-!f/examples
+u/
+*.test.ts
