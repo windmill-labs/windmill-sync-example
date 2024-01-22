@@ -1,1 +1,1 @@
-includes: ["f/examples/*"] # uses "*" or uncomment this line to include everything. Note that wmill will only consider files with valid path (u/ or f/, with the right extension)
+includes: ["f/**"] # uses "*" or uncomment this line to include everything. Note that wmill will only consider files with valid path (u/ or f/, with the right extension)

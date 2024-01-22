@@ -8,8 +8,8 @@ schema:
   type: object
   properties:
     name:
-      type: string
-      description: ''
       default: Nicolas Bourbaki
+      description: ''
       format: ''
+      type: string
   required: []

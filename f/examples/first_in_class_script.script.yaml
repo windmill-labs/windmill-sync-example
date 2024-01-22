@@ -12,29 +12,28 @@ schema:
   type: object
   properties:
     a:
+      default: null
+      description: ''
       type: number
-      description: ''
-      default: null
     b:
-      type: string
-      description: ''
       default: null
+      description: ''
       enum:
         - my
         - enum
-    c:
-      type: object
+      type: string
+    d:
+      default: inferred type string from default arg
       description: ''
+      type: string
+    c:
       default:
         nested: object
+      description: ''
       properties:
         nested:
           type: string
-          description: ''
-    d:
-      type: string
-      description: ''
-      default: inferred type string from default arg
+      type: object
   required:
     - a
     - b
