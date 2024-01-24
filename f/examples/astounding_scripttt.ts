@@ -5,6 +5,7 @@
 
 // fill the type, or use the +Resource type to get a type-safe reference to a resource
 // type Postgresql = object
+//foooo
 
 export async function main(
   a: number,
