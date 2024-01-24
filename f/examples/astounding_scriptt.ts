@@ -13,7 +13,9 @@ export async function main(
   d = "inferred type string from default arg",
   e = { nested: "object" },
   //e: wmill.Base64
+  
 ) {
+  //foo
   // let x = await wmill.getVariable('u/user/foo')
   return { foo: a };
 }
