@@ -1,0 +1,32 @@
+name: "Push staging to Windmill workspace"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "staging"
+    # if the windmill workspace is persisted in a subfolder of this repos, you can add the following to avoid pushing to windmill when there's no change
+    # paths:
+    #   - wm/**
+
+env:
+  WMILL_URL: https://app.windmill.dev/
+  WMILL_WORKSPACE: github-sync-example-staging
+
+jobs:
+  sync:
+    environment: windmill
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+
+      # (push will pull first to detect conflicts and only push actual changes)
+      - name: Push changes
+        run: |
+          deno run --unstable -A  https://deno.land/x/wmill@v1.250.0/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          deno run --unstable -A  https://deno.land/x/wmill@v1.250.0/main.ts sync push --yes --raw --skip-variables --skip-secrets --skip-resources
