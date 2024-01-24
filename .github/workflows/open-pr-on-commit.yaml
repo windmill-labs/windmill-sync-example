@@ -2,11 +2,13 @@ name: Windmill Pull Request
 on:
   push:
     branches:
-      - wm_deploy/**
+      - wm_deploy/windmill-sync-example-staging/**
+
+env:
+  TARGET_BRANCH: main
 
 jobs:
   submit_pull_requests:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -15,6 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Create pull request
-        run: gh pr view ${{ github.ref_name }} && gh pr reopen ${{ github.ref_name }} || gh pr create -B main -H ${{ github.ref_name }} --title "${{ github.event.head_commit.message }}" --body "PR created by Github action '${{ github.workflow }}'"
+        run: |
+          gh pr view ${{ github.ref_name }} \
+          && gh pr reopen ${{ github.ref_name }} \
+          || gh pr create -B ${{ env.TARGET_BRANCH }} -H ${{ github.ref_name }} \
+          --title "${{github.event.head_commit.message }}" \ 
+          --body "PR created by Github action '${{ github.workflow }}'"
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
