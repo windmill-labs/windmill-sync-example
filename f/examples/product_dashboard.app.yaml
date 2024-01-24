@@ -1181,8 +1181,8 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/admin
-  on_behalf_of_email: admin@windmill.dev
+  on_behalf_of: u/guillaume
+  on_behalf_of_email: guillaume@windmill.dev
   triggerables:
     rawscript/0b7c4f9a401d090cc96b25069f8cb3846fed012f68437856425adcc7ff23ae9b: {}
     rawscript/0ce94e9ebe918bee2c0942577d8acc74d9f81e2cad7c380a6098325d468990de: {}
