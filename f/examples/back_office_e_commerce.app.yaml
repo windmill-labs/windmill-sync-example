@@ -2077,17 +2077,17 @@ value:
                           "https://deno.land/x/windmill@v1.70.1/windmill-api/services/WorkerService.ts": "cb47e532df3fc89359e575b0e21e6f3323e051ee9fcc2454caacb1cc0f076e53",
                           "https://deno.land/x/windmill@v1.70.1/windmill-api/services/WorkspaceService.ts": "2e945ccde1c8a2ef683597db304abae8501d81be604f051b62998642f9d39b31",
                           "https://deno.land/x/xhr@0.3.0/mod.ts": "094aacd627fd9635cd942053bf8032b5223b909858fa9dc8ffa583752ff63b20",
-                          "https://esm.sh/@supabase/supabase-js@2.10.0": "c6d519d072fbf659bf71ed8c5a56ce3a865479f2366690e60a2de78203d74c22",
-                          "https://esm.sh/v134/@supabase/functions-js@2.1.5/denonext/functions-js.mjs": "7c800615b7487a05e6d38d1fbcd695a426f0db087f358a099247f32756ac2207",
-                          "https://esm.sh/v134/@supabase/gotrue-js@2.57.0/denonext/gotrue-js.mjs": "1e7a7655b02881bdc811049f1973c1b1bddb1d851c52b93b7a3a411a89798576",
-                          "https://esm.sh/v134/@supabase/node-fetch@2.6.14/denonext/node-fetch.mjs": "23a71af3512da67a8757ab1e2356fa22565758444ea1fc08e0de0e8d4625e8aa",
-                          "https://esm.sh/v134/@supabase/postgrest-js@1.8.5/denonext/postgrest-js.mjs": "a1dae5d4060db1c4f9b55446b75deeb45de84596e9c6d25d200f9d06e87dd6a1",
-                          "https://esm.sh/v134/@supabase/realtime-js@2.8.4/denonext/realtime-js.mjs": "2e2b65d6780260ae48b64651142ec3d01550c0aef62071a76a84bbb92358d6dd",
-                          "https://esm.sh/v134/@supabase/storage-js@2.5.4/denonext/storage-js.mjs": "55cbba8bbef4241f268b29822dfb2deea017414e1e91bef93637b47dc069df20",
-                          "https://esm.sh/v134/@supabase/supabase-js@2.10.0/denonext/supabase-js.mjs": "f1be9be9ee0f0b2fd4b4b0b9b6fcbb1d1c1ff52ac95640a6a6c192a0030e5078",
-                          "https://esm.sh/v134/cross-fetch@3.1.8/denonext/cross-fetch.mjs": "8fba9e7c3fbaf0d2168beb63ce0cd21b5bfbfbd77e2fcbf8d957d533a71222f6",
-                          "https://esm.sh/v134/es5-ext@0.10.62/denonext/global.js": "2f51d9acef1f761faaa542da919b3c747744ea29fe709d0a904fd531716a93d6",
-                          "https://esm.sh/v134/websocket@1.0.34/denonext/websocket.mjs": "15d25cb970f37490b12a05c37050a95623e43a5aedaf5d62106214dd1bb0b8f4"
+                          "https://esm.sh/@supabase/supabase-js@2.10.0": "82f548aee1fa7383e18ec5807933148e23bd4f293556cb5ca7788c1213a3b313",
+                          "https://esm.sh/v135/@supabase/functions-js@2.1.5/denonext/functions-js.mjs": "739affd2df20c1affd91991c3731c2537d270b82be5cdbd926c43be40eb2fdc5",
+                          "https://esm.sh/v135/@supabase/gotrue-js@2.57.0/denonext/gotrue-js.mjs": "a4e6768643628fc5445683f4f58090ea5b65c51c3abb165dc0a385cf8eae2121",
+                          "https://esm.sh/v135/@supabase/node-fetch@2.6.14/denonext/node-fetch.mjs": "23a71af3512da67a8757ab1e2356fa22565758444ea1fc08e0de0e8d4625e8aa",
+                          "https://esm.sh/v135/@supabase/postgrest-js@1.9.0/denonext/postgrest-js.mjs": "e6239e65dca3c73527af617ee406934dc509a33e4082a9da9c3aa6c430519cdf",
+                          "https://esm.sh/v135/@supabase/realtime-js@2.8.4/denonext/realtime-js.mjs": "9f8af6f82b095b1b1d336a92c4ff8519a5b7f783a1e09eab005114b983cafd5d",
+                          "https://esm.sh/v135/@supabase/storage-js@2.5.4/denonext/storage-js.mjs": "dff68679fb795ec7e157b8f51cb0b8c544d6c3d57ecc093f5b15eb909439efcd",
+                          "https://esm.sh/v135/@supabase/supabase-js@2.10.0/denonext/supabase-js.mjs": "7c48ae11e37d60693bd0342752d969628cc22ff9449101087b8f80afca5be9e7",
+                          "https://esm.sh/v135/cross-fetch@3.1.8/denonext/cross-fetch.mjs": "8fba9e7c3fbaf0d2168beb63ce0cd21b5bfbfbd77e2fcbf8d957d533a71222f6",
+                          "https://esm.sh/v135/es5-ext@0.10.62/denonext/global.js": "2f51d9acef1f761faaa542da919b3c747744ea29fe709d0a904fd531716a93d6",
+                          "https://esm.sh/v135/websocket@1.0.34/denonext/websocket.mjs": "dfe5d62007e9f7430d561e2376fe47caa9d04cb016d83d3386fcc2206a90296b"
                         }
                       }
                     language: deno
@@ -3581,17 +3581,17 @@ value:
                       "https://deno.land/x/windmill@v1.70.1/windmill-api/services/WorkerService.ts": "cb47e532df3fc89359e575b0e21e6f3323e051ee9fcc2454caacb1cc0f076e53",
                       "https://deno.land/x/windmill@v1.70.1/windmill-api/services/WorkspaceService.ts": "2e945ccde1c8a2ef683597db304abae8501d81be604f051b62998642f9d39b31",
                       "https://deno.land/x/xhr@0.3.0/mod.ts": "094aacd627fd9635cd942053bf8032b5223b909858fa9dc8ffa583752ff63b20",
-                      "https://esm.sh/@supabase/supabase-js@2.10.0": "c6d519d072fbf659bf71ed8c5a56ce3a865479f2366690e60a2de78203d74c22",
-                      "https://esm.sh/v134/@supabase/functions-js@2.1.5/denonext/functions-js.mjs": "7c800615b7487a05e6d38d1fbcd695a426f0db087f358a099247f32756ac2207",
-                      "https://esm.sh/v134/@supabase/gotrue-js@2.57.0/denonext/gotrue-js.mjs": "1e7a7655b02881bdc811049f1973c1b1bddb1d851c52b93b7a3a411a89798576",
-                      "https://esm.sh/v134/@supabase/node-fetch@2.6.14/denonext/node-fetch.mjs": "23a71af3512da67a8757ab1e2356fa22565758444ea1fc08e0de0e8d4625e8aa",
-                      "https://esm.sh/v134/@supabase/postgrest-js@1.8.5/denonext/postgrest-js.mjs": "a1dae5d4060db1c4f9b55446b75deeb45de84596e9c6d25d200f9d06e87dd6a1",
-                      "https://esm.sh/v134/@supabase/realtime-js@2.8.4/denonext/realtime-js.mjs": "2e2b65d6780260ae48b64651142ec3d01550c0aef62071a76a84bbb92358d6dd",
-                      "https://esm.sh/v134/@supabase/storage-js@2.5.4/denonext/storage-js.mjs": "55cbba8bbef4241f268b29822dfb2deea017414e1e91bef93637b47dc069df20",
-                      "https://esm.sh/v134/@supabase/supabase-js@2.10.0/denonext/supabase-js.mjs": "f1be9be9ee0f0b2fd4b4b0b9b6fcbb1d1c1ff52ac95640a6a6c192a0030e5078",
-                      "https://esm.sh/v134/cross-fetch@3.1.8/denonext/cross-fetch.mjs": "8fba9e7c3fbaf0d2168beb63ce0cd21b5bfbfbd77e2fcbf8d957d533a71222f6",
-                      "https://esm.sh/v134/es5-ext@0.10.62/denonext/global.js": "2f51d9acef1f761faaa542da919b3c747744ea29fe709d0a904fd531716a93d6",
-                      "https://esm.sh/v134/websocket@1.0.34/denonext/websocket.mjs": "15d25cb970f37490b12a05c37050a95623e43a5aedaf5d62106214dd1bb0b8f4"
+                      "https://esm.sh/@supabase/supabase-js@2.10.0": "82f548aee1fa7383e18ec5807933148e23bd4f293556cb5ca7788c1213a3b313",
+                      "https://esm.sh/v135/@supabase/functions-js@2.1.5/denonext/functions-js.mjs": "739affd2df20c1affd91991c3731c2537d270b82be5cdbd926c43be40eb2fdc5",
+                      "https://esm.sh/v135/@supabase/gotrue-js@2.57.0/denonext/gotrue-js.mjs": "a4e6768643628fc5445683f4f58090ea5b65c51c3abb165dc0a385cf8eae2121",
+                      "https://esm.sh/v135/@supabase/node-fetch@2.6.14/denonext/node-fetch.mjs": "23a71af3512da67a8757ab1e2356fa22565758444ea1fc08e0de0e8d4625e8aa",
+                      "https://esm.sh/v135/@supabase/postgrest-js@1.9.0/denonext/postgrest-js.mjs": "e6239e65dca3c73527af617ee406934dc509a33e4082a9da9c3aa6c430519cdf",
+                      "https://esm.sh/v135/@supabase/realtime-js@2.8.4/denonext/realtime-js.mjs": "9f8af6f82b095b1b1d336a92c4ff8519a5b7f783a1e09eab005114b983cafd5d",
+                      "https://esm.sh/v135/@supabase/storage-js@2.5.4/denonext/storage-js.mjs": "dff68679fb795ec7e157b8f51cb0b8c544d6c3d57ecc093f5b15eb909439efcd",
+                      "https://esm.sh/v135/@supabase/supabase-js@2.10.0/denonext/supabase-js.mjs": "7c48ae11e37d60693bd0342752d969628cc22ff9449101087b8f80afca5be9e7",
+                      "https://esm.sh/v135/cross-fetch@3.1.8/denonext/cross-fetch.mjs": "8fba9e7c3fbaf0d2168beb63ce0cd21b5bfbfbd77e2fcbf8d957d533a71222f6",
+                      "https://esm.sh/v135/es5-ext@0.10.62/denonext/global.js": "2f51d9acef1f761faaa542da919b3c747744ea29fe709d0a904fd531716a93d6",
+                      "https://esm.sh/v135/websocket@1.0.34/denonext/websocket.mjs": "dfe5d62007e9f7430d561e2376fe47caa9d04cb016d83d3386fcc2206a90296b"
                     }
                   }
                 language: deno
@@ -6087,8 +6087,8 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  on_behalf_of: u/admin
-  on_behalf_of_email: admin@windmill.dev
+  on_behalf_of: guillaume@windmill.dev
+  on_behalf_of_email: guillaume@windmill.dev
   triggerables:
     rawscript/0fc9afb3c876f0393da742d9e43c29bbd011397034da32caa19cdb7f4e069b4c:
       auth: '$res:f/examples/demo_supabase'
