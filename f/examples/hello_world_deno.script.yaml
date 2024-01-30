@@ -1,6 +1,6 @@
 summary: Hello World in Deno
 description: ''
-lock: |-
+lock: |
   {
     "version": "3",
     "remote": {}

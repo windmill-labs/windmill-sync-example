@@ -1,7 +1,6 @@
-summary: Use polars for blazingly fast data processing
+summary: ''
 description: ''
-lock: polars==0.20.6
-is_template: false
+lock: ''
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'

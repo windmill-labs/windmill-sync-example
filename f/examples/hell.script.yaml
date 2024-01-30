@@ -1,10 +1,6 @@
 summary: ''
 description: ''
-lock: 
-  - "foo"
-  - "bar"
-  - "zed"
-  - "ammo"
+lock: ''
 is_template: false
 kind: script
 schema:

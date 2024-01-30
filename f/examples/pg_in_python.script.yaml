@@ -1,10 +1,10 @@
 summary: Execute a query on Postgres in Python
 description: ''
 lock: |-
-  psycopg[binary,pool]==3.1.8
-  psycopg-binary==3.1.8
-  psycopg-pool==3.1.6
-  typing-extensions==4.5.0
+  psycopg[binary,pool]==3.1.17
+  psycopg-binary==3.1.17
+  psycopg-pool==3.2.1
+  typing-extensions==4.9.0
 is_template: false
 kind: script
 schema:

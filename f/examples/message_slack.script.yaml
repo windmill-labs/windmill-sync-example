@@ -1,20 +1,15 @@
 summary: Send a Slack message
 description: Send a message to a channel or person in the connected slack workspace
 lock: |-
-  anyio==3.6.2
-  attrs==22.2.0
-  certifi==2022.12.7
+  anyio==4.2.0
+  certifi==2023.11.17
   h11==0.14.0
-  httpcore==0.16.3
-  httpx==0.23.3
-  idna==3.4
-  python-dateutil==2.8.2
-  rfc3986[idna2008]==1.5.0
-  six==1.16.0
-  slack-sdk==3.20.2
+  httpcore==0.17.3
+  httpx==0.24.1
+  idna==3.6
+  slack-sdk==3.26.2
   sniffio==1.3.0
-  windmill-api==1.75.0
-  wmill==1.75.0
+  wmill==1.256.0
 is_template: false
 kind: script
 schema:

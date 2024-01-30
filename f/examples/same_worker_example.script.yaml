@@ -1,14 +1,18 @@
-summary: A Python script importing another one
+summary: ''
 description: ''
-lock: ''
-is_template: false
+lock: |
+  {
+    "version": "3",
+    "remote": {}
+  }
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
   properties:
-    x:
+    path:
       type: string
+      description: ''
       default: null
   required:
-    - x
+    - path

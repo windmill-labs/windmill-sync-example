@@ -1,11 +1,11 @@
 summary: Do a simple HTTP POST request
 description: This example pass a value as JSON data and use a secret as bearer token
 lock: |-
-  certifi==2022.12.7
-  charset-normalizer==3.1.0
-  idna==3.4
-  requests==2.28.2
-  urllib3==1.26.15
+  certifi==2023.11.17
+  charset-normalizer==3.3.2
+  idna==3.6
+  requests==2.31.0
+  urllib3==2.2.0
 is_template: true
 kind: script
 schema:

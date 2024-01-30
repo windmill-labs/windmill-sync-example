@@ -4,11 +4,11 @@ lock: |
   {
     "version": "3",
     "redirects": {
-      "https://deno.land/x/sleep/mod.ts": "https://deno.land/x/sleep@v1.3.0/mod.ts"
+      "https://deno.land/x/sleep/mod.ts": "https://deno.land/x/sleep@v1.2.1/mod.ts"
     },
     "remote": {
-      "https://deno.land/x/sleep@v1.3.0/mod.ts": "e9955ecd3228a000e29d46726cd6ab14b65cf83904e9b365f3a8d64ec61c1af3",
-      "https://deno.land/x/sleep@v1.3.0/sleep.ts": "b6abaca093b094b0c2bba94f287b19a60946a8d15764d168f83fcf555f5bb59e"
+      "https://deno.land/x/sleep@v1.2.1/mod.ts": "f2d3c9e1ef1fb2852f580f6960384bed36bc18a2da357c35f11a089fcca44273",
+      "https://deno.land/x/sleep@v1.2.1/sleep.ts": "2426efe5d3ce5de0b8af08bd36a8700deb5dc60e752f5f8f05d5e815a7e8cb0e"
     }
   }
 is_template: false
