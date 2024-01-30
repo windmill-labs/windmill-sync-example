@@ -11,7 +11,6 @@ lock: |
       "https://deno.land/x/sleep@v1.2.1/sleep.ts": "2426efe5d3ce5de0b8af08bd36a8700deb5dc60e752f5f8f05d5e815a7e8cb0e"
     }
   }
-is_template: false
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
