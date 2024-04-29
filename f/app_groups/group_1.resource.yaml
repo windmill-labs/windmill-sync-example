@@ -1,0 +1,31 @@
+description: null
+value:
+  name: wewew
+  value:
+    item:
+      '12':
+        fixed: false
+        h: 8
+        w: 6
+        x: 6
+        y: 8
+      '3':
+        fixed: false
+        h: 8
+        w: 2
+        x: 0
+        y: 8
+      id: c
+      data:
+        id: c
+        type: containercomponent
+        configuration: {}
+        customCss:
+          container:
+            class: ''
+            style: ''
+        groupFields: {}
+        numberOfSubgrids: 1
+    subgrids:
+      c-0: []
+resource_type: app_group

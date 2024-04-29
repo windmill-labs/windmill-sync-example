@@ -1,0 +1,9 @@
+description: ''
+value:
+  database: foo
+  host: aws.connect.psdb.cloud
+  password: '$var:f/user/benevolent_mysql'
+  port: 3306
+  ssl: true
+  user: obfx8xnciigv3fw74wy1
+resource_type: mysql

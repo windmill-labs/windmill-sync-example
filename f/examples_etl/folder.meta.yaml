@@ -1,6 +1,6 @@
-display_name: examples
+display_name: examples_etl
 extra_perms:
-  g/fooo: false
+  g/all: false
   u/admin: true
 owners:
   - u/admin

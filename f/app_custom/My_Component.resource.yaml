@@ -1,0 +1,40 @@
+description: null
+value:
+  name: My Component
+  value:
+    additionalLibs:
+      reactVersion: 18.2.0
+  js: >
+    (function(){"use strict";try{if(typeof document<"u"){var
+    o=document.createElement("style");o.appendChild(document.createTextNode(".My_Component{font-family:Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light
+    dark;color:#ffffffde;background-color:#999;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}.My_Component
+    a{font-weight:500;color:#646cff;text-decoration:inherit}.My_Component
+    a:hover{color:#535bf2}.My_Component
+    h1{font-size:3.2em;line-height:1.1}.My_Component
+    button{border-radius:8px;border:1px solid transparent;padding:.6em
+    1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color
+    .25s}.My_Component
+    button:hover{border-color:#646cff}.My_Component>button:focus,.My_Component>button:focus-visible{outline:4px
+    auto -webkit-focus-ring-color}@media (prefers-color-scheme:
+    light){.My_Component{color:#213547;background-color:#fff}.My_Component
+    a:hover{color:#747bff}.My_Component
+    button{background-color:#f9f9f9}}.My_Component{margin:0
+    auto;text-align:center}.My_Component
+    .card{padding:2em}")),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
+
+    var wmc=function(i,e,u){"use strict";const g="";function
+    m({passSetters:t,setOutput:d,renderInit:a}){const[c,r]=e.useState(a),[s,p]=e.useState({count:0}),[y,f]=e.useState([]);return
+    e.useEffect(()=>{const n=[];let
+    l=0;t({onInput:E=>{l++,n.push({i:l,value:E}),f([...n])},onRender:r})},[r,t]),c?e.createElement(e.Fragment,null,e.createElement("h1",null,"Windmill
+    Custom Component"),e.createElement("div",null,"State:
+    ",e.createElement("pre",null,JSON.stringify(s))),e.createElement("div",{style:{width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}},"
+    ",e.createElement("div",{className:"card",style:{display:"flex",gap:"20px"}},"Inputs:",e.createElement("div",{style:{overflow:"auto",maxHeight:"300px",border:"1px
+    solid",minWidth:"50px",backgroundColor:"gray"}},y.slice(-10).map(({i:n,value:l})=>e.createElement("div",{style:{textAlign:"left"},key:n},n,":
+    ",JSON.stringify(l))),"
+    ")),e.createElement("div",{className:"card",style:{display:"flex",gap:"20px"}},e.createElement("div",null,e.createElement("button",{style:{fontSize:"12px"},onClick:()=>{p(n=>({count:n.count+1})),d(s)}},"Increment
+    state and set output to state","
+    "))))):e.createElement(e.Fragment,null)}function
+    o(t){u.createRoot(document.getElementById(t.id)).render(e.createElement(e.StrictMode,null,e.createElement(m,{passSetters:t.passSetters,setOutput:t.setOutput,renderInit:t.render})))}return
+    window.windmill===void
+    0&&(window.windmill={}),window.windmill.My_Component=o,i.customComponent=o,Object.defineProperty(i,Symbol.toStringTag,{value:"Module"}),i}({},React,ReactDOM);
+resource_type: app_custom

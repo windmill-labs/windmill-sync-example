@@ -1,0 +1,7 @@
+display_name: user
+extra_perms:
+  u/admin: true
+  u/foo: false
+  u/test23: false
+owners:
+  - u/admin

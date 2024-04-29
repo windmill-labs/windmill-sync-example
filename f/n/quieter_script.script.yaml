@@ -1,0 +1,34 @@
+summary: ''
+description: ''
+lock: '!inline f/n/quieter_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    a:
+      type: number
+      description: ''
+      default: null
+    b:
+      type: string
+      description: ''
+      default: null
+      enum:
+        - my
+        - enum
+    e:
+      type: string
+      description: ''
+      default: inferred type string from default arg
+    f:
+      type: object
+      description: ''
+      default:
+        nested: object
+      properties:
+        nested:
+          type: string
+  required:
+    - a
+    - b

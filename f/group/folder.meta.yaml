@@ -1,0 +1,4 @@
+display_name: group
+extra_perms:
+  g/usergroup: false
+owners: []
