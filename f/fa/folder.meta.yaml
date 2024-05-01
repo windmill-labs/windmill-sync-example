@@ -1,0 +1,5 @@
+display_name: fa
+extra_perms:
+  admin@windmill.dev: true
+owners:
+  - admin@windmill.dev
