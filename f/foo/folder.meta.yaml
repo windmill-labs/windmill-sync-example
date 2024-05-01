@@ -1,6 +1,5 @@
 display_name: foo
 extra_perms:
-  g/all: false
-  u/admin: true
+  u/ruben: true
 owners:
-  - u/admin
+  - u/ruben
