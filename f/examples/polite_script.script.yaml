@@ -1,10 +1,6 @@
 summary: ''
 description: ''
-lock: |
-  {
-    "version": "3",
-    "remote": {}
-  }
+lock: '!inline f/examples/polite_script.script.lock'
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
