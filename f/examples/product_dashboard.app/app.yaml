@@ -294,7 +294,7 @@ value:
             type: runnableByName
             name: All Product Data
             inlineScript:
-              content: '!inline all_product_data.inline_script.ts'
+              content: '!inline all_product_data.inline_script.deno.ts'
               lock: '!inline all_product_data.inline_script.lock'
               language: deno
               path: /inline-script/Inline Script 2
@@ -431,7 +431,7 @@ value:
             type: runnableByName
             name: One Product Detail
             inlineScript:
-              content: '!inline one_product_detail.inline_script.ts'
+              content: '!inline one_product_detail.inline_script.deno.ts'
               lock: '!inline one_product_detail.inline_script.lock'
               language: deno
               path: /inline-script/Inline Script 0
@@ -515,7 +515,7 @@ value:
             type: runnableByName
             name: Product Category Count
             inlineScript:
-              content: '!inline product_category_count.inline_script.ts'
+              content: '!inline product_category_count.inline_script.deno.ts'
               lock: '!inline product_category_count.inline_script.lock'
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
@@ -657,7 +657,7 @@ value:
             type: runnableByName
             name: Product Brand Count
             inlineScript:
-              content: '!inline product_brand_count.inline_script.ts'
+              content: '!inline product_brand_count.inline_script.deno.ts'
               lock: '!inline product_brand_count.inline_script.lock'
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
@@ -866,7 +866,7 @@ value:
             type: runnableByName
             name: Stock Worth Title
             inlineScript:
-              content: '!inline stock_worth_title.inline_script.ts'
+              content: '!inline stock_worth_title.inline_script.deno.ts'
               lock: '!inline stock_worth_title.inline_script.lock'
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
@@ -1018,7 +1018,7 @@ value:
             type: runnableByName
             name: Product Stock Total Worth
             inlineScript:
-              content: '!inline product_stock_total_worth.inline_script.ts'
+              content: '!inline product_stock_total_worth.inline_script.deno.ts'
               lock: '!inline product_stock_total_worth.inline_script.lock'
               language: deno
               path: u/adam/products-app/inline-script/Inline Script 0
