@@ -25,8 +25,20 @@ jobs:
         with:
           deno-version: vx.x.x
 
-      # (push will pull first to detect conflicts and only push actual changes)
+      # We check the commit to make sure it doesn't start with [WM] which commits coming from Windmill Git Sync do.\
+      # If that's the case, then we stop the workflow as we want to avoid overwriting changes that are out-of-sync
+      # (for instance if one were to deploy in quick succession)
+      - name: Check commit message
+        id: check_message
+        run: |
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          if [[ "$COMMIT_MESSAGE" =~ ^\[WM\] ]]; then
+            echo "Commit message starts with '[WM]', skipping push to Windmill to avoid overwriting deploy that immediately follows it"
+            echo "skip=skip" >> $GITHUB_OUTPUT
+          fi
+
       - name: Push changes
+        if: steps.check_message.outputs.skip != 'skip'
         run: |
           deno run --unstable -A  https://deno.land/x/wmill@v1.333.4/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
           deno run --unstable -A  https://deno.land/x/wmill@v1.333.4/main.ts sync push --yes --raw --skip-variables --skip-secrets --skip-resources
