@@ -1,6 +1,5 @@
-display_name: examples
+display_name: a
 extra_perms:
-  g/fooo: false
   u/admin: true
 owners:
   - u/admin

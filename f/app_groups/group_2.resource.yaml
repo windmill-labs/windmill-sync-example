@@ -1,0 +1,101 @@
+description: null
+value:
+  name: foooewwew
+  value:
+    item:
+      '12':
+        id: b
+        fixed: false
+        h: 8
+        w: 6
+        x: 6
+        y: 0
+      '3':
+        fixed: false
+        h: 8
+        w: 2
+        x: 1
+        y: 0
+      id: b
+      data:
+        id: b
+        type: containercomponent
+        configuration: {}
+        customCss:
+          container:
+            class: ''
+            style: ''
+        groupFields: {}
+        numberOfSubgrids: 1
+    subgrids:
+      b-0:
+        - '12':
+            fixed: false
+            h: 10
+            w: 6
+            x: 0
+            y: 0
+          '3':
+            fixed: false
+            h: 10
+            w: 3
+            x: 0
+            y: 0
+          id: c
+          data:
+            id: c
+            type: tablecomponent
+            actionButtons: []
+            componentInput:
+              type: static
+              value:
+                - id: 1
+                  name: A cell with a long name
+                  age: 42
+                - id: 2
+                  name: A briefer cell
+                  age: 84
+              fieldType: array
+              subFieldType: object
+            configuration:
+              columnDefs:
+                type: static
+                value:
+                  - field: id
+                  - field: name
+                  - field: age
+              downloadButton:
+                type: static
+                value: true
+              initialState:
+                type: static
+                value: {}
+              pagination:
+                type: oneOf
+                configuration:
+                  auto:
+                    pageSize:
+                      type: static
+                      value: 20
+                  manual:
+                    pageCount:
+                      type: static
+                      value: -1
+                selected: auto
+              search:
+                type: static
+                value: Disabled
+            customCss:
+              container:
+                class: ''
+                style: ''
+              tableBody:
+                class: ''
+                style: ''
+              tableFooter:
+                class: ''
+                style: ''
+              tableHeader:
+                class: ''
+                style: ''
+resource_type: app_group
