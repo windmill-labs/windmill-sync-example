@@ -1,5 +1,0 @@
-display_name: foo
-extra_perms:
-  u/ruben: true
-owners:
-  - u/ruben
