@@ -1,6 +1,8 @@
 display_name: examples_etl
 extra_perms:
   g/all: false
+  guillaume@windmill.dev: true
   u/admin: true
 owners:
   - u/admin
+  - guillaume@windmill.dev
