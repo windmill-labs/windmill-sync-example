@@ -1,4 +1,6 @@
 display_name: App Groups
 extra_perms:
   g/all: false
-owners: []
+  guillaume@windmill.dev: true
+owners:
+  - guillaume@windmill.dev
