@@ -1,0 +1,22 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          x:
+            type: static
+            value: null
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+        tag: ''
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []
+visible_to_runner_only: false
+ws_error_handler_muted: false
