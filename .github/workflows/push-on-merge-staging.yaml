@@ -40,5 +40,6 @@ jobs:
       - name: Push changes
         if: steps.check_message.outputs.skip != 'skip'
         run: |
-          deno run -A  https://deno.land/x/wmill@v1.333.4/main.ts workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
-          deno run -A  https://deno.land/x/wmill@v1.333.4/main.ts sync push --yes --raw --skip-variables --skip-secrets --skip-resources
+          deno install -A -n wmill  https://deno.land/x/wmill@v1.355.0/main.ts
+          wmill workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
+          wmill sync push --yes --skip-variables --skip-secrets --skip-resources
