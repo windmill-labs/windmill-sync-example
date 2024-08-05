@@ -1,6 +1,6 @@
 type gmail = {}
 export async function main(x: gmail) {
-    if (!x) {
+    if (Object.keys(x ?? {}).length > 0) {
       return []
     }
     return [
