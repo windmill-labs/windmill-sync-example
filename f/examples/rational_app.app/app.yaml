@@ -453,7 +453,7 @@ value:
 policy:
   execution_mode: publisher
   triggerables_v2:
-    'e:rawscript/20e7755028be225d6af904ada30500437341e061022716a495b4877fe1957028':
+    'e:rawscript/094997a84ee8d057b046eb321df55cb1eec1427e95849872a8aeac616fc69ee2':
       allow_user_resources:
         - x
       one_of_inputs: {}
