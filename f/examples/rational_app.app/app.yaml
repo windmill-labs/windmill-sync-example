@@ -318,6 +318,48 @@ value:
           container:
             class: ''
             style: ''
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 5
+        w: 11
+        x: 0
+        y: 15
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 2
+        x: 0
+        y: 20
+      id: f
+      data:
+        id: f
+        type: displaycomponent
+        actions: []
+        componentInput:
+          type: evalv2
+          value:
+            foo: 42
+          connections:
+            - id: values
+              componentId: d
+          expr: d.values
+          fieldType: object
+        configuration:
+          hideDetails:
+            type: static
+            value: false
+          title:
+            type: static
+            value: Result
+        customCss:
+          container:
+            class: ''
+            style: ''
+          header:
+            class: ''
+            style: ''
   hiddenInlineScripts: []
   hideLegacyTopBar: true
   norefreshbar: false
@@ -411,7 +453,7 @@ value:
 policy:
   execution_mode: publisher
   triggerables_v2:
-    'e:rawscript/0dba1db21e597c80cbd87a7a5bcdf68eff829fb1914fbc1063d0b2c4815d8491':
+    'e:rawscript/20e7755028be225d6af904ada30500437341e061022716a495b4877fe1957028':
       allow_user_resources:
         - x
       one_of_inputs: {}
