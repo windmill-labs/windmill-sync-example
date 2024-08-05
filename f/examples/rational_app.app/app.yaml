@@ -5,7 +5,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 2
+        h: 1
         w: 12
         x: 0
         y: 0
@@ -81,7 +81,40 @@ value:
           label:
             class: ''
             style: ''
-  hiddenInlineScripts: []
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        x:
+          type: evalv2
+          value: null
+          allowUserResources: true
+          connections:
+            - id: values
+              componentId: d
+          expr: d.values.first_name
+          fieldType: object
+          format: resource-gmail
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.ts'
+        lock: '!inline background_runnable_0.inline_script.lock'
+        language: bun
+        path: f/examples/rational_app/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: object
+              description: ''
+              default: null
+              format: resource-gmail
+              originalType: string
+          required:
+            - x
+      recomputeIds: []
+      recomputeOnInputChanged: true
   hideLegacyTopBar: true
   norefreshbar: false
   subgrids:
@@ -173,4 +206,9 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  triggerables_v2: {}
+  triggerables_v2:
+    'bg_0:rawscript/bcdac2b60283b9d0087af4b6e272ba1afc70a89c17e33e5683aab70b7a7f6220':
+      allow_user_resources:
+        - x
+      one_of_inputs: {}
+      static_inputs: {}
