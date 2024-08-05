@@ -30,10 +30,10 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 12
+        h: 2
         w: 8
         x: 0
-        y: 2
+        y: 1
       '3':
         fixed: false
         fullHeight: false
@@ -50,9 +50,9 @@ value:
           type: static
           value:
             order:
-              - first_name
+              - gmail
             properties:
-              first_name:
+              gmail:
                 type: object
                 default: {}
                 format: resource-gmail
@@ -81,40 +81,244 @@ value:
           label:
             class: ''
             style: ''
-  hiddenInlineScripts:
-    - type: runnableByName
-      name: Background Runnable 0
-      autoRefresh: true
-      fields:
-        x:
-          type: evalv2
-          value: null
-          allowUserResources: true
-          connections:
-            - id: values
-              componentId: d
-          expr: d.values.first_name
-          fieldType: object
-          format: resource-gmail
-      inlineScript:
-        content: '!inline background_runnable_0.inline_script.ts'
-        lock: '!inline background_runnable_0.inline_script.lock'
-        language: bun
-        path: f/examples/rational_app/Background_Runnable_0
-        schema:
-          $schema: 'https://json-schema.org/draft/2020-12/schema'
-          type: object
-          properties:
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 12
+        w: 12
+        x: 0
+        y: 3
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 10
+        w: 3
+        x: 0
+        y: 10
+      id: e
+      data:
+        id: e
+        type: aggridcomponent
+        actions:
+          - id: e_a
+            type: buttoncomponent
+            actions: []
+            componentInput:
+              type: runnable
+              fields: {}
+              fieldType: any
+            configuration:
+              afterIcon:
+                type: static
+                value: ''
+              beforeIcon:
+                type: static
+                value: ''
+              color:
+                type: static
+                value: blue
+              confirmationModal:
+                type: oneOf
+                configuration:
+                  confirmationModal:
+                    description:
+                      type: static
+                      value: Are you sure?
+                    confirmationText:
+                      type: static
+                      value: Confirm
+                    title:
+                      type: static
+                      value: Title
+                  none: {}
+                selected: none
+              disabled:
+                type: static
+                value: false
+              fillContainer:
+                type: static
+                value: false
+              label:
+                type: static
+                value: Press me
+              onError:
+                type: oneOf
+                configuration:
+                  close:
+                    id:
+                      type: static
+                      value: ''
+                  errorOverlay: {}
+                  gotoUrl:
+                    newTab:
+                      type: static
+                      value: true
+                    url:
+                      type: static
+                      value: ''
+                  open:
+                    id:
+                      type: static
+                      value: ''
+                  sendErrorToast:
+                    appendError:
+                      type: static
+                      value: true
+                    message:
+                      type: static
+                      value: An error occured
+                  setTab:
+                    setTab:
+                      type: static
+                      value: []
+                selected: errorOverlay
+              onSuccess:
+                type: oneOf
+                configuration:
+                  clearFiles:
+                    id:
+                      type: static
+                      value: ''
+                  close:
+                    id:
+                      type: static
+                      value: ''
+                  closeModal:
+                    modalId:
+                      type: static
+                      value: ''
+                  gotoUrl:
+                    newTab:
+                      type: static
+                      value: true
+                    url:
+                      type: static
+                      value: ''
+                  none: {}
+                  open:
+                    id:
+                      type: static
+                      value: ''
+                  openModal:
+                    modalId:
+                      type: static
+                      value: ''
+                  sendToast:
+                    message:
+                      type: static
+                      value: Do something
+                  setTab:
+                    setTab:
+                      type: static
+                      value: []
+                selected: sendToast
+              size:
+                type: static
+                value: xs
+              triggerOnAppLoad:
+                type: static
+                value: false
+            customCss:
+              button:
+                class: ''
+                style: ''
+              container:
+                class: ''
+                style: ''
+            horizontalAlignment: center
+            recomputeIds: []
+            verticalAlignment: center
+        componentInput:
+          type: runnable
+          value:
+            - id: 1
+              name: A cell with a long name
+              age: 42
+            - id: 2
+              name: A briefer cell
+              age: 84
+          autoRefresh: true
+          fields:
             x:
-              type: object
-              description: ''
-              default: null
+              type: evalv2
+              value: null
+              allowUserResources: true
+              connections:
+                - id: values
+                  componentId: d
+              expr: d.values.gmail
+              fieldType: object
               format: resource-gmail
-              originalType: string
-          required:
-            - x
-      recomputeIds: []
-      recomputeOnInputChanged: true
+          fieldType: array
+          recomputeOnInputChanged: true
+          runnable:
+            type: runnableByName
+            name: Inline Script 0
+            inlineScript:
+              content: '!inline inline_script_0.inline_script.ts'
+              lock: '!inline inline_script_0.inline_script.lock'
+              language: bun
+              path: f/examples/rational_app/Inline_Script_0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                type: object
+                properties:
+                  x:
+                    type: object
+                    description: ''
+                    default: null
+                    format: resource-gmail
+                required:
+                  - x
+          subFieldType: object
+        configuration:
+          allEditable:
+            type: static
+            value: false
+          columnDefs:
+            type: static
+            value:
+              - field: id
+                flex: 1
+              - editable: true
+                field: name
+                flex: 1
+              - field: age
+                flex: 1
+          compactness:
+            type: static
+            value: normal
+          customActionsHeader:
+            type: static
+          extraConfig:
+            type: static
+            value: {}
+          flex:
+            type: static
+            value: true
+          footer:
+            type: static
+            value: true
+          multipleSelectable:
+            type: static
+            value: false
+          pagination:
+            type: static
+            value: false
+          rowMultiselectWithClick:
+            type: static
+            value: true
+          selectFirstRowByDefault:
+            type: static
+            value: true
+          wrapActions:
+            type: static
+            value: false
+        customCss:
+          container:
+            class: ''
+            style: ''
+  hiddenInlineScripts: []
   hideLegacyTopBar: true
   norefreshbar: false
   subgrids:
@@ -207,7 +411,7 @@ value:
 policy:
   execution_mode: publisher
   triggerables_v2:
-    'bg_0:rawscript/bcdac2b60283b9d0087af4b6e272ba1afc70a89c17e33e5683aab70b7a7f6220':
+    'e:rawscript/0dba1db21e597c80cbd87a7a5bcdf68eff829fb1914fbc1063d0b2c4815d8491':
       allow_user_resources:
         - x
       one_of_inputs: {}
