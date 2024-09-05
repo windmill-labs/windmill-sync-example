@@ -39,6 +39,7 @@ jobs:
 
       # (push will pull first to detect conflicts and only push actual changes)
       - name: Push changes
+        if: steps.check_message.outputs.skip != 'skip'
         run: |
           deno install -A -n wmill  https://deno.land/x/wmill@v1.355.0/main.ts
           wmill workspace add __automation ${{ env.WMILL_WORKSPACE }} ${{ env.WMILL_URL }} --token ${{ secrets.WMILL_TOKEN }}
