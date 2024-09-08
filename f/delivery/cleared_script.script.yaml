@@ -1,6 +1,6 @@
 summary: ''
 description: ''
-lock: '!inline f/examples/snappy_script.script.lock'
+lock: '!inline f/delivery/cleared_script.script.lock'
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
@@ -16,14 +16,14 @@ schema:
       default: null
       enum:
         - my
-        - ennn
+        - enum
       originalType: enum
-    e:
+    d:
       type: string
       description: ''
       default: inferred type string from default arg
       originalType: string
-    f:
+    e:
       type: object
       description: ''
       default:
