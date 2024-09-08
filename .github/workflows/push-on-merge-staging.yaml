@@ -23,7 +23,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
 
       # We check the commit to make sure it doesn't start with [WM] which commits coming from Windmill Git Sync do.\
       # If that's the case, then we stop the workflow as we want to avoid overwriting changes that are out-of-sync
