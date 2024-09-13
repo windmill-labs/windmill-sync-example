@@ -1,4 +1,4 @@
 includes: ["f/**"] # uses "*" or uncomment this line to include everything. Note that wmill will only consider files with valid path (u/ or f/, with the right extension)
 excludes: [] # excludes patterns here
 
-defaultTs: "bun" # deno is the default, set it to bun if you primarily use bun to avoid needing the .bun.ts extension
+defaultTs: "bun" # bun is the default, set it to deno if you primarily use deno to avoid needing the .deno.ts extension
