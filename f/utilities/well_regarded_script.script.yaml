@@ -1,0 +1,69 @@
+summary: ''
+description: ''
+lock: '!inline f/utilities/well_regarded_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    a:
+      type: number
+      description: ''
+      default: null
+    b:
+      type: string
+      description: ''
+      default: null
+      enum:
+        - my
+        - enum
+      originalType: enum
+    e:
+      type: string
+      description: ''
+      default: inferred type string from default arg
+      originalType: string
+    f:
+      type: object
+      description: ''
+      default:
+        nested: object
+      properties:
+        nested:
+          type: string
+          description: ''
+          originalType: string
+    g:
+      type: object
+      description: ''
+      default: null
+      oneOf:
+        - type: object
+          properties:
+            foo:
+              type: string
+              description: ''
+              originalType: string
+            label:
+              type: string
+              description: ''
+              enum:
+                - Variant 1
+              originalType: enum
+          title: Variant 1
+        - type: object
+          properties:
+            bar:
+              type: number
+              description: ''
+            label:
+              type: string
+              description: ''
+              enum:
+                - Variant 2
+              originalType: enum
+          title: Variant 2
+  required:
+    - a
+    - b
+    - g
