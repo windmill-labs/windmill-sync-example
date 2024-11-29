@@ -1,5 +1,7 @@
 display_name: g
 extra_perms:
+  guillaume@windmill.dev: true
   u/admin: true
 owners:
   - u/admin
+  - guillaume@windmill.dev
