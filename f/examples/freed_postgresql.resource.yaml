@@ -1,0 +1,8 @@
+description: ''
+value:
+  dbname: ''
+  host: foo
+  password: ''
+  root_certificate_pem: ''
+  user: ''
+resource_type: postgresql
