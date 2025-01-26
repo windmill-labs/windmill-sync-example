@@ -15,12 +15,14 @@ schema:
       description: ''
       default: null
       enum:
-        - my
+        - myyy
         - enum
+      originalType: enum
     e:
       type: string
       description: ''
       default: inferred type string from default arg
+      originalType: string
     f:
       type: object
       description: ''
@@ -29,6 +31,7 @@ schema:
       properties:
         nested:
           type: string
+          originalType: string
   required:
     - a
     - b
