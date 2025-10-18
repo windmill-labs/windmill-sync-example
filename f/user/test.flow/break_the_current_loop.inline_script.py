@@ -15,8 +15,6 @@ from f.lib.metadata import schedule
 from f.lib.utils import Json, get_secret, get_variable, now
 
 
-
-
 @contextmanager
 def auxilius_client(at: str | None = None) -> Iterator[httpx.Client]:
     transport = httpx.HTTPTransport(
