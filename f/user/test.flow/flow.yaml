@@ -1,59 +1,330 @@
 summary: Ingest auxilius metering data
 value:
   modules:
-    - id: step_10
-      summary: Loop values lists
-      value:
-        type: whileloopflow
-        skip_failures: false
-        modules:
-          - id: step_0
-            summary: Get Auxilius access-token
-            value:
-              type: rawscript
-              language: python3
-              content: |
-                from __future__ import annotations\n\nfrom collections.abc import\
-                \ Iterator\nfrom contextlib import contextmanager\nfrom datetime import\
-                \ datetime\nfrom decimal import Decimal\nfrom typing import Any, Literal\n\
-                \nfrom uuid import UUID\n\nimport httpx\nimport logfire\nimport pydantic\
-                \ as pyd\n\nfrom f.lib.metadata import schedule\nfrom f.lib.utils import\
-                \ Json, get_secret, get_variable, now\n\n\n@contextmanager\ndef auxilius_client(at:\
-                \ str | None = None) -> Iterator[httpx.Client]:\n    transport = httpx.HTTPTransport(\n\
-                \        trust_env=False,\n        http2=False,\n        retries=10,\n\
-                \        )\n    username = get_variable(\"AUXILIUS_USERNAME\")\n    password\
-                \ = get_secret(\"AUXILIUS_PASSWORD\").get_secret_value()\n    # TODO disable\
-                \ cookies\n    client_instance = httpx.Client(\n        transport=transport,\n\
-                \        timeout=60.0,\n        base_url=get_variable(\"AUXILIUS_BASE_URL\"\
-                ),\n        ),\n    auth=(username, password),\n    )\n    if at:\n        client_instance.headers[\"\
-                AUX_AUTH\"] = f\"Bearer {at}\"\n    logfire.instrument_httpx(client_instance,\
-                \ capture_response_body=True)\n\n    try:\n        yield client_instance\n\
-                \    finally:\n        client_instance.close()\n\n\ndef authenticate(client:\
-                \ httpx.Client) -> str:\n    resp = client.get(\"/tokens\")\n    resp.raise_for_status()\n\
-                \    at = resp.json()[\"token\"]\n    assert isinstance(at, str)\n    client.headers[\"\
-                AUX_AUTH\"] = f\"Bearer {at}\"\n    return at\n\n\n\nclass LoginResult(pyd.BaseModel):\n\
-                \    token: str\n\n\nfrom f.lib.utils\ import server\n@server.main()\
-                \ -> LoginResult:\n    with auxilius_client()\n\ as client:\n        at = authenticate(client)\n\
-                \        return LoginResult(token=at)\n\n\ndef create_key(\n    prefix: str,\n\
-                \    filename: str | None = None,\n\    day: pyd.AwareDatetime | None = None,\n\
-                \    suffix: str = \"\",\n\    metering_code: str | None = None,\n) -> str:\n\
-                \    if day is None:\n        day = now(\"Europe/Berlin\")\n    if filename is None:\n\
-                \        filename = day.isoformat().replace(\":\", \"_\")\n    if metering_code:\n\
-                \        filename = f\"{prefix}/{metering_code}/{filename}\"\n    return\
-                \ f\"{prefix}/year={day.year:04d}/month={day.month:02d}/day={day.day:02d}/{filename}{suffix}\"\
-                \n\n\nclass Value(pyd.BaseModel):\n    id: UUID\n\n\nclass ValuesListResponse(pyd.BaseModel):\n\
-                \    truncated: bool\n    values: list[Value] = []\n\n\nclass ValuesResult(pyd.BaseModel):\n\
-                \    data: Json\n    values: list[UUID]\n    truncated: bool\n\n\ndef\
-                \ get_values_list(at: str) -> ValuesListResult:\n    with auxilius_client(at)\
-                \ as client:\n        resp = client.get(\"/values\")\n        resp.raise_for_status()\n\
-                \        data = resp.json()\n        values = ValuesListResponse.model_validate(data)\n\
-                \        return ValuesListResult(\n            data=data,\n            truncated=values.truncated,\n\
-                \        values=[v.id for v in values.values],\n        )\n\n\nclass Entry(pyd.BaseModel):\n\
-                \    channelAddress: str\n\    unit: Literal[\"kWh\"]\n    scalar: int = 0\n\
-                \    value: Decimal\n\    estimated: bool | None = None\n    transducerFactor: Decimal | None\
-                \ = None\n    info: str | None = None\n    # TODO: DafxXfCr gibt es ein\
-                \ type: \"G\" field.\n\n\nclass LoadProfile(pyd.BaseModel):\n    timestamp:\
-                \ pyd.AwareDatetime\n    entry: list[Entry]\n\n\nclass ValuesResponse(pyd.BaseModel):\n\
-                \    subtype: str\n    meteringCode: str\n    deviceId: str\n    customerProjectId:\
-                \ str\n    loadProfileEntries: list[LoadProfile]\n\n    @pyd.field_validator(\"\
-                loadProfileEntries\")\n    @classmethod\n    def ensure_at_least_one_entry(cls,\
+  - id: step_10
+    value:
+      type: whileloopflow
+      modules:
+      - id: step_0
+        value:
+          type: rawscript
+          input_transforms: {}
+          content: |
+            from __future__ import annotations
+
+            from collections.abc import Iterator
+            from contextlib import contextmanager
+            from datetime import datetime
+            from decimal import Decimal
+            from typing import Any, Literal
+            from uuid import UUID
+
+            import httpx
+            import logfire
+            import pydantic as pyd
+
+            from f.lib.metadata import schedule
+            from f.lib.utils import Json, get_secret, get_variable, now
+
+
+            @contextmanager
+            def auxilius_client(at: str | None = None) -> Iterator[httpx.Client]:
+                transport = httpx.HTTPTransport(
+                    trust_env=False,
+                    http2=False,
+                    retries=10,
+                )
+                username = get_variable("AUXILIUS_USERNAME")
+                password = get_secret("AUXILIUS_PASSWORD").get_secret_value()
+                # TODO disable cookies
+                client_instance = httpx.Client(
+                    transport=transport,
+                    timeout=60.0,
+                    base_url=get_variable("AUXILIUS_BASE_URL"),
+                    auth=(username, password),
+                )
+                if at:
+                    client_instance.headers["AUX_AUTH"] = f"Bearer {at}"
+                logfire.instrument_httpx(client_instance, capture_response_body=True)
+
+                try:
+                    yield client_instance
+                finally:
+                    client_instance.close()
+
+
+            def authenticate(client: httpx.Client) -> str:
+                resp = client.get("/tokens")
+                resp.raise_for_status()
+                at = resp.json()["token"]
+                assert isinstance(at, str)
+                client.headers["AUX_AUTH"] = f"Bearer {at}"
+                return at
+
+
+            class LoginResult(pyd.BaseModel):
+                token: str
+
+
+            from f.lib.utils import script
+            @script()
+            def main() -> LoginResult:
+                with auxilius_client() as client:
+                    at = authenticate(client)
+                    return LoginResult(token=at)
+
+
+            def create_key(
+                prefix: str,
+                filename: str | None = None,
+                day: pyd.AwareDatetime | None = None,
+                suffix: str = "",
+                metering_code: str | None = None,
+            ) -> str:
+                if day is None:
+                    day = now("Europe/Berlin")
+                if filename is None:
+                    filename = day.isoformat().replace(":", "_")
+                if metering_code:
+                    filename = f"deviceId={metering_code}/{filename}"
+                return f"{prefix}/year={day.year:04d}/month={day.month:02d}/day={day.day:02d}/{filename}{suffix}"
+
+
+            class Value(pyd.BaseModel):
+                id: UUID
+
+
+            class ValuesListResponse(pyd.BaseModel):
+                truncated: bool
+                values: list[Value] = []
+
+
+            class ValuesListResult(pyd.BaseModel):
+                data: Json
+                values: list[UUID]
+                truncated: bool
+
+
+            def get_values_list(at: str) -> ValuesListResult:
+                with auxilius_client(at) as client:
+                    resp = client.get("/values")
+                    resp.raise_for_status()
+                    data = resp.json()
+                    values = ValuesListResponse.model_validate(data)
+                    return ValuesListResult(
+                        data=data,
+                        values=[v.id for v in values.values],
+                        truncated=values.truncated,
+                    )
+
+
+            class Entry(pyd.BaseModel):
+                channelAddress: str
+                unit: Literal["kWh"]
+                scaler: int = 0
+                value: Decimal
+                estimated: bool | None = None
+                transducerFactor: Decimal | None = None
+                info: str | None = None
+                # TODO: Dafür gibt es ein type: "G" field.
+
+
+            class LoadProfile(pyd.BaseModel):
+                timestamp: pyd.AwareDatetime
+                entry: list[Entry]
+
+
+            class ValuesResponse(pyd.BaseModel):
+                vsubtype: str
+                meteringCode: str
+                deviceId: str
+                customerProjectId: str
+                loadProfileEntries: list[LoadProfile]
+
+                @pyd.field_validator("loadProfileEntries")
+                @classmethod
+                def ensureAtLeastOneEntry(cls, v: list[LoadProfile]) -> list[LoadProfile]:
+                    if len(v) == 0:
+                        raise ValueError
+                    return v
+
+                def day(self) -> datetime:
+                    return self.loadProfileEntries[0].timestamp.replace(
+                        hour=0, minute=0, second=0, microsecond=0
+                    )
+
+
+            class ValuesResult(pyd.BaseModel):
+                data: Json
+                meteringCode: str
+                day: datetime
+
+
+            def get_readings(at: str, uuid: UUID) -> ValuesResult:
+                with auxilius_client(at) as client:
+                    resp = client.get(f"/values/{uuid}")
+                    resp.raise_for_status()
+                    data = resp.json()
+                    values = ValuesResponse.model_validate(data)
+                    return ValuesResult(
+                        data=data,
+                        meteringCode=values.meteringCode,
+                        day=values.day(),
+                    )
+
+
+            def delete_reatings(at: str, uuid: UUID) -> None:
+                with auxilius_client(at) as client:
+                    resp = client.delete(f"/values/{uuid}")
+                    resp.raise_for_status()
+
+
+            class ForStatusResult(pyd.BaseModel):
+                errors: int
+                success: int
+                break_while: bool
+
+
+            def check_for_status(data: list[Any], truncated: bool) -> ForStatusResult:
+                errors = 0
+                for v in data:
+                    if isinstance(v, dict) and "error" in v:
+                        errors += 1
+
+                success = len(data) - errors
+                return ForStatusResult(
+                    errors=errors,
+                    success=success,
+                    break_while=not (success > 0 and truncated),
+                )
+
+
+            class AuxiliusFlowError(Exception): ...
+
+
+            def check_flow_status(data: list[ForStatusResult]) -> None:
+                errors = sum(v.errors for v in data)
+                if errors > 0:
+                    msg = f"We got {errors} values with errors."
+                    raise AuxiliusFlowError(msg)
+
+
+            @schedule(
+                schedule="0 0 9 * * *",
+                enabled=True,
+                args={"bucket": "$var:f/vars/AUXILIUS_BUCKET_NAME"},
+            )
+            def flow() -> Any:
+                from f.lib import flows
+
+                return flows.Flow(
+                    "Ingest auxilius metering data",
+                    on_behalf_of_email=True,
+                    steps=[
+                        loop_value_lists := flows.While(
+                            summary="Loop values lists",
+                            skip_failures=False,
+                            steps=[
+                                login := flows.Action(
+                                    get_access_token,
+                                    summary="Get Auxilius access-token",
+                                    retry=flows.ExpRetry(attempts=2, seconds=5),
+                                ),
+                                values := flows.Action(
+                                    get_values_list,
+                                    summary="Get values list",
+                                    kwargs={"at": login.result.token},
+                                    retry=flows.ExpRetry(attempts=2, seconds=5),
+                                ),
+                                values_key := flows.Action(
+                                    create_key,
+                                    summary="Generate s3 key",
+                                    kwargs={
+                                        "prefix": "meterdata/provider=auxilius/type=values",
+                                        "suffix": ".json.gz",
+                                    },
+                                ),
+                                flows.Action(
+                                    "f.scripts.store_s3",
+                                    summary="Store values list",
+                                    kwargs={
+                                        "data": values.result.data,
+                                        "bucket": flows.INPUT.bucket,
+                                        "key": values_key.result,
+                                    },
+                                ),
+                                for_values := flows.For(
+                                    summary="Loop readings from values list.",
+                                    skip_failures=True,
+                                    parallel=True,
+                                    parallelism=10,
+                                    over=values.result.values,
+                                    steps=[
+                                        value := flows.Action(
+                                            get_readings,
+                                            summary="Get value",
+                                            kwargs={
+                                                "at": login.result.token,
+                                                "uuid": flows.INPUT.iter.value,
+                                            },
+                                        ),
+                                        value_key := flows.Action(
+                                            create_key,
+                                            summary="Generate s3 key",
+                                            kwargs={
+                                                "prefix": "meterdata/provider=auxilius/type=value",
+                                                "suffix": ".json.gz",
+                                                "metering_code": value.result.meteringCode,
+                                                "filename": flows.INPUT.iter.value,
+                                                "day": value.result.day,
+                                            },
+                                        ),
+                                        flows.Action(
+                                            "f.scripts.store_s3",
+                                            summary="Store value",
+                                            kwargs={
+                                                "data": value.result.data,
+                                                "bucket": flows.INPUT.bucket,
+                                                "key": value_key.result,
+                                            },
+                                        ),
+                                        flows.Action(
+                                            delete_reatings,
+                                            summary="Delete value from auxilius",
+                                            kwargs={
+                                                "at": login.result.token,
+                                                "uuid": flows.INPUT.iter.value,
+                                            },
+                                            retry=flows.ExpRetry(attempts=2, seconds=5),
+                                        ),
+                                    ],
+                                ),
+                                flows.BreakIf(
+                                    check_for_status,
+                                    kwargs={
+                                        "data": for_values.result,
+                                        "truncated": values.result.truncated,
+                                    },
+                                    result=flows.RESULT.break_while,
+                                ),
+                            ],
+                        ),
+                        flows.Action(
+                            check_flow_status,
+                            summary="Check status of while loop",
+                            kwargs={"data": loop_value_lists.result},
+                        ),
+                    ],
+                )
+          language: python3
+        summary: Get Auxilius access-token
+        retry:
+          constant:
+            attempts: 0
+            seconds: 0
+          exponential:
+            attempts: 2
+            multiplier: 2
+            seconds: 5
+            random_factor: 0
+ 
