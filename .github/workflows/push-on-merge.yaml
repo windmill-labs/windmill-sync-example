@@ -40,5 +40,5 @@ jobs:
       - name: Push changes
         if: steps.check_message.outputs.skip != 'skip'
         run: |
-          npm install -g windmill-cli@1.466.2
+          npm install -g windmill-cli@1.587.0
           wmill sync push --yes --skip-variables --skip-secrets --skip-resources --workspace ${{ env.WMILL_WORKSPACE }} --token ${{ secrets.WMILL_TOKEN }} --base-url ${{ env.WMILL_URL }}
