@@ -1,4 +1,6 @@
 display_name: group
 extra_perms:
   g/usergroup: false
-owners: []
+  guillaume@windmill.dev: true
+owners:
+  - guillaume@windmill.dev
