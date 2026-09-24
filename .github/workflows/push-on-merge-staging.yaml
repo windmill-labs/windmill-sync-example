@@ -29,8 +29,9 @@ jobs:
       # (for instance if one were to deploy in quick succession)
       - name: Check commit message
         id: check_message
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
           if [[ "$COMMIT_MESSAGE" =~ ^\[WM\] ]]; then
             echo "Commit message starts with '[WM]', skipping push to Windmill to avoid overwriting deploy that immediately follows it"
             echo "skip=skip" >> $GITHUB_OUTPUT
